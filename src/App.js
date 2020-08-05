@@ -9,7 +9,13 @@ function App() {
       <Header />
       <div className="container">
         <h1>Hello</h1>
+        <div className="left">
+                        <h2>HEADER H2</h2>
+                    </div>
       </div>
+      <div className="left">
+                        <h2>HEADER H2</h2>
+                    </div>
     </div>
   );
 }
