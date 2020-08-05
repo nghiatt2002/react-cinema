@@ -7,7 +7,7 @@ export default class Header extends Component {
             <div className={headerStyle.header}>
                 {/* Import các component con vào đây */}
                 <h3>Header h3</h3>
-                <div className={headerStyle.header.container}>
+                <div className="container">
                     <h1>HEADER H1</h1>
                 </div>
             </div>

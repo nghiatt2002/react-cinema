@@ -1,10 +1,7 @@
 .header {
-    .container {
+    :global(.container) {
         h1 {
             color:green;
         }
     }
-    // h1 {
-    //     color: red;
-    // }
 }
