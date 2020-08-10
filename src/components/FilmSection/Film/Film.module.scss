@@ -1,5 +1,5 @@
 .film {
-    width: 220px;
+    // width: 220px;
     height: 320px;
     padding: 0 5px;
     :global .filmDetail {
@@ -9,9 +9,10 @@
         height: 100%;
         .filmThumbnail {
           background-image: url('/./img/Films/ca-sau-tu-than.png');
-          background-position: center;
-          background-repeat: no-repeat;
           height: 100%;
+          background-position: center,0 0;
+          background-size: 100% auto;
+          background-repeat: no-repeat,repeat-y;
         }
         .film__hoverInfo {
           position: absolute;
@@ -24,7 +25,7 @@
           align-items: center;
           opacity: 0.7;
           transition: all 0.3s;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.623), rgba(0, 0, 0, 0.623) 20%, rgba(0, 0, 0, 0.623) 10%, transparent 100%);
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.723), rgba(0, 0, 0, 0.723) 30%, rgba(0, 0, 0, 0.623) 10%, transparent 100%);
           opacity: 0;
           .playButton {
             background: transparent;  

@@ -4,11 +4,12 @@ import './App.css';
 import Header from './components/Header';
 import Film from './components/FilmSection/Film';
 import './assets/style/main.scss'
+import FlimList from './components/FilmSection/FlimList';
 
 function App() {
   return (
     <div className="App">
-      <Film />
+      <FlimList />
     </div>
   );
 }
