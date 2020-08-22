@@ -36,7 +36,9 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 font-size: 1.5rem;
-                
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
             .commingSoonSlider__info {
                 display: flex;
@@ -99,7 +101,65 @@
             
         }
         .commingSoonSlider__area--right {
-            
+            text-align: center;
+            .commingSoonSlider__img {
+                a {
+                    display: block;
+                    width: fit-content;
+                    height: 100%;
+                    text-align: center;
+                    position: relative;
+                    margin: 0 auto;
+                    box-shadow: 0 0 50px 15px rgba(0,0,0,.75);
+                    .overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0,0,0,.5);
+                    }
+                    i {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        color: white;
+                        font-size: 1.5rem;
+                        width: 80px;
+                        height: 80px;
+                        line-height: 80px;
+                        text-align: center;
+                        border-radius: 50%;
+                        border: 1.5px solid #ec7532;
+                        transform: translate(-50%, -50%) scale(1);
+                        transition: all 0.3s;
+                    }
+                    &:hover {
+                        i {
+                            transform: translate(-50%, -50%) scale(0.8);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .commingSoonSlider {
+        :global .commingSoonSlider__area {
+            .commingSoonSlider__area--left {
+                .commingSoonSlider__info {
+                    display: block;
+                    .commingSoonSlider__info--calendar {
+                        margin-left: 0;
+                        i {
+                            margin-left: 0 !important;
+                        }
+                    }
+                }
+            }
         }
     }
 }
