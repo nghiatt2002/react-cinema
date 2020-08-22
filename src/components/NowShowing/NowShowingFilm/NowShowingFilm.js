@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import style from './Film.module.scss';
+import style from './NowShowingFilm.module.scss';
 
 class Film extends Component {
     constructor(props) {
@@ -12,18 +12,28 @@ class Film extends Component {
 
     setStar = (number) => {
         let imgArr = [];
-        for(let i=0; i< number; i++) {
+        for(let i=0; i< Math.floor(number); i++) {
             let img = <img className = 'd-inline smallStar' src="./img/Films/star1.png"/>
+            imgArr = [...imgArr, img];
+        }
+        if (Math.floor(number) < number) {
+            let img = <img className = 'd-inline smallStar' src="./img/Films/star1.2.png"/>
             imgArr = [...imgArr, img];
         }
         return imgArr;
     }
 
     render() {
-        let {title, infoFilm, imgUrl, point, starNumber} = this.props;
+        let {title, infoFilm, imgUrl, point, starNumber, hotFilm, ageType} = this.props.dataProvider;
         return (
             <div className = {style.film}>
-              <a className ="filmDetail" href="">
+              {hotFilm ? (
+                  <div className="film__hot">
+                    <img src="./img/Films/film_type_1.png" alt=""/>
+                  </div>
+                  ): ''
+              }
+              <a className ="filmDetail" href="" style = {{backgroundImage: `url(${imgUrl})`}}>
                   <div className = "filmThumbnail" >
                         <span className = "film__avgPoint">
                           <p className = "avgpoint m-0">
@@ -46,7 +56,7 @@ class Film extends Component {
               </a>
               <div className = "fimInfo">
                   <div className="nameFilm--noHover">
-                        <span className = "ageType">C18</span>
+                        <span className = "ageType">{ageType}</span>
                         <span className = "filmTitle ml-2">{title}</span>
                   </div>
                   <div className="infoFim">

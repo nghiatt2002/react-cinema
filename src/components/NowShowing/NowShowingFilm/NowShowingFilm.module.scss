@@ -1,7 +1,19 @@
 .film {
     height: 320px;
     max-width: 210px;
-    padding: 0 5px;
+    padding: 15px 5px 0;
+    position: relative;
+    :global .film__hot {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      z-index: 10;
+      max-width: 150px;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
     :global .filmDetail {
         position: relative;
         display: block;
@@ -9,7 +21,7 @@
         height: 100%;
         overflow: hidden;
         .filmThumbnail {
-          background-image: url('/./img/Films/ca-sau-tu-than.png');
+          // background-image: url('/./img/Films/ca-sau-tu-than.png');
           height: 100%;
           background-position: center,0 0;
           background-size: 100% 100%;
@@ -17,10 +29,16 @@
           position: relative;
           .film__avgPoint {
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 12px;
+            right: 12px;
+            padding: 2px;
+            width: 54px;
+            border-radius: 2px;
             text-align: center;
+            background-color: rgba(12,27,54,.8);
             color: white;
+            font-size: 16px;
+            text-align: center;
             .smallStar {
               max-width: 7px;
             }
@@ -84,9 +102,6 @@
         max-height: 50px;
         overflow: hidden;
         text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
         .ageType {
           background-color: red;
           color: white;
