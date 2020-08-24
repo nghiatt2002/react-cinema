@@ -1,0 +1,123 @@
+.listCinema {
+    :global .listContent {
+        h1 {
+            color: red;
+        }
+        .homeCinemaComplex {
+            #parentListCinemas {
+                width: 92px;
+                min-height: 705px;
+                border: 1px solid #ebebec;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                .cinemaItem {
+                    &.active {
+                        a {
+                            img {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    &:hover {
+                        a {
+                            img {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    a {
+                        display: inline-block;
+                        padding: 20px;
+                        cursor: pointer;
+                        border: none;
+                        position: relative;
+                        transition: all 0.2s;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            width: 70%;
+                            transform: translateX(-50%);
+                            border-bottom: 1px solid #ffffff;
+                            border-color: rgba(238,238,238,.88);
+                        }
+                        img {
+                            width: 50px;
+                            opacity: 0.5;
+                        }
+                    }
+                }
+                
+            }
+
+            #listCinemas {
+                width: 30%;
+                min-height: 705px;
+                height: 705px;
+                overflow-y: auto;
+                border-top: 1px solid #ebebec;
+                border-bottom: 1px solid #ebebec;
+                float: left;
+                .listCinemas {
+                    .cinema {
+                        padding: 15px;
+                        padding-left: 20px;
+                        float: left;
+                        clear: both;
+                        width: 100%;
+                        position: relative;
+                        opacity: 1;
+                        cursor: pointer;
+                        transition: all 0.2s;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            width: 90%;
+                            transform: translateX(-50%);
+                            border-bottom: 1px solid #fff;
+                            border-color: rgba(238,238,238,.88);
+                        }
+
+                        .cinema__image {
+                            float: left;
+                            width: 50px;
+                        }
+                        .cinema__info {
+                            span {
+                                text-align: left;
+                                display: block;
+                                line-height: 1.4;
+                            }
+                            padding-left: 60px;
+                            .cinema__name {
+                                color: #000;
+                                font-size: 14px;
+                                .cinema__parent {
+                                    color: #e71a0f;
+                                    display: inline-block !important;
+                                }
+                            }
+                            .cinema__address {
+                                font-size: 12px;
+                                color: #949494;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                            .cinema__detail {
+                                a {
+                                    color: #fb4226;
+                                    text-decoration: none;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
