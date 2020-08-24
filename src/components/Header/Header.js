@@ -1,22 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import headerStyle from './Header.module.scss';
 
 export default class Header extends Component {
     render() {
         return (
             <div className={headerStyle.header}>
-                {/* Import các component con vào đây */}
-                <h3>Header h3</h3>
-                <div className="container">
-                    <h1>HEADER H1</h1>
-                    <div className="left">
-                        <h2>HEADER H2</h2>
-                        <div className="left-p">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, velit?</p>
+                <div className="container-fluid">
+                    <div className="row header__content">
+                        <div className="col-4">
+                            <div className="header__logo">
+                                <a href="#">
+                                    <img src="./img/header/galaxy-logo.png" alt="" />
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div className = "right">
-                        <h2>HEADER H2</h2>
+                        <div className="col-5">
+                            <div className="header__search">
+                                <form action="">
+                                    <input className="headerSearch_txt" type="text" name="" id="" placeholder="Tìm tên phim, diễn viên..." />
+                                    <button className="headerSearch_btn" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div className="col-3">
+                            <div className="header__login">
+                                <i className="headerLogin__i fa fa-user" />
+                                <a href="">Đăng Nhập</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

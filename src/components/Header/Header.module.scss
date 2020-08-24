@@ -1,21 +1,58 @@
 .header {
     // :global(.container) {
-    :global .container {
-        h1 {
-            color:green;
+    :global .header__content {
+        align-items: center;
+        .header__logo{
+            img{
+                height: 50px;
+            }
         }
-        .left {
-            color: yellow;
-           .left-p {
-               background-color: #999;
-               p {
-                   color: tomato;
-                   letter-spacing: 2px;
-               }
-           }
+        .header__search{
+            .headerSearch_txt{
+                width:300px;
+                border: 1px solid #DADBE3;
+                border-right: none;
+                outline: none;
+                transition: all .5s;
+                &:focus{
+                    border-color: black;
+                    & + .headerSearch_btn{
+                        border-color: black;
+                    }
+                }
+            }
+            .headerSearch_btn{
+                border: 1px solid #DADBE3;
+                border-left: none;
+                outline: none;
+                transition: all .5s;
+                &:hover{
+                    color: orange;
+                    background-color: #ffffff;
+                }
+                &:focus{
+                    border-color: black;
+                    & + .headerSearch_txt{
+                        border-color: black;
+                    }
+                }
+            }
         }
-        .right {
-            color: red;
+        .header__login{
+            &:hover{
+                i,a{
+                    color: #25A2DB;
+                }
+            }
+            i{
+                margin-right: 10px;
+                transition: all .5s;
+            }
+            a{
+                text-decoration: none;
+                color: #A0A3A7;
+                transition: all .5s;
+            }
         }
     }
 }
