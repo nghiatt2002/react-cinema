@@ -16,13 +16,13 @@ class CommingSoonFilmSlider extends Component {
                 description: 'Captain America: Civil War là câu chuyện theo sau sự kiện Avengers: Age Of Ultron, các liên minh chính phủ trên toàn thế giới thông qua một hiệp ước được thiết lập để điều chỉnh hoạt động của tất cả siêu anh hùng. Điều này gây ra sự phân cực trong nội bộ nhóm Avengers, tạo nên hai phe gồm Iron Man và Captain America, gây ra một trận chiến sử thi giữa những người đồng đội.',
                 starNumber: 5,
                 releaseDate: '30/08/2017',
-                url: './img/Films/mai-ben-em-endless.png'
+                imgUrl: './img/Films/mai-ben-em-endless.png'
             }
         }
     }
 
     render() {
-        let {type, title, description, starNumber, releaseDate, url} = this.state.filmInfo;
+        let {type, title, description, starNumber, releaseDate, imgUrl} = this.state.filmInfo;
         moment.locale('vi')
         return (
             <div className={style.commingSoonSlider}>
@@ -35,11 +35,6 @@ class CommingSoonFilmSlider extends Component {
                                 <h4 className = "commingSoonSlider__area--title">{title}</h4>
                                 <div className = "commingSoonSlider__info">
                                     <div className = "commingSoonSlider__info--star">
-                                        {/* <img src="./img/Films/star1.png" alt=""/>
-                                        <img src="./img/Films/star1.png" alt=""/>
-                                        <img src="./img/Films/star1.png" alt=""/>
-                                        <img src="./img/Films/star1.png" alt=""/>
-                                        <img src="./img/Films/star1.png" alt=""/> */}
                                         {Utils.setStar(starNumber)}
                                     </div>
                                     <div className="commingSoonSlider__info--calendar">
@@ -59,7 +54,7 @@ class CommingSoonFilmSlider extends Component {
                                 <div className="commingSoonSlider__img">
                                     <a href="">
                                         <div className="overlay"></div>
-                                        <img className = "img-fuild" src= {url} alt=""/>
+                                        <img className = "img-fuild" src= {imgUrl} alt=""/>
                                         <i className="fa fa-play"></i>
                                     </a>
                                 </div>

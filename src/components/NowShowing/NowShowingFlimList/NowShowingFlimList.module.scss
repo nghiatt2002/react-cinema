@@ -2,6 +2,7 @@
     :global .filmList-container {
         // max-width: 940px;
         padding-top: 25px;
+        margin-bottom: 80px;
         .slick-arrow {
             &::before {
                 content: "";
@@ -25,6 +26,22 @@
         .slick-next {
             background-image: url('/./img/next-session.png');
             right: -60px;
+        }
+    }
+}
+
+@media screen and (max-width: 1260px) {
+    .filmList {
+        :global .filmList-container {
+            .slick-prev {
+                background-image: url('/./img/back-session.png');
+                left: -35px;
+            }
+    
+            .slick-next {
+                background-image: url('/./img/next-session.png');
+                right: -35px;
+            }
         }
     }
 }

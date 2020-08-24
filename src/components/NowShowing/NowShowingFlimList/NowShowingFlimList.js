@@ -106,7 +106,7 @@ class FlimList extends Component {
             rows: 2,
             responsive: [
                 {
-                    breakpoint: 1060,
+                    breakpoint: 1070,
                     settings: {
                         dots: true,
                         arrows: false,

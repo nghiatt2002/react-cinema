@@ -1,6 +1,7 @@
 .film {
     height: 320px;
     max-width: 210px;
+    margin: 0 auto;
     padding: 15px 5px 0;
     position: relative;
     :global .film__hot {
