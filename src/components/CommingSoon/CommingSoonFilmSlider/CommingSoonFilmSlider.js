@@ -22,7 +22,7 @@ class CommingSoonFilmSlider extends Component {
     }
 
     render() {
-        let {type, title, description, starNumber, releaseDate, imgUrl} = this.state.filmInfo;
+        let {type, title, description, starNumber, releaseDate, imgUrl} = this.props.dataProvider;
         moment.locale('vi')
         return (
             <div className={style.commingSoonSlider}>
@@ -30,7 +30,7 @@ class CommingSoonFilmSlider extends Component {
                     <div className="container h-100">
                         <h3>PHIM SẮP CHIẾU</h3>
                         <div className="row h-100 align-item-center">
-                            <div className="col-6 col-xl-8 commingSoonSlider__area--left">
+                            <div className="col-6 col-md-8 commingSoonSlider__area--left">
                                 <p className = "commingSoonSlider__area--type">{type}</p>
                                 <h4 className = "commingSoonSlider__area--title">{title}</h4>
                                 <div className = "commingSoonSlider__info">
@@ -50,7 +50,7 @@ class CommingSoonFilmSlider extends Component {
                                     </a>
                                 </p>
                             </div>
-                            <div className="col-6 col-xl-4 commingSoonSlider__area--right">
+                            <div className="col-6 col-md-4 commingSoonSlider__area--right">
                                 <div className="commingSoonSlider__img">
                                     <a href="">
                                         <div className="overlay"></div>

@@ -3,8 +3,6 @@ import Slider from "react-slick";
 import style from './CommingSoonFimList.module.scss';
 import Commingsoonflim from '../CommingSoonFlim/CommingSoonFlim';
 import CommingSoonFilmSlider from '../CommingSoonFilmSlider/CommingSoonFilmSlider';
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 
 class FimCommingSoonList extends Component {
     constructor(props) {
@@ -138,7 +136,7 @@ class FimCommingSoonList extends Component {
     renderCommingSoonFilm = () => {
         return this.state.filmList.map((item, index) => {
             return (
-                <div key = {index} 
+                <div key = {index}
                      onClick ={()=> {this.slider1.slickGoTo(index != 0 ? index: this.state.filmList.length)}}>
                     <Commingsoonflim dataProvider = {item}/>
                 </div>
@@ -160,16 +158,32 @@ class FimCommingSoonList extends Component {
 
         const settingsThumbs = {
             slidesToShow: 5,
-            slidesToScroll: 5,
+            slidesToScroll: 2,
+            swipeToSlide: true,
+            draggable: true,
+            infinite: true,
             asNavFor: '.slider-for',
-            focusOnSelect: false,
-            centerPadding: '50px',
             responsive: [
                 {
                     breakpoint: 1200,
                     settings: {
                         slidesToShow: 4,
-                        slidesToScroll: 4,
+                        slidesToScroll: 2,
+                        dots: true,
+                    }
+                },
+                {
+                    breakpoint: 850,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 630,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
                     }
                 }
             ]

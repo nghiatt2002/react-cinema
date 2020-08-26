@@ -1,6 +1,6 @@
 .fimCommingSoonList {
     background-color: #101010;
-    padding: 30px 0;
+    padding: 30px 10px;
     :global .slick-slider {
         -webkit-user-select: text;
         -khtml-user-select: text;
@@ -10,6 +10,15 @@
     }
     :global .slick-active {
         z-index: 10;    
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .fimCommingSoonList {
+        :global .container {
+            max-width: 100% !important;
+        }
     }
 }
 
@@ -24,7 +33,7 @@
     }
 }
 
-@media screen and (max-width: 1005px) {
+@media screen and (max-width: 1010px) {
     .fimCommingSoonList {
         :global .slick-prev  {
             left: 0px;

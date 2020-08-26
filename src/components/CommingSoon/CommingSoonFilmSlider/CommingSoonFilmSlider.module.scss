@@ -146,6 +146,17 @@
 
 }
 
+
+@media screen and (max-width: 992px) {
+    .commingSoonSlider {
+        :global .commingSoonSlider__area {
+            .container {
+                max-width: 100% !important;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .commingSoonSlider {
         :global .commingSoonSlider__area {
