@@ -56,7 +56,7 @@ export default class ListCinema extends Component {
                             <div id="listCinemas">
                                 <div className="listCinemas">
                                     <div className="cinema">
-                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt="" />
                                         <div className="cinema__info">
                                             <span className="cinema__name">
                                                 <span className="cinema__parent">CGV</span>
@@ -68,7 +68,7 @@ export default class ListCinema extends Component {
                                         </div>
                                     </div>
                                     <div className="cinema">
-                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt="" />
                                         <div className="cinema__info">
                                             <span className="cinema__name">
                                                 <span className="cinema__parent">CGV</span>
@@ -80,7 +80,7 @@ export default class ListCinema extends Component {
                                         </div>
                                     </div>
                                     <div className="cinema">
-                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt="" />
                                         <div className="cinema__info">
                                             <span className="cinema__name">
                                                 <span className="cinema__parent">CGV</span>
@@ -92,7 +92,7 @@ export default class ListCinema extends Component {
                                         </div>
                                     </div>
                                     <div className="cinema">
-                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt="" />
                                         <div className="cinema__info">
                                             <span className="cinema__name">
                                                 <span className="cinema__parent">CGV</span>
@@ -104,7 +104,7 @@ export default class ListCinema extends Component {
                                         </div>
                                     </div>
                                     <div className="cinema">
-                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt="" />
                                         <div className="cinema__info">
                                             <span className="cinema__name">
                                                 <span className="cinema__parent">CGV</span>
@@ -116,7 +116,7 @@ export default class ListCinema extends Component {
                                         </div>
                                     </div>
                                     <div className="cinema">
-                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt="" />
                                         <div className="cinema__info">
                                             <span className="cinema__name">
                                                 <span className="cinema__parent">CGV</span>
@@ -128,7 +128,7 @@ export default class ListCinema extends Component {
                                         </div>
                                     </div>
                                     <div className="cinema">
-                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt="" />
                                         <div className="cinema__info">
                                             <span className="cinema__name">
                                                 <span className="cinema__parent">CGV</span>
@@ -140,7 +140,7 @@ export default class ListCinema extends Component {
                                         </div>
                                     </div>
                                     <div className="cinema">
-                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt="" />
                                         <div className="cinema__info">
                                             <span className="cinema__name">
                                                 <span className="cinema__parent">CGV</span>
@@ -152,7 +152,7 @@ export default class ListCinema extends Component {
                                         </div>
                                     </div>
                                     <div className="cinema">
-                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt="" />
                                         <div className="cinema__info">
                                             <span className="cinema__name">
                                                 <span className="cinema__parent">CGV</span>
@@ -164,7 +164,7 @@ export default class ListCinema extends Component {
                                         </div>
                                     </div>
                                     <div className="cinema">
-                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                        <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt="" />
                                         <div className="cinema__info">
                                             <span className="cinema__name">
                                                 <span className="cinema__parent">CGV</span>
@@ -173,6 +173,189 @@ export default class ListCinema extends Component {
                                             <span className="cinema__detail">
                                                 <a href="#">chi tiết</a>
                                             </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Column 3 */}
+                            <div className="movieShowTimeList">
+                                <div className="movie">
+                                    <div className="movieInfo">
+                                        <img className="movieImage" src="https://s3img.vcdn.vn/mobile/123phim/2020/08/ham-quy-behind-you-c18-15976394035712_60x60.jpg" />
+                                        <div className="wrapInfo">
+                                            <p>
+                                                <span className="movieAgeType">C18</span>
+                                                <span className="movieName">Hầm quỷ - Behind You</span>
+                                            </p>
+                                            <p className="movieTime">86 phút - TIX 6.2 - IMDb 0</p>
+                                        </div>
+                                        <div className="movieSessions">
+                                            <div className="movieListTime">
+                                                <div className="movieType">2D Digital</div>
+                                                <div className="movieSession">
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="movie">
+                                    <div className="movieInfo">
+                                        <img className="movieImage" src="https://s3img.vcdn.vn/mobile/123phim/2020/08/ham-quy-behind-you-c18-15976394035712_60x60.jpg" />
+                                        <div className="wrapInfo">
+                                            <p>
+                                                <span className="movieAgeType">C18</span>
+                                                <span className="movieName">Hầm quỷ - Behind You</span>
+                                            </p>
+                                            <p className="movieTime">86 phút - TIX 6.2 - IMDb 0</p>
+                                        </div>
+                                        <div className="movieSessions">
+                                            <div className="movieListTime">
+                                                <div className="movieType">2D Digital</div>
+                                                <div className="movieSession">
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="movie">
+                                    <div className="movieInfo">
+                                        <img className="movieImage" src="https://s3img.vcdn.vn/mobile/123phim/2020/08/ham-quy-behind-you-c18-15976394035712_60x60.jpg" />
+                                        <div className="wrapInfo">
+                                            <p>
+                                                <span className="movieAgeType">C18</span>
+                                                <span className="movieName">Hầm quỷ - Behind You</span>
+                                            </p>
+                                            <p className="movieTime">86 phút - TIX 6.2 - IMDb 0</p>
+                                        </div>
+                                        <div className="movieSessions">
+                                            <div className="movieListTime">
+                                                <div className="movieType">2D Digital</div>
+                                                <div className="movieSession">
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="movie">
+                                    <div className="movieInfo">
+                                        <img className="movieImage" src="https://s3img.vcdn.vn/mobile/123phim/2020/08/ham-quy-behind-you-c18-15976394035712_60x60.jpg" />
+                                        <div className="wrapInfo">
+                                            <p>
+                                                <span className="movieAgeType">C18</span>
+                                                <span className="movieName">Hầm quỷ - Behind You</span>
+                                            </p>
+                                            <p className="movieTime">86 phút - TIX 6.2 - IMDb 0</p>
+                                        </div>
+                                        <div className="movieSessions">
+                                            <div className="movieListTime">
+                                                <div className="movieType">2D Digital</div>
+                                                <div className="movieSession">
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="movie">
+                                    <div className="movieInfo">
+                                        <img className="movieImage" src="https://s3img.vcdn.vn/mobile/123phim/2020/08/ham-quy-behind-you-c18-15976394035712_60x60.jpg" />
+                                        <div className="wrapInfo">
+                                            <p>
+                                                <span className="movieAgeType">C18</span>
+                                                <span className="movieName">Hầm quỷ - Behind You</span>
+                                            </p>
+                                            <p className="movieTime">86 phút - TIX 6.2 - IMDb 0</p>
+                                        </div>
+                                        <div className="movieSessions">
+                                            <div className="movieListTime">
+                                                <div className="movieType">2D Digital</div>
+                                                <div className="movieSession">
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    <a href="#" className="showTimeDetail">
+                                                        <span className="movie-time">18:05</span>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
