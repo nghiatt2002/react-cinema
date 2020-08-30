@@ -1,19 +1,25 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import './assets/style/main.scss'
-import NowShowingFlimList from './components/NowShowing/NowShowingFlimList';
-import CommingSoonFilmSlider from './components/CommingSoon/CommingSoonFilmSlider/CommingSoonFilmSlider';
-import Commingsoonflim from './components/CommingSoon/CommingSoonFlim/CommingSoonFlim';
-import FimCommingSoonList from './components/CommingSoon/CommingSoonFimList/CommingSoonFimList';
-
+import Filmsection from './components/FlimSection/FilmSection';
 function App() {
+
+  let [state, setState] = useState({
+    url: ''
+  });
+  let url = '';
+
+  let showPopup = () => {
+    url = 'https://www.youtube.com/embed/Nn-8OqGdgrA';
+    setState({
+      url: 'https://www.youtube.com/embed/Nn-8OqGdgrA'
+    })
+  }
   return (
     <div className="App">
-      <NowShowingFlimList />
-      <FimCommingSoonList />
-      {/* <CommingSoonFilmSlider /> */}
+      <Filmsection />
     </div>
   );
 }

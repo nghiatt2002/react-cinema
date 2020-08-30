@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
 import style from './NowShowingFilm.module.scss';
+import { connect } from 'react-redux';
 
 class Film extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-         
         }
     }
 
     setStar = (number) => {
         let imgArr = [];
         for(let i=0; i< Math.floor(number); i++) {
-            let img = <img className = 'd-inline smallStar' src="./img/Films/star1.png"/>
+            let img = <img key = {i} className = 'd-inline smallStar' src="./img/Films/star1.png"/>
             imgArr = [...imgArr, img];
         }
-        if (Math.floor(number) < number) {
-            let img = <img className = 'd-inline smallStar' src="./img/Films/star1.2.png"/>
+        if (Math.floor(number) < number + 1) {
+            let img = <img key = {number} className = 'd-inline smallStar' src="./img/Films/star1.2.png"/>
             imgArr = [...imgArr, img];
         }
         return imgArr;
+    }
+
+    playTrainer = (event) => {
+        event.preventDefault();
+        this.props.dispatch({
+            type: 'SHOW_TRAILER_POPUP',
+            src: this.props.dataProvider.trailerUrl
+        })
     }
 
     render() {
@@ -47,7 +55,8 @@ class Film extends Component {
                   <div className = "film__hoverInfo">
                   </div>
                   <div className="film__playButton">
-                    <button className = "playButton">
+                    <button type="button" className = "playButton" onClick = {this.playTrainer}
+                        data-toggle="modal" data-target="#trainerModal" >
                             <span>
                                 <i className="fa fa-play"></i>
                             </span>
@@ -71,4 +80,4 @@ class Film extends Component {
     }
 }
 
-export default Film
+export default connect(null)(Film)

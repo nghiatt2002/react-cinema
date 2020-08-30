@@ -4,21 +4,19 @@ import style from './CommingSoonFilmSlider.module.scss';
 import moment from 'moment';
 import 'moment/locale/vi';
 import * as Utils from '../../../assets/utils/utils';
+import { connect } from 'react-redux';
 
 class CommingSoonFilmSlider extends Component {
     constructor(props) {
         super(props)
+    }
 
-        this.state = {
-            filmInfo : {
-                type : 'Hài, Hành động',
-                title : 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War',
-                description: 'Captain America: Civil War là câu chuyện theo sau sự kiện Avengers: Age Of Ultron, các liên minh chính phủ trên toàn thế giới thông qua một hiệp ước được thiết lập để điều chỉnh hoạt động của tất cả siêu anh hùng. Điều này gây ra sự phân cực trong nội bộ nhóm Avengers, tạo nên hai phe gồm Iron Man và Captain America, gây ra một trận chiến sử thi giữa những người đồng đội.',
-                starNumber: 5,
-                releaseDate: '30/08/2017',
-                imgUrl: './img/Films/mai-ben-em-endless.png'
-            }
-        }
+    playTrainer = (event) => {
+        event.preventDefault();
+        this.props.dispatch({
+            type: 'SHOW_TRAILER_POPUP',
+            src: this.props.dataProvider.trailerUrl
+        })
     }
 
     render() {
@@ -38,7 +36,7 @@ class CommingSoonFilmSlider extends Component {
                                         {Utils.setStar(starNumber)}
                                     </div>
                                     <div className="commingSoonSlider__info--calendar">
-                                        <i class="fa fa-calendar-alt mx-2"></i>
+                                        <i className="fa fa-calendar-alt mx-2"></i>
                                         <span className="date">{moment(releaseDate, "DD/MM/YYYY").lang('vi').format('Do MMMM YYYY')}</span>
                                     </div>
                                 </div>
@@ -46,13 +44,14 @@ class CommingSoonFilmSlider extends Component {
                                 <p className = "commingSoonSlider__moreinfo">
                                     <a href="">
                                         XEM THÊM
-                                        <i class="fa fa-angle-right"></i>
+                                        <i className="fa fa-angle-right"></i>
                                     </a>
                                 </p>
                             </div>
                             <div className="col-6 col-md-4 commingSoonSlider__area--right">
                                 <div className="commingSoonSlider__img">
-                                    <a href="">
+                                    <a href="" onClick = {this.playTrainer}
+                                      data-toggle="modal" data-target="#trainerModal" >
                                         <div className="overlay"></div>
                                         <img className = "img-fuild" src= {imgUrl} alt=""/>
                                         <i className="fa fa-play"></i>
@@ -67,4 +66,4 @@ class CommingSoonFilmSlider extends Component {
     }
 }
 
-export default CommingSoonFilmSlider
+export default connect(null)(CommingSoonFilmSlider)

@@ -22,6 +22,7 @@ class FimCommingSoonList extends Component {
                     hotFilm: true,
                     releaseDate: '30/08/2017',
                     description: 'Captain America: Civil War là câu chuyện theo sau sự kiện Avengers: Age Of Ultron, các liên minh chính phủ trên toàn thế giới thông qua một hiệp ước được thiết lập để điều chỉnh hoạt động của tất cả siêu anh hùng. Điều này gây ra sự phân cực trong nội bộ nhóm Avengers, tạo nên hai phe gồm Iron Man và Captain America, gây ra một trận chiến sử thi giữa những người đồng đội.',
+                    trailerUrl: 'https://www.youtube.com/embed/50aEACmN5iI'
                 },
                 {
                     type : 'Hài, Hành động',
@@ -33,6 +34,7 @@ class FimCommingSoonList extends Component {
                     starNumber: 5,
                     releaseDate: '30/08/2017',
                     description: 'Captain America: Civil War là câu chuyện theo sau sự kiện Avengers: Age Of Ultron, các liên minh chính phủ trên toàn thế giới thông qua một hiệp ước được thiết lập để điều chỉnh hoạt động của tất cả siêu anh hùng. Điều này gây ra sự phân cực trong nội bộ nhóm Avengers, tạo nên hai phe gồm Iron Man và Captain America, gây ra một trận chiến sử thi giữa những người đồng đội.',
+                    trailerUrl: 'https://www.youtube.com/embed/50aEACmN5iI'
                 },
                 {
                     type : 'Hài, Hành động',
@@ -44,6 +46,7 @@ class FimCommingSoonList extends Component {
                     starNumber: 5,
                     releaseDate: '30/08/2017',
                     description: 'Captain America: Civil War là câu chuyện theo sau sự kiện Avengers: Age Of Ultron, các liên minh chính phủ trên toàn thế giới thông qua một hiệp ước được thiết lập để điều chỉnh hoạt động của tất cả siêu anh hùng. Điều này gây ra sự phân cực trong nội bộ nhóm Avengers, tạo nên hai phe gồm Iron Man và Captain America, gây ra một trận chiến sử thi giữa những người đồng đội.',
+                    trailerUrl: 'https://www.youtube.com/embed/50aEACmN5iI'
                 },
                 {
                     type : 'Hài, Hành động',
@@ -55,6 +58,7 @@ class FimCommingSoonList extends Component {
                     starNumber: 5,
                     releaseDate: '30/08/2017',
                     description: 'Captain America: Civil War là câu chuyện theo sau sự kiện Avengers: Age Of Ultron, các liên minh chính phủ trên toàn thế giới thông qua một hiệp ước được thiết lập để điều chỉnh hoạt động của tất cả siêu anh hùng. Điều này gây ra sự phân cực trong nội bộ nhóm Avengers, tạo nên hai phe gồm Iron Man và Captain America, gây ra một trận chiến sử thi giữa những người đồng đội.',
+                    trailerUrl: 'https://www.youtube.com/embed/50aEACmN5iI'
                 },
                 {
                     type : 'Hài, Hành động',
@@ -66,6 +70,7 @@ class FimCommingSoonList extends Component {
                     starNumber: 5,
                     releaseDate: '30/08/2017',
                     description: 'Captain America: Civil War là câu chuyện theo sau sự kiện Avengers: Age Of Ultron, các liên minh chính phủ trên toàn thế giới thông qua một hiệp ước được thiết lập để điều chỉnh hoạt động của tất cả siêu anh hùng. Điều này gây ra sự phân cực trong nội bộ nhóm Avengers, tạo nên hai phe gồm Iron Man và Captain America, gây ra một trận chiến sử thi giữa những người đồng đội.',
+                    trailerUrl: 'https://www.youtube.com/embed/50aEACmN5iI'
                 },
                 {
                     type : 'Hài, Hành động',
@@ -77,6 +82,7 @@ class FimCommingSoonList extends Component {
                     starNumber: 5,
                     releaseDate: '30/08/2017',
                     description: 'Captain America: Civil War là câu chuyện theo sau sự kiện Avengers: Age Of Ultron, các liên minh chính phủ trên toàn thế giới thông qua một hiệp ước được thiết lập để điều chỉnh hoạt động của tất cả siêu anh hùng. Điều này gây ra sự phân cực trong nội bộ nhóm Avengers, tạo nên hai phe gồm Iron Man và Captain America, gây ra một trận chiến sử thi giữa những người đồng đội.',
+                    trailerUrl: 'https://www.youtube.com/embed/50aEACmN5iI'
                 },
                 {
                     type : 'Hài, Hành động',
@@ -88,6 +94,7 @@ class FimCommingSoonList extends Component {
                     starNumber: 5,
                     releaseDate: '30/08/2017',
                     description: 'Captain America: Civil War là câu chuyện theo sau sự kiện Avengers: Age Of Ultron, các liên minh chính phủ trên toàn thế giới thông qua một hiệp ước được thiết lập để điều chỉnh hoạt động của tất cả siêu anh hùng. Điều này gây ra sự phân cực trong nội bộ nhóm Avengers, tạo nên hai phe gồm Iron Man và Captain America, gây ra một trận chiến sử thi giữa những người đồng đội.',
+                    trailerUrl: 'https://www.youtube.com/embed/50aEACmN5iI'
                 },
                 {
                     type : 'Hài, Hành động',
@@ -99,6 +106,7 @@ class FimCommingSoonList extends Component {
                     starNumber: 5,
                     releaseDate: '30/08/2017',
                     description: 'Captain America: Civil War là câu chuyện theo sau sự kiện Avengers: Age Of Ultron, các liên minh chính phủ trên toàn thế giới thông qua một hiệp ước được thiết lập để điều chỉnh hoạt động của tất cả siêu anh hùng. Điều này gây ra sự phân cực trong nội bộ nhóm Avengers, tạo nên hai phe gồm Iron Man và Captain America, gây ra một trận chiến sử thi giữa những người đồng đội.',
+                    trailerUrl: 'https://www.youtube.com/embed/50aEACmN5iI'
                 },
                 {
                     type : 'Hài, Hành động',
@@ -110,6 +118,7 @@ class FimCommingSoonList extends Component {
                     starNumber: 5,
                     releaseDate: '30/08/2017',
                     description: 'Captain America: Civil War là câu chuyện theo sau sự kiện Avengers: Age Of Ultron, các liên minh chính phủ trên toàn thế giới thông qua một hiệp ước được thiết lập để điều chỉnh hoạt động của tất cả siêu anh hùng. Điều này gây ra sự phân cực trong nội bộ nhóm Avengers, tạo nên hai phe gồm Iron Man và Captain America, gây ra một trận chiến sử thi giữa những người đồng đội.',
+                    trailerUrl: 'https://www.youtube.com/embed/50aEACmN5iI'
                 },
             ]
         };

@@ -17,7 +17,8 @@ class FlimList extends Component {
                     ageType: 'C13',
                     point: 7.5,
                     starNumber: 3.5,
-                    hotFilm: true
+                    hotFilm: true,
+                    trailerUrl: 'https://www.youtube.com/embed/50aEACmN5iI'
                 },
                 {
                     title: 'Cá Sấu Tử Thần - Black Water: Abyss - (C18)',
@@ -25,23 +26,26 @@ class FlimList extends Component {
                     imgUrl: '/./img/Films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
-                    starNumber: 5
+                    starNumber: 5,
+                    trailerUrl: 'https://www.youtube.com/embed/wihfeV6sTfM'
                 },
                 {
                     title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War (NC16) Captain America: Ci',
                     infoFilm: '147 phút',
-                    imgUrl: '/./img/Films/ca-sau-tu-than.png',
+                    imgUrl: '/./img/Films/noi-chien-sieu-anh-hung.png',
                     ageType: 'C18',
                     point: 8.2,
-                    starNumber: 5
+                    starNumber: 5,
+                    trailerUrl: 'https://www.youtube.com/embed/VdeuR-jUysg'
                 },
                 {
-                    title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War (NC16) Captain America: Ci',
-                    infoFilm: '147 phút',
+                    title: '',
+                    infoFilm: '',
                     imgUrl: '/./img/Films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
-                    starNumber: 5
+                    starNumber: 5,
+                    trailerUrl: 'https://www.youtube.com/embed/Nn-8OqGdgrA'
                 },
                 {
                     title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War',
@@ -49,7 +53,8 @@ class FlimList extends Component {
                     imgUrl: '/./img/Films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
-                    starNumber: 5
+                    starNumber: 5,
+                    trailerUrl: 'https://www.youtube.com/embed/Nn-8OqGdgrA'
                 },
                 {
                     title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War (NC16) Captain America: Ci',
@@ -57,7 +62,8 @@ class FlimList extends Component {
                     imgUrl: '/./img/Films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
-                    starNumber: 5
+                    starNumber: 5,
+                    trailerUrl: 'https://www.youtube.com/embed/Nn-8OqGdgrA'
                 },
                 {
                     title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War (NC16) Captain America: Ci',
@@ -65,7 +71,8 @@ class FlimList extends Component {
                     imgUrl: '/./img/Films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
-                    starNumber: 5
+                    starNumber: 5,
+                    trailerUrl: 'https://www.youtube.com/embed/Nn-8OqGdgrA'
                 },
                 {
                     title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War (NC16) Captain America: Ci',
@@ -73,7 +80,8 @@ class FlimList extends Component {
                     imgUrl: '/./img/Films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
-                    starNumber: 5
+                    starNumber: 5,
+                    trailerUrl: 'https://www.youtube.com/embed/Nn-8OqGdgrA'
                 },
                 {
                     title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War (NC16) Captain America: Ci',
@@ -81,7 +89,8 @@ class FlimList extends Component {
                     imgUrl: '/./img/Films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
-                    starNumber: 5
+                    starNumber: 5,
+                    trailerUrl: 'https://www.youtube.com/embed/Nn-8OqGdgrA'
                 },
             ]
         }
@@ -92,18 +101,20 @@ class FlimList extends Component {
             return (
                 <div className="mb-5" key = {index}>
                     <Film dataProvider = {item}/>
+                    
                 </div>
+
             )
         })
     }
 
     render() {
         const settings = {
-            className: "center",
             infinite: true,
             speed: 500,
             slidesPerRow: 4,
             rows: 2,
+            useCSS: true,
             responsive: [
                 {
                     breakpoint: 1070,
@@ -128,6 +139,7 @@ class FlimList extends Component {
         return (
           <div className= {style.filmList}>
              <div className="container filmList-container">
+                 <h2 className= "filmList__title">PHIM ĐANG CHIẾU</h2>
                 <Slider {...settings}>
                     {this.renderFilm()}
                 </Slider>   

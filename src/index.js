@@ -4,8 +4,17 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './redux/reducers/rootReducer';
+import reduxThunk from 'redux-thunk';
+
+const reduxStore = createStore(rootReducer,applyMiddleware(reduxThunk))
+
 ReactDOM.render(
-  <App />,
+  <Provider store={reduxStore}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
 

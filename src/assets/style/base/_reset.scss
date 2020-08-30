@@ -2,4 +2,10 @@
 @font-face {font-family: 'SF Medium'; src:url('../../fonts/FontsFree-Net-SFProDisplay-Medium.ttf')}
 html, body {
     font-family: 'SF Text Regular';
+    scroll-behavior: smooth;
+}
+body.modal-open {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 0 !important;
 }
