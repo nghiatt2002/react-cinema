@@ -3,8 +3,22 @@ import { Tab, TabPanel, Tabs, TabList } from "react-web-tabs";
 import "react-web-tabs/dist/react-web-tabs.css";
 import style from './ListCinema3.module.scss';
 
+import axios from 'axios';
+
 
 export default class ListCinema3 extends Component {
+
+    componentDidMount() {
+        axios({
+            url: 'http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP01',
+            method: 'GET'
+        }).then(res => {
+            // sau khi lấy dữ liệu từ api => dispacth reducer danhsachPhim
+            console.log(res.data);
+        }).catch(err => {
+            console.log(err.response.data);
+        })
+    }
 
     // link tham khảo:
     // https://reactcommunity.org/react-tabs/
