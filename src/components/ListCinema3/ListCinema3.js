@@ -32,7 +32,7 @@ export default class ListCinema3 extends Component {
                             <TabPanel tabId="cgv-list-rap">
                                 <Tabs vertical>
                                     {/* column 2 */}
-                                    <TabList className="listCinemas" defaultTab="cgv1">
+                                    <TabList className="listCinemas scrollbar" defaultTab="cgv1">
                                         <Tab className="cinemaItem" tabId="cgv1" tabFor="cgv1-lich-chieu">
                                             <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
                                             <div className="cinema__info">
@@ -69,13 +69,169 @@ export default class ListCinema3 extends Component {
                                                 </span>
                                             </div>
                                         </Tab>
+                                        <Tab className="cinemaItem" tabId="cgv4" tabFor="cgv4-lich-chieu">
+                                            <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                            <div className="cinema__info">
+                                                <span className="cinema__name">
+                                                    <span className="cinema__parent">CGV</span>
+                                                    &nbsp;- Aeon Bình Tân</span>
+                                                <span className="cinema__address">Tầng 3, Trung tâm thương mại Aeon Mall Bình Tân, Số 1 đường số 17A, khu phố 11, phường Bình Trị Đông B, quận Bình Tân, TPHCM</span>
+                                                <span className="cinema__detail">
+                                                    <a href="#">chi tiết</a>
+                                                </span>
+                                            </div>
+                                        </Tab>
+                                        <Tab className="cinemaItem" tabId="cgv4" tabFor="cgv4-lich-chieu">
+                                            <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                            <div className="cinema__info">
+                                                <span className="cinema__name">
+                                                    <span className="cinema__parent">CGV</span>
+                                                    &nbsp;- Aeon Bình Tân</span>
+                                                <span className="cinema__address">Tầng 3, Trung tâm thương mại Aeon Mall Bình Tân, Số 1 đường số 17A, khu phố 11, phường Bình Trị Đông B, quận Bình Tân, TPHCM</span>
+                                                <span className="cinema__detail">
+                                                    <a href="#">chi tiết</a>
+                                                </span>
+                                            </div>
+                                        </Tab>
+                                        <Tab className="cinemaItem" tabId="cgv5" tabFor="cgv5-lich-chieu">
+                                            <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                            <div className="cinema__info">
+                                                <span className="cinema__name">
+                                                    <span className="cinema__parent">CGV</span>
+                                                    &nbsp;- Aeon Bình Tân</span>
+                                                <span className="cinema__address">Tầng 3, Trung tâm thương mại Aeon Mall Bình Tân, Số 1 đường số 17A, khu phố 11, phường Bình Trị Đông B, quận Bình Tân, TPHCM</span>
+                                                <span className="cinema__detail">
+                                                    <a href="#">chi tiết</a>
+                                                </span>
+                                            </div>
+                                        </Tab>
+                                        <Tab className="cinemaItem" tabId="cgv6" tabFor="cgv6-lich-chieu">
+                                            <img className="cinema__image" src="https://s3img.vcdn.vn/123phim/2018/09/cgv-aeon-binh-tan-15380175062534.jpg" alt=""/>
+                                            <div className="cinema__info">
+                                                <span className="cinema__name">
+                                                    <span className="cinema__parent">CGV</span>
+                                                    &nbsp;- Aeon Bình Tân</span>
+                                                <span className="cinema__address">Tầng 3, Trung tâm thương mại Aeon Mall Bình Tân, Số 1 đường số 17A, khu phố 11, phường Bình Trị Đông B, quận Bình Tân, TPHCM</span>
+                                                <span className="cinema__detail">
+                                                    <a href="#">chi tiết</a>
+                                                </span>
+                                            </div>
+                                        </Tab>
                                     </TabList>
 
                                     {/* column 3 - start */}
                                     <TabPanel tabId="cgv1-lich-chieu">
-                                        <ul>
-                                            <li>CGV1 - Phim 1</li>
-                                        </ul>
+                                        <div className="movieShowTimeList scrollbar">
+                                            <div className="movieItem">
+                                                <div className="movieInfo">
+                                                    <img className="movieImage" src="https://s3img.vcdn.vn/mobile/123phim/2020/08/ham-quy-behind-you-c18-15976394035712_60x60.jpg" />
+                                                    <div className="wrapInfo">
+                                                        <p>
+                                                            <span className="movieAgeType">C18</span>
+                                                            <span className="movieName">Hầm quỷ - Behind You</span>
+                                                        </p>
+                                                        <p className="movieTime">86 phút - TIX 6.2 - IMDb 0</p>
+                                                    </div>
+                                                    <div className="movieSessions">
+                                                        <div className="movieListTime">
+                                                            <div className="movieType">2D Digital</div>
+                                                            <div className="movieSession">
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="movieItem">
+                                                <div className="movieInfo">
+                                                    <img className="movieImage" src="https://s3img.vcdn.vn/mobile/123phim/2020/08/ham-quy-behind-you-c18-15976394035712_60x60.jpg" />
+                                                    <div className="wrapInfo">
+                                                        <p>
+                                                            <span className="movieAgeType">C18</span>
+                                                            <span className="movieName">Hầm quỷ - Behind You</span>
+                                                        </p>
+                                                        <p className="movieTime">86 phút - TIX 6.2 - IMDb 0</p>
+                                                    </div>
+                                                    <div className="movieSessions">
+                                                        <div className="movieListTime">
+                                                            <div className="movieType">2D Digital</div>
+                                                            <div className="movieSession">
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="movieItem">
+                                                <div className="movieInfo">
+                                                    <img className="movieImage" src="https://s3img.vcdn.vn/mobile/123phim/2020/08/ham-quy-behind-you-c18-15976394035712_60x60.jpg" />
+                                                    <div className="wrapInfo">
+                                                        <p>
+                                                            <span className="movieAgeType">C18</span>
+                                                            <span className="movieName">Hầm quỷ - Behind You</span>
+                                                        </p>
+                                                        <p className="movieTime">86 phút - TIX 6.2 - IMDb 0</p>
+                                                    </div>
+                                                    <div className="movieSessions">
+                                                        <div className="movieListTime">
+                                                            <div className="movieType">2D Digital</div>
+                                                            <div className="movieSession">
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                                <a href="#" className="showTimeDetail">
+                                                                    <span className="movie-time">18:05</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </TabPanel>
                                     <TabPanel tabId="cgv2-lich-chieu">
                                         <ul>
