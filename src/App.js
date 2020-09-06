@@ -4,22 +4,17 @@ import './App.css';
 import Header from './components/Header';
 import './assets/style/main.scss'
 import Filmsection from './components/FlimSection/FilmSection';
+import News from './components/NewsSection/News';
+import NewsList from './components/NewsSection/NewsList';
+import NewsSection from './components/NewsSection';
 function App() {
-
-  let [state, setState] = useState({
-    url: ''
-  });
-  let url = '';
-
-  let showPopup = () => {
-    url = 'https://www.youtube.com/embed/Nn-8OqGdgrA';
-    setState({
-      url: 'https://www.youtube.com/embed/Nn-8OqGdgrA'
-    })
-  }
   return (
     <div className="App">
       <Filmsection />
+      {/* <News /> */}
+      {/* <NewsList /> */}
+      {/* <MovieNews /> */}
+      <NewsSection />
     </div>
   );
 }

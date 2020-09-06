@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import NowShowingFlimList from '../NowShowing/NowShowingFlimList/';
-import FimCommingSoonList from '../CommingSoon/CommingSoonFimList/CommingSoonFimList';
+import NowShowingFlimList from '../FlimSection/NowShowing/NowShowingFlimList';
+import FimCommingSoonList from '../FlimSection/CommingSoon/CommingSoonFimList/';
 import Trailerpopup from '../TrailerPopup'
 
 class Filmsection extends Component {
