@@ -34,12 +34,12 @@
         }
 
         .slick-prev {
-            background-image: url('/./img/back-session.png');
+            background-image: url('/./images/back-session.png');
             left: -60px;
         }
 
         .slick-next {
-            background-image: url('/./img/next-session.png');
+            background-image: url('/./images/next-session.png');
             right: -60px;
         }
     }
@@ -49,12 +49,12 @@
     .filmList {
         :global .filmList-container {
             .slick-prev {
-                background-image: url('/./img/back-session.png');
+                background-image: url('/./images/back-session.png');
                 left: -35px;
             }
     
             .slick-next {
-                background-image: url('/./img/next-session.png');
+                background-image: url('/./images/next-session.png');
                 right: -35px;
             }
         }

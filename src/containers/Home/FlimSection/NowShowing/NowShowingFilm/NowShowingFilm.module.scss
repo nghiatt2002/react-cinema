@@ -4,6 +4,7 @@
     margin: 0 auto;
     padding: 15px 5px 0;
     position: relative;
+    outline: none;
     :global .film__hot {
       position: absolute;
       top: -20px;
@@ -22,7 +23,6 @@
         height: 100%;
         overflow: hidden;
         .filmThumbnail {
-          // background-image: url('/./img/Films/ca-sau-tu-than.png');
           height: 100%;
           background-position: center,0 0;
           background-size: 100% 100%;

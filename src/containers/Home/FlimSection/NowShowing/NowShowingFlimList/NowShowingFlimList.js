@@ -13,7 +13,7 @@ class FlimList extends Component {
                 {
                     title: 'Mãi Bên Em - Endless - (C13)',
                     infoFilm: '100 phút',
-                    imgUrl: '/./img/Films/mai-ben-em-endless.png',
+                    imgUrl: '/./images/films/mai-ben-em-endless.png',
                     ageType: 'C13',
                     point: 7.5,
                     starNumber: 3.5,
@@ -23,7 +23,7 @@ class FlimList extends Component {
                 {
                     title: 'Cá Sấu Tử Thần - Black Water: Abyss - (C18)',
                     infoFilm: '100 phút',
-                    imgUrl: '/./img/Films/ca-sau-tu-than.png',
+                    imgUrl: '/./images/films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
                     starNumber: 5,
@@ -32,7 +32,7 @@ class FlimList extends Component {
                 {
                     title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War (NC16) Captain America: Ci',
                     infoFilm: '147 phút',
-                    imgUrl: '/./img/Films/noi-chien-sieu-anh-hung.png',
+                    imgUrl: '/./images/films/noi-chien-sieu-anh-hung.png',
                     ageType: 'C18',
                     point: 8.2,
                     starNumber: 5,
@@ -41,7 +41,7 @@ class FlimList extends Component {
                 {
                     title: '',
                     infoFilm: '',
-                    imgUrl: '/./img/Films/ca-sau-tu-than.png',
+                    imgUrl: '/./images/films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
                     starNumber: 5,
@@ -50,7 +50,7 @@ class FlimList extends Component {
                 {
                     title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War',
                     infoFilm: '147 phút',
-                    imgUrl: '/./img/Films/ca-sau-tu-than.png',
+                    imgUrl: '/./images/films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
                     starNumber: 5,
@@ -59,7 +59,7 @@ class FlimList extends Component {
                 {
                     title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War (NC16) Captain America: Ci',
                     infoFilm: '147 phút',
-                    imgUrl: '/./img/Films/ca-sau-tu-than.png',
+                    imgUrl: '/./images/films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
                     starNumber: 5,
@@ -68,7 +68,7 @@ class FlimList extends Component {
                 {
                     title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War (NC16) Captain America: Ci',
                     infoFilm: '147 phút',
-                    imgUrl: '/./img/Films/ca-sau-tu-than.png',
+                    imgUrl: '/./images/films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
                     starNumber: 5,
@@ -77,7 +77,7 @@ class FlimList extends Component {
                 {
                     title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War (NC16) Captain America: Ci',
                     infoFilm: '147 phút',
-                    imgUrl: '/./img/Films/ca-sau-tu-than.png',
+                    imgUrl: '/./images/films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
                     starNumber: 5,
@@ -86,7 +86,7 @@ class FlimList extends Component {
                 {
                     title: 'Nội Chiến Siêu Anh Hùng - Captain America: Civil War (NC16) Captain America: Ci',
                     infoFilm: '147 phút',
-                    imgUrl: '/./img/Films/ca-sau-tu-than.png',
+                    imgUrl: '/./images/films/ca-sau-tu-than.png',
                     ageType: 'C18',
                     point: 8.2,
                     starNumber: 5,
@@ -101,7 +101,6 @@ class FlimList extends Component {
             return (
                 <div className="mb-5" key = {index}>
                     <Film dataProvider = {item}/>
-                    
                 </div>
 
             )
@@ -114,7 +113,7 @@ class FlimList extends Component {
             speed: 500,
             slidesPerRow: 4,
             rows: 2,
-            useCSS: true,
+            className: "outline-none",
             responsive: [
                 {
                     breakpoint: 1070,

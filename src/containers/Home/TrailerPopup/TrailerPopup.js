@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {isNullorUnDefined} from '../../assets/utils/utils';
+import {isNullorUnDefined} from '../../../assets/utils/utils';
 import style from './TrailerPopup.module.scss';
 import { connect } from 'react-redux';
 

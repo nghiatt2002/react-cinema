@@ -13,11 +13,11 @@ class Film extends Component {
     setStar = (number) => {
         let imgArr = [];
         for(let i=0; i< Math.floor(number); i++) {
-            let img = <img key = {i} className = 'd-inline smallStar' src="./img/Films/star1.png"/>
+            let img = <img key = {i} className = 'd-inline smallStar' src="./images/films/star1.png"/>
             imgArr = [...imgArr, img];
         }
         if (Math.floor(number) < number + 1) {
-            let img = <img key = {number} className = 'd-inline smallStar' src="./img/Films/star1.2.png"/>
+            let img = <img key = {number} className = 'd-inline smallStar' src="./images/films/star1.2.png"/>
             imgArr = [...imgArr, img];
         }
         return imgArr;
@@ -37,7 +37,7 @@ class Film extends Component {
             <div className = {style.film}>
               {hotFilm ? (
                   <div className="film__hot">
-                    <img src="./img/Films/film_type_1.png" alt=""/>
+                    <img src="./images/films/film_type_1.png" alt=""/>
                   </div>
                   ): ''
               }

@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import style from './CommingSoonFilmSlider.module.scss';
 import moment from 'moment';
 import 'moment/locale/vi';
-import * as Utils from '../../../../assets/utils/utils';
+import * as Utils from '../../../../../assets/utils/utils';
 import { connect } from 'react-redux';
 
 class CommingSoonFilmSlider extends Component {
