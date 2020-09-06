@@ -18,11 +18,11 @@ export default class PageNotFound extends Component {
                             </div>
                             <div className="error-actions">
                                 <a href="/" className="btn btn-primary btn-lg">
-                                    <i class="fa fa-home"></i>
+                                    <i className="fa fa-home"></i>
                                     Take Me Home 
                                 </a>
                                 <a href="/" className="btn btn-default btn-lg">
-                                    <i class="fa fa-envelope"></i>
+                                    <i className="fa fa-envelope"></i>
                                     Contact Support 
                                 </a>
                             </div>
