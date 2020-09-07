@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Tab, TabPanel, Tabs, TabList } from "react-web-tabs";
 import "react-web-tabs/dist/react-web-tabs.css";
 
-import { getMovieShowTimeAxios } from '../../redux/Actions/MovieShowTimeAction';
+import { getMovieShowTimeAxios } from '../../Redux/Actions/MovieShowTimeAction';
 
 export default function MovieShowTime(props) {
     // giống như mapStateToProps lấy dữ liệu từ reducer
