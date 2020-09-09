@@ -4,7 +4,7 @@ import {GET_MOVIE_SHOWTIME_HOME} from '../Contants/MovieShowTimeContants';
 export const getMovieShowTimeAxios = () => {
     return dispatch => {
         axios({
-            url: 'http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP04',
+            url: 'http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP01',
             method: 'GET'
         }).then(res => {
             // sau khi lấy dữ liệu từ api => dispacth đến reducer
