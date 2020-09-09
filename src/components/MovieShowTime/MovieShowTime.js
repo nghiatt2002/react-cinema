@@ -4,7 +4,7 @@ import { Tab, TabPanel, Tabs, TabList } from "react-web-tabs";
 import "react-web-tabs/dist/react-web-tabs.css";
 import style from './MovieShowTime.module.scss';
 
-import { getMovieShowTimeAxios } from '../../Redux/Actions/MovieShowTimeAction';
+import { getMovieShowTimeAxios } from '../../redux/actions/MovieShowTimeAction';
 
 export default function MovieShowTime(props) {
     // giống như mapStateToProps lấy dữ liệu từ reducer
@@ -113,13 +113,13 @@ export default function MovieShowTime(props) {
                 <TabPanel tabId={cinema.maHeThongRap} key={index}>
                     {/* <div> */}
                         <Tabs vertical>
-                            <div className="row">
-                                <div className="col-4 mx-0">
+                            <div className="row no-gutter">
+                                <div className="col-md-5 col-lg-4">
                                     <TabList className="listCinemas scrollbar">
                                         {renderCinema(cinema.lstCumRap)}
                                     </TabList>
                                 </div>
-                                <div className="col-8 mx-0">
+                                <div className="col-md-7 col-lg-8">
                                     {renderlistMovies(cinema.lstCumRap)}
                                 </div>
                             </div>
@@ -134,14 +134,14 @@ export default function MovieShowTime(props) {
         <div className="container">
             <div className={style.movieShowTimeStyle}>
                 <div className="movieShowTimeContent">
-                    <Tabs defaultTab="BHDStar" vertical>
-                        <div className="row">
-                            <div className="col col-lg-2 mx-0">
+                    <Tabs vertical>
+                        <div className="row no-gutter">
+                            <div className="col-md-12 col-lg-1">
                                 <TabList className="cinemasGroup">
                                     {renderCinemaGroups()}
                                 </TabList>
                             </div>
-                            <div className="col-11 col-lg-10 mx-0">
+                            <div className="col-md col-lg-11">
                                 {renderCinemaAndShowTime()}
                             </div>
                         </div>
