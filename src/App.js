@@ -17,7 +17,7 @@ const showHomeLayout = (routes) => {
   if (routes && routes.length > 0) {
     return routes.map ((item, index) => {
       return (
-        <HomeTemplate key = {index} exact = {item.exact} path = {item.path} Component = {item.component}></HomeTemplate>
+        <HomeTemplate key = {index} exact = {item.exact} path = {item.path} Component = {item.component} demo = "acn"></HomeTemplate>
       )
     })
   }
