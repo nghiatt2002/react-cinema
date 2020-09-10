@@ -98,7 +98,7 @@ export default function MovieShowTime(props) {
         return cinema.map((item, index) => {
             return (
                 <TabPanel tabId={item.maCumRap} key={index}>
-                    <div className="movieShowTimeList scrollbar">
+                    <div className="movieShowTimeList scrollbarY">
                         {renderFilm(item.danhSachPhim)}
                     </div>
                 </TabPanel>
@@ -115,7 +115,7 @@ export default function MovieShowTime(props) {
                         <Tabs vertical>
                             <div className="row no-gutter">
                                 <div className="col-md-5 col-lg-4">
-                                    <TabList className="listCinemas scrollbar">
+                                    <TabList className="listCinemas scrollbarY">
                                         {renderCinema(cinema.lstCumRap)}
                                     </TabList>
                                 </div>
@@ -136,8 +136,9 @@ export default function MovieShowTime(props) {
                 <div className="movieShowTimeContent">
                     <Tabs vertical>
                         <div className="row no-gutter">
-                            <div className="col-md-12 col-lg-1">
+                            <div className="col-md-12 col-lg-1 columnFirst scrollbarY scrollbarX">
                                 <TabList className="cinemasGroup">
+                                    {renderCinemaGroups()}
                                     {renderCinemaGroups()}
                                 </TabList>
                             </div>
