@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
+import Moment from 'react-moment';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Tab, TabPanel, Tabs, TabList } from "react-web-tabs";
+import { getMovieShowTimeAxios } from '../../redux/actions/MovieShowTimeAction';
+
 import "react-web-tabs/dist/react-web-tabs.css";
 import style from './MovieShowTime.module.scss';
 
-import { getMovieShowTimeAxios } from '../../redux/actions/MovieShowTimeAction';
 
 export default function MovieShowTime(props) {
     // giống như mapStateToProps lấy dữ liệu từ reducer
@@ -14,17 +17,14 @@ export default function MovieShowTime(props) {
     let dispatch = useDispatch();
 
     useEffect(() => {
-        console.log('useEffect thay thế cho didMount');
-        // dispatch 1 action
+        // dispatch action
         dispatch(getMovieShowTimeAxios());
     }, []);
 
 
     // render column danh sach cac loai rap
     let renderCinemaGroups = () => {
-        // console.log(movieShowTimeInfo);
         return movieShowTimeInfo.map((item, index) => {
-            console.log(item)
             return (
                 <Tab className="cinemasGroup__item" tabFor={item.maHeThongRap} key={index} >
                     <img src={item.logo} alt={item.logo} />
@@ -43,7 +43,7 @@ export default function MovieShowTime(props) {
                         <span className="cinema__name">{item.tenCumRap}</span>
                         <span className="cinema__address">{item.diaChi}</span>
                         <span className="cinema__detail">
-                            <a href="#">chi tiết</a>
+                            <Link to="#">chi tiết</Link>
                         </span>
                     </div>
                 </Tab>
@@ -52,7 +52,6 @@ export default function MovieShowTime(props) {
     };
 
     let renderFilm = (listFilm) => {
-        console.log('DS Phim: ', listFilm)
         return listFilm.map((phim, index) => {
             return (
                 <div className="movieItem" key={index}>
@@ -63,7 +62,7 @@ export default function MovieShowTime(props) {
                                 <span className="movieAgeType">C18</span>
                                 <span className="movieName">{phim.tenPhim}</span>
                             </p>
-                            <p className="movieTime">86 phút - TIX 6.2 - IMDb 0</p>
+                            <p className="movieTime">100 phút - TIX 7.5 - IMDb 7</p>
                         </div>
                         <div className="movieSessions">
                             <div className="movieListTime">
@@ -81,10 +80,17 @@ export default function MovieShowTime(props) {
                                     <a href="#" className="showTimeDetail">
                                         <span className="movie-time">18:05</span>
                                     </a>
-                                    <a href="#" className="showTimeDetail">
-                                        <span className="movie-time">18:05</span>
-                                    </a>
-                                    
+                                    {/* {phim.lstLichChieuTheoPhim?.map((thongtin, index) => {
+                                        if (thongtin.ngayChieuGioChieu.substring(0, 10) === "2019-01-01") {
+                                            return (
+                                                <Link to="#" className="showTimeDetail" key={index}>
+                                                    <Moment className="movie-time" format="HH:mm">
+                                                        {thongtin.ngayChieuGioChieu}
+                                                    </Moment>
+                                                </Link>
+                                            );
+                                        }
+                                    })} */}
                                 </div>
                             </div>
                         </div>
@@ -138,7 +144,6 @@ export default function MovieShowTime(props) {
                         <div className="row no-gutter">
                             <div className="col-md-12 col-lg-1 columnFirst scrollbarY scrollbarX">
                                 <TabList className="cinemasGroup">
-                                    {renderCinemaGroups()}
                                     {renderCinemaGroups()}
                                 </TabList>
                             </div>
