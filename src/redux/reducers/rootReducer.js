@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { MovieShowTimeReducer } from './MovieShowTimeReducer';
+import { MovieShowTimeReducer } from './MovieShowTime/MovieShowTimeReducer';
 
 const rootReducer = combineReducers({
     MovieShowTimeReducer

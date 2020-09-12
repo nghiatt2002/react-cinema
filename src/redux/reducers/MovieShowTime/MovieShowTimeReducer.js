@@ -1,4 +1,4 @@
-import {GET_MOVIE_SHOWTIME_HOME} from '../contants/MovieShowTimeContants';
+import {GET_MOVIE_SHOWTIME_HOME} from './../../contants/MovieShowTime/MovieShowTimeContants';
 
 const initialState = {
     cinemaSystemInfo: [],

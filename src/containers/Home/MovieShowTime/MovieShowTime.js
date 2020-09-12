@@ -3,7 +3,7 @@ import Moment from 'react-moment';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Tab, TabPanel, Tabs, TabList } from "react-web-tabs";
-import { getMovieShowTimeAxios } from '../../redux/actions/MovieShowTimeAction';
+import { getMovieShowTimeAxios } from '../../../redux/actions/MovieShowTime/MovieShowTimeAction';
 
 import "react-web-tabs/dist/react-web-tabs.css";
 import style from './MovieShowTime.module.scss';
