@@ -2,26 +2,26 @@ import React, { Component } from 'react';
 import style from './NowShowingFlimList.module.scss';
 import Film from '../NowShowingFilm/NowShowingFilm';
 import Slider from "react-slick";
+import { connect } from 'react-redux';
+import { getFilmLists } from '../../../../../redux/actions/FilmSectionReducerAction';
 
 
-class FlimList extends Component {
+class NowShowingFlimList extends Component {
     constructor(props) {
-        super(props)
-
+        super(props);
         this.state = {
             filmList : [
                 {
                     title: 'Mãi Bên Em - Endless - (C13)',
                     infoFilm: '100 phút',
-                    imgUrl: '/./images/films/mai-ben-em-endless.png',
-                    ageType: 'C13',
+                    imgUrl: '/./images/films/mai-ben-em-endless.png',ageType: 'C13',
                     point: 7.5,
                     starNumber: 3.5,
                     hotFilm: true,
                     trailerUrl: 'https://www.youtube.com/embed/50aEACmN5iI'
                 },
                 {
-                    title: 'Cá Sấu Tử Thần - Black Water: Abyss - (C18)',
+                    title: 'Cá Sấu Tử Thần - Water: Abyss - (C18)',
                     infoFilm: '100 phút',
                     imgUrl: '/./images/films/ca-sau-tu-than.png',
                     ageType: 'C18',
@@ -96,13 +96,29 @@ class FlimList extends Component {
         }
     }
 
+    mapPropstoDataProvider = () => {
+        let dataProvider = this.props.listFilm.map((item) => {
+            return ({
+                title: item.tenPhim,
+                infoFilm: '0 phút',
+                imgUrl: item.hinhAnh,
+                ageType: 'C18',
+                point: item.danhGia,
+                starNumber: (item.danhGia * 5) /10,
+                trailerUrl: item.trailer
+            })
+        })
+        return dataProvider;
+    }
+
     renderFilm = () => {
-        return this.state.filmList.map((item, index) => {
+        const dataProvider = this.mapPropstoDataProvider();
+
+        return dataProvider.map((item, index) => {
             return (
                 <div className="mb-5" key = {index}>
                     <Film dataProvider = {item}/>
                 </div>
-
             )
         })
     }
@@ -146,6 +162,14 @@ class FlimList extends Component {
           </div>
         )
     }
+    // componentDidMount() {
+    //     this.props.dispatch(getFilmLists());
+    // }
 }
 
-export default FlimList
+const mapStatetoProps = (state) => {
+    return ({
+        listFilm: state.FilmSectionReducer.listFilm
+    });
+}
+export default connect(mapStatetoProps)(NowShowingFlimList)

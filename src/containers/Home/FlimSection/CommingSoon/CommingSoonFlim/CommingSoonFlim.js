@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import style from './CommingSoonFlim.module.scss';
+import moment from 'moment';
+import 'moment/locale/vi'
 
 export default class Commingsoonflim extends Component {
     constructor(props) {
@@ -12,6 +14,7 @@ export default class Commingsoonflim extends Component {
 
     render() {
         let {title, releaseDate, imgUrl} = this.props.dataProvider;
+        moment.locale('vi');
         return (
             <div className={`${style.commingSoonFlim}`}>
                 <div className="commingSoonFlim__card">
@@ -24,7 +27,7 @@ export default class Commingsoonflim extends Component {
                                {title}
                         </p>
                             <p className="commingSoonFlim__content--release_date">
-                               {releaseDate}
+                               {moment(releaseDate).format('Do MMMM YYYY')}
                         </p>
                         </div>
                 </div>

@@ -52,8 +52,8 @@
           width: 300%;
           height: 120%;
           transition: all 0.3s;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.723), rgba(0, 0, 0, 0.723) 30%, rgba(0, 0, 0, 0.623) 10%, transparent 100%);
-          transform: skewX(30deg) translateX(-120%);
+          background: rgba(0, 0, 0, 0.426);
+          transform: translateX(-120%);
         }
         .film__playButton {
           position: absolute;
@@ -161,7 +161,7 @@
       }
       :global .filmDetail {
         .film__hoverInfo {
-          transform: skewX(30deg) translateX(-30%);
+          transform: translateX(-30%);
         }
         .film__playButton {
           opacity: 1;

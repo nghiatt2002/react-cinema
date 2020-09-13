@@ -46,13 +46,13 @@ export default class News extends Component {
                                 <div className={`d-flex block-icon`}>
                                     <div className="like">
                                         <button className="like-btn" onClick={() => this.handleClickLike()}>
-                                            <i class={`fa fa-thumbs-up mr-2 ${this.state.like ? 'like--click' : ''}`}></i>
+                                            <i className={`fa fa-thumbs-up mr-2 ${this.state.like ? 'like--click' : ''}`}></i>
                                         </button>
                                         <span className="like-count">{this.state.like_number}</span>
                                     </div>
                                     <div className="comment">
                                         <a className="comment-link mr-2" href="">
-                                            <i class="fa fa-comment-alt"></i>
+                                            <i className="fa fa-comment-alt"></i>
                                         </a>
                                         <span className="comment-count">{this.state.comment_number}</span>
                                     </div>

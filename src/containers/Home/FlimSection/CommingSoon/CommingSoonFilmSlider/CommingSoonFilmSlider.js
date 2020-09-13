@@ -21,7 +21,7 @@ class CommingSoonFilmSlider extends Component {
 
     render() {
         let {type, title, description, starNumber, releaseDate, imgUrl} = this.props.dataProvider;
-        moment.locale('vi')
+        moment.locale('vi');
         return (
             <div className={style.commingSoonSlider}>
                 <div className="commingSoonSlider__area">
@@ -37,7 +37,7 @@ class CommingSoonFilmSlider extends Component {
                                     </div>
                                     <div className="commingSoonSlider__info--calendar">
                                         <i className="fa fa-calendar-alt mx-2"></i>
-                                        <span className="date">{moment(releaseDate, "DD/MM/YYYY").lang('vi').format('Do MMMM YYYY')}</span>
+                                        <span className="date">{moment(releaseDate).format('Do MMMM YYYY')}</span>
                                     </div>
                                 </div>
                                 <p className= "commingSoonSlider__description">{description}</p>
@@ -53,7 +53,7 @@ class CommingSoonFilmSlider extends Component {
                                     <a href="" onClick = {this.playTrainer}
                                       data-toggle="modal" data-target="#trainerModal" >
                                         <div className="overlay"></div>
-                                        <img className = "img-fuild" src= {imgUrl} alt=""/>
+                                        <img src= {imgUrl} alt=""/>
                                         <i className="fa fa-play"></i>
                                     </a>
                                 </div>

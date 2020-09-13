@@ -36,7 +36,7 @@ import { connect } from 'react-redux';
 
 const mapStatetoProps = (state) => {
     return {
-        src : state.FilmSectionReducers.src
+        src : state.TrailerPopupReducers.src
     }
 }
 

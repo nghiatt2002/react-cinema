@@ -8,6 +8,10 @@ const routeHome = [
         path: '/',
         component: Home
     },
+    {
+        path: '/detail',
+        component: Filmsection
+    }
 ]
 
 const routeAdmin = [
