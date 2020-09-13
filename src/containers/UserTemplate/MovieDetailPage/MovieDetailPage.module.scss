@@ -1,0 +1,100 @@
+.movieDetailStyle {
+    :global .movieDetailContent {
+        width: 100%;
+        .detailMain {
+            // background-color: rgb(255, 255, 255);
+            background-color: yellowgreen;
+            height: 100%;
+            .detailTop {
+                .detailTop__content {
+                    position: relative;
+                    .detailTop__blur {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        overflow: hidden;
+                        .detailTop__poster {
+                            width: calc(100% + 5px);
+                            filter: blur(15px);
+                        }
+                    }
+                    .detailTop__gradient {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        // background: linear-gradient(to top, rgb(255, 255, 255), transparent 100%);
+                    }
+                    .detailTop_movieInfo {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 100%;
+                        transform: translate3d(-50%, -50%, 0);
+                        .movieInfo__maxWidth {
+                            max-width: 870px;
+                            float: none;
+                            margin: auto;
+                            clear: both;
+                        }
+                        .movieInfo__poster {
+                            padding-left: 0 !important;
+                            padding-right: 0 !important;
+                            max-width: 220px;
+                            .imagePoster {
+                                // background: url('https://s3img.vcdn.vn/mobile/123phim/2019/12/tenet-15768107031731_215x318.jpg');
+                                border-radius: 4px;
+                                padding-top: 147.90697674%;
+                                background-position: center,0 0;
+                                background-size: 100% auto;
+                                background-repeat: no-repeat,repeat-y;
+                            }
+                        }
+                        .movieInfo__detailGroup {
+                            position: absolute;
+                            top: 50%;
+                            left: 25%;
+                            transform: translateY(-50%);
+                            float: none;
+                            clear: both;
+
+                            font-size: 24px;
+                            color: #e9e9e9;
+
+                            .movieInfo__date {
+                                font-size: 14px;
+                                // color: #e9e9e9;
+                            }
+                            .movieInfo__detail {
+                                position: relative;
+                                font-size: 24px;
+                                // color: #e9e9e9;
+                                .movieInfo__age {
+                                    margin-right: 6px;
+                                    margin-top: 6px;
+                                    background-color: #fb4226;
+                                    color: #fff;
+                                    font-size: 16px;
+                                    border-radius: 4px;
+                                    padding: 0 5px;
+                                    display: inline-block;
+                                    text-align: center;
+                                    min-width: 33px;
+                                }
+                            }
+                            .movieInfo__time {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .detailContent {
+
+            }
+        }
+    }
+}
