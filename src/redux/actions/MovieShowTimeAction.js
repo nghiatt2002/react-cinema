@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GET_MOVIE_SHOWTIME_HOME} from '../../contants/MovieShowTime/MovieShowTimeContants';
+import {GET_MOVIE_SHOWTIME_HOME} from '../contants/MovieShowTimeContants';
 
 export const getMovieShowTimeAxios = () => {
     return dispatch => {
