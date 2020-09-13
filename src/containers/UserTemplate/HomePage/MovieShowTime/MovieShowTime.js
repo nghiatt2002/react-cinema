@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
+import Moment from 'react-moment';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Tab, TabPanel, Tabs, TabList } from "react-web-tabs";
+import { getMovieShowTimeAxios } from '../../../../redux/actions/MovieShowTimeAction';
+
 import "react-web-tabs/dist/react-web-tabs.css";
 import style from './MovieShowTime.module.scss';
 
-import { getMovieShowTimeAxios } from '../../Redux/Actions/MovieShowTimeAction';
 
 export default function MovieShowTime(props) {
     // giống như mapStateToProps lấy dữ liệu từ reducer
@@ -14,23 +17,20 @@ export default function MovieShowTime(props) {
     let dispatch = useDispatch();
 
     useEffect(() => {
-        console.log('useEffect thay thế cho didMount');
-        // dispatch 1 action
+        // dispatch action
         dispatch(getMovieShowTimeAxios());
     }, []);
 
 
     // render column danh sach cac loai rap
     let renderCinemaGroups = () => {
-        // console.log(movieShowTimeInfo);
         return movieShowTimeInfo.map((item, index) => {
-            console.log(item)
             return (
                 <Tab className="cinemasGroup__item" tabFor={item.maHeThongRap} key={index} >
                     <img src={item.logo} alt={item.logo} />
                 </Tab>
             );
-        })
+        });
     };
 
     // render column ds rap chieu theo cum
@@ -43,16 +43,15 @@ export default function MovieShowTime(props) {
                         <span className="cinema__name">{item.tenCumRap}</span>
                         <span className="cinema__address">{item.diaChi}</span>
                         <span className="cinema__detail">
-                            <a href="#">chi tiết</a>
+                            <Link to="#">chi tiết</Link>
                         </span>
                     </div>
                 </Tab>
-            )
-        })
-    };
+            );
+        });
+    }
 
     let renderFilm = (listFilm) => {
-        console.log('DS Phim: ', listFilm)
         return listFilm.map((phim, index) => {
             return (
                 <div className="movieItem" key={index}>
@@ -63,7 +62,7 @@ export default function MovieShowTime(props) {
                                 <span className="movieAgeType">C18</span>
                                 <span className="movieName">{phim.tenPhim}</span>
                             </p>
-                            <p className="movieTime">86 phút - TIX 6.2 - IMDb 0</p>
+                            <p className="movieTime">100 phút - TIX 7.5 - IMDb 7</p>
                         </div>
                         <div className="movieSessions">
                             <div className="movieListTime">
@@ -81,29 +80,36 @@ export default function MovieShowTime(props) {
                                     <a href="#" className="showTimeDetail">
                                         <span className="movie-time">18:05</span>
                                     </a>
-                                    <a href="#" className="showTimeDetail">
-                                        <span className="movie-time">18:05</span>
-                                    </a>
-                                    
+                                    {/* {phim.lstLichChieuTheoPhim?.map((thongtin, index) => {
+                                        if (thongtin.ngayChieuGioChieu.substring(0, 10) === "2019-01-01") {
+                                            return (
+                                                <Link to="#" className="showTimeDetail" key={index}>
+                                                    <Moment className="movie-time" format="HH:mm">
+                                                        {thongtin.ngayChieuGioChieu}
+                                                    </Moment>
+                                                </Link>
+                                            );
+                                        }
+                                    })} */}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            )
-        })
+            );
+        });
     }
 
     let renderlistMovies =(cinema) => {
         return cinema.map((item, index) => {
             return (
                 <TabPanel tabId={item.maCumRap} key={index}>
-                    <div className="movieShowTimeList scrollbar">
+                    <div className="movieShowTimeList scrollbarY">
                         {renderFilm(item.danhSachPhim)}
                     </div>
                 </TabPanel>
-            )
-        })
+            );
+        });
     }
 
     // render column 2 & 3
@@ -111,37 +117,35 @@ export default function MovieShowTime(props) {
         return movieShowTimeInfo.map((cinema, index) => {
             return (
                 <TabPanel tabId={cinema.maHeThongRap} key={index}>
-                    {/* <div> */}
-                        <Tabs vertical>
-                            <div className="row">
-                                <div className="col-4 mx-0">
-                                    <TabList className="listCinemas scrollbar">
-                                        {renderCinema(cinema.lstCumRap)}
-                                    </TabList>
-                                </div>
-                                <div className="col-8 mx-0">
-                                    {renderlistMovies(cinema.lstCumRap)}
-                                </div>
+                    <Tabs vertical>
+                        <div className="row no-gutter">
+                            <div className="col-md-5 col-lg-4">
+                                <TabList className="listCinemas scrollbarY">
+                                    {renderCinema(cinema.lstCumRap)}
+                                </TabList>
                             </div>
-                        </Tabs>
-                    {/* </div> */}
+                            <div className="col-md-7 col-lg-8">
+                                {renderlistMovies(cinema.lstCumRap)}
+                            </div>
+                        </div>
+                    </Tabs>
                 </TabPanel>
-            )
-        })
+            );
+        });
     }
 
     return (
         <div className="container">
             <div className={style.movieShowTimeStyle}>
                 <div className="movieShowTimeContent">
-                    <Tabs defaultTab="BHDStar" vertical>
-                        <div className="row">
-                            <div className="col col-lg-2 mx-0">
+                    <Tabs vertical>
+                        <div className="row no-gutter">
+                            <div className="col-md-12 col-lg-1 columnFirst scrollbarY scrollbarX">
                                 <TabList className="cinemasGroup">
                                     {renderCinemaGroups()}
                                 </TabList>
                             </div>
-                            <div className="col-11 col-lg-10 mx-0">
+                            <div className="col-md col-lg-11">
                                 {renderCinemaAndShowTime()}
                             </div>
                         </div>

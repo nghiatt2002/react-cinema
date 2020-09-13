@@ -1,17 +1,12 @@
-import Home from "../containers/Home"
-import Admin from "../containers/Admin"
-import Filmsection from "../containers/Home/FlimSection"
+import HomePage from "../containers/UserTemplate/HomePage/HomePage"
+import Admin from "../containers/AdminTemplate/Admin"
 
-const routeHome = [
+const routeUser = [
     {
         exact: true,
         path: '/',
-        component: Home
+        component: HomePage
     },
-    {
-        path: '/detail',
-        component: Filmsection
-    }
 ]
 
 const routeAdmin = [
@@ -21,4 +16,4 @@ const routeAdmin = [
         component: Admin
     }
 ]
-export {routeHome, routeAdmin}
+export {routeUser, routeAdmin}

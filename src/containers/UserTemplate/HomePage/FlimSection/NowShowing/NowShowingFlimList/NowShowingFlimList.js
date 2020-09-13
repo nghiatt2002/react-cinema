@@ -3,7 +3,7 @@ import style from './NowShowingFlimList.module.scss';
 import Film from '../NowShowingFilm/NowShowingFilm';
 import Slider from "react-slick";
 import { connect } from 'react-redux';
-import { getFilmLists } from '../../../../../redux/actions/FilmSectionReducerAction';
+import { getFilmLists } from '../../../../../../redux/actions/FilmSectionReducerAction';
 
 
 class NowShowingFlimList extends Component {
