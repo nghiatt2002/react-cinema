@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import style from './NewsList.module.scss';
-import News from '../News';
+import News from '../News/News';
 
 export default class NewsList extends Component {
     data = [
@@ -86,34 +86,27 @@ export default class NewsList extends Component {
         }
     ]
     render() {
+        let {dataProvider} = this.props;
         return (
             <div className = {`${style.newsList} container`}>
-                <div className="row mb-4 mx-0">
-                    <div className="col-12 col-sm-6">
-                        <News data = {this.data[0]}/>
-                    </div>
-                    <div className="col-12 col-sm-6">
-                        <News data = {this.data[1]}/>
-                    </div>
-                </div>
                 <div className="row mx-0">
                     <div className="col-12 col-sm-4 pr-0 order-sm-0 order-2">
-                        <News type = "2" data = {this.data[2]}/>
+                        <News type = "2" data = {dataProvider[0]}/>
                         <hr/>
-                        <News type = "2" data = {this.data[3]}/>
+                        <News type = "2" data = {dataProvider[1]}/>
                         <hr/>
-                        <News type = "2" data = {this.data[4]}/>
+                        <News type = "2" data = {dataProvider[2]}/>
                         <hr/>
-                        <News type = "2" data = {this.data[5]}/>
+                        <News type = "2" data = {dataProvider[3]}/>
                         <hr/>
-                        <News type = "2" data = {this.data[6]}/>
+                        <News type = "2" data = {dataProvider[4]}/>
                     </div>
                     <div className="col-12 col-sm-4 order-sm-1 order-0">
-                        <News center_box = {true} data = {this.data[7]}/>
+                        <News center_box = {true} data = {dataProvider[5]}/>
                     </div>
                     <div className="col-12 col-sm-4 order-sm-2 order-1">
-                        <News className = "mb-2" type = "1" data = {this.data[8]}/>
-                        <News type = "1" data = {this.data[9]}/>
+                        <News className = "mb-2" type = "1" data = {dataProvider[6]}/>
+                        <News type = "1" data = {dataProvider[7]}/>
                     </div>
                 </div>
             </div>

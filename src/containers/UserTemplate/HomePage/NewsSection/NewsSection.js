@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import style from './NewsSection.module.scss';
-import MoviesNews from './MovieNews';
-import Review from './Review';
+import MoviesNews from './MovieNews/MoviesNews';
+import Review from './Review/Review';
 import Promotion from './Promotion/Promotion';
 
 

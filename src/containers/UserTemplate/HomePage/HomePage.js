@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MovieShowTime from './MovieShowTime/MovieShowTime';
-import Filmsection from './FlimSection/FilmSection'
+import Filmsection from './FlimSection/FilmSection';
+import NewsSection from './NewsSection/NewsSection'
 
 export default class HomePage extends Component {
     render() {
@@ -8,6 +9,7 @@ export default class HomePage extends Component {
             <div>
                 {/* <MovieShowTime /> */}
                 <Filmsection />
+                <NewsSection />
             </div>
         )
     }
