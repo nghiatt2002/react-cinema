@@ -2,8 +2,7 @@
     :global .movieDetailContent {
         width: 100%;
         .detailMain {
-            // background-color: rgb(255, 255, 255);
-            background-color: yellowgreen;
+            background-color: rgb(255, 255, 255);
             height: 100%;
             .detailTop {
                 .detailTop__content {
@@ -33,12 +32,10 @@
                         left: 50%;
                         width: 100%;
                         transform: translate3d(-50%, -50%, 0);
-                        .movieInfo__maxWidth {
-                            max-width: 870px;
-                            float: none;
-                            margin: auto;
-                            clear: both;
-                        }
+                        max-width: 870px;
+                        float: none;
+                        margin: auto;
+                        clear: both;
                         .movieInfo__poster {
                             padding-left: 0 !important;
                             padding-right: 0 !important;
@@ -88,12 +85,93 @@
                                 font-size: 14px;
                             }
                         }
+
+                        .movieInfo_circleStar {
+                            text-align: center;
+                            padding: 0;
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
                     }
                 }
             }
 
             .detailContent {
+                max-width: 870px;
+                float: none;
+                margin: auto;
+                clear: both;
+                transform: translate(0,-70px);
 
+                .detailContent__navMenu {
+                    .navMenuList {
+                        justify-content: center;
+                        border-bottom: transparent;
+                        .nav-item {
+                            .nav-link {
+                                color: #fff;
+                                font-size: 20px;
+                                border: none;
+                                transition: all 0.5s;
+                                &.active {
+                                    color: #fb4226;
+                                    background-color: transparent;
+                                    border-color: transparent;
+                                }
+                                &:hover {
+                                    border-color: transparent;
+                                    transform: scale(1.2);
+                                }
+                            }
+                        }
+                    }
+                    #myTabContent {
+                        margin-top: 40px;
+                        #info {
+                            .info__left {
+                                .rowInfoLeft {
+                                    margin-bottom: 10px;
+                                    .info__left_title {
+                                        color: #fff;
+                                        width: 35%;
+                                        float: left;
+                                        font-size: 14px;
+                                        font-family: 'SF Medium';
+                                    }
+                                    .info__left_data {
+                                        color: #e9e9e9;
+                                        width: 40%;
+                                        float: left;
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                            .info__right {
+                                .rowInfoRight {
+                                    margin-bottom: 10px;
+                                    .info__right_title {
+                                        color: #fff;
+                                        width: 35%;
+                                        float: left;
+                                        font-size: 14px;
+                                        font-family: 'SF Medium';
+                                    }
+                                    .info__right_content {
+                                        text-align: justify;
+                                        white-space: pre-wrap;
+                                        font-family: 'SF Regular';
+                                        width: 100%;
+                                        float: left;
+                                        font-size: 14px;
+                                        color: #e9e9e9;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
