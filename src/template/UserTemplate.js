@@ -1,7 +1,7 @@
 import React from 'react';
 const { Route } = require("react-router-dom")
 
-function HomeLayouts(props) {
+function UserLayouts(props) {
     return (
         <div>
             {props.children}
@@ -9,17 +9,17 @@ function HomeLayouts(props) {
     )
 }
 
-function HomeTemplate({Component, ...props}) {
+function UserTemplate({Component, ...props}) {
     return (
         <Route
             {...props}
             render = {(propsComponent)=>(
-                <HomeLayouts>
+                <UserLayouts>
                     <Component {...propsComponent}/> 
-                </HomeLayouts>
+                </UserLayouts>
             )}
         />
     )
 }
 
-export default HomeTemplate
+export default UserTemplate

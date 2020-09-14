@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import MovieShowTime from '../../components/MovieShowTime/MovieShowTime'
 
-export default class Home extends Component {
+export default class MovieDetailPage extends Component {
     render() {
         return (
             <div>

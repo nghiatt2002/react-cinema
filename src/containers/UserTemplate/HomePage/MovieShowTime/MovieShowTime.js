@@ -3,7 +3,7 @@ import Moment from 'react-moment';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Tab, TabPanel, Tabs, TabList } from "react-web-tabs";
-import { getMovieShowTimeAxios } from '../../../redux/actions/MovieShowTime/MovieShowTimeAction';
+import { getMovieShowTimeAxios } from '../../../../redux/actions/MovieShowTimeAction';
 
 import "react-web-tabs/dist/react-web-tabs.css";
 import style from './MovieShowTime.module.scss';
@@ -30,7 +30,7 @@ export default function MovieShowTime(props) {
                     <img src={item.logo} alt={item.logo} />
                 </Tab>
             );
-        })
+        });
     };
 
     // render column ds rap chieu theo cum
@@ -47,9 +47,9 @@ export default function MovieShowTime(props) {
                         </span>
                     </div>
                 </Tab>
-            )
-        })
-    };
+            );
+        });
+    }
 
     let renderFilm = (listFilm) => {
         return listFilm.map((phim, index) => {
@@ -96,8 +96,8 @@ export default function MovieShowTime(props) {
                         </div>
                     </div>
                 </div>
-            )
-        })
+            );
+        });
     }
 
     let renderlistMovies =(cinema) => {
@@ -108,8 +108,8 @@ export default function MovieShowTime(props) {
                         {renderFilm(item.danhSachPhim)}
                     </div>
                 </TabPanel>
-            )
-        })
+            );
+        });
     }
 
     // render column 2 & 3
@@ -117,23 +117,21 @@ export default function MovieShowTime(props) {
         return movieShowTimeInfo.map((cinema, index) => {
             return (
                 <TabPanel tabId={cinema.maHeThongRap} key={index}>
-                    {/* <div> */}
-                        <Tabs vertical>
-                            <div className="row no-gutter">
-                                <div className="col-md-5 col-lg-4">
-                                    <TabList className="listCinemas scrollbarY">
-                                        {renderCinema(cinema.lstCumRap)}
-                                    </TabList>
-                                </div>
-                                <div className="col-md-7 col-lg-8">
-                                    {renderlistMovies(cinema.lstCumRap)}
-                                </div>
+                    <Tabs vertical>
+                        <div className="row no-gutter">
+                            <div className="col-md-5 col-lg-4">
+                                <TabList className="listCinemas scrollbarY">
+                                    {renderCinema(cinema.lstCumRap)}
+                                </TabList>
                             </div>
-                        </Tabs>
-                    {/* </div> */}
+                            <div className="col-md-7 col-lg-8">
+                                {renderlistMovies(cinema.lstCumRap)}
+                            </div>
+                        </div>
+                    </Tabs>
                 </TabPanel>
-            )
-        })
+            );
+        });
     }
 
     return (
