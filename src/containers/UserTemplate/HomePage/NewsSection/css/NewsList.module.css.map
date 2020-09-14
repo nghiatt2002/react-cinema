@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAIA,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EAC/B,AAAA,SAAS,CAAC;IACN,KAAK,EAAE,eAAe;IACtB,SAAS,EAAE,eAAe;GAC7B",
-    "sources": [
-        "../NewsList/NewsList.module.scss"
-    ],
-    "names": [],
-    "file": "NewsList.module.css"
-}
