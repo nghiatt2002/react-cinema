@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import style from './News.module.scss';
+import { NavLink } from 'react-router-dom';
 
 export default class News extends Component {
     constructor(props) {
@@ -31,15 +32,15 @@ export default class News extends Component {
                 {
                     type !== '2' ? (
                         <>
-                            <a href="">
+                            <NavLink to="/comming-soon">
                                 <img className={`card-img-top mb-2 ${type === '1' ? 'small-img' : ''}`} src={this.state.imgUrl} alt="" />
-                            </a>
+                            </NavLink>
                             <div className="card-body">
-                                <a href="">
+                                <NavLink to="/comming-soon">
                                     <h4 className={`card-title title-overflow ${center_box ? 'center-box-title': ''} ${type === '1' ? 'smmall-text' : ''}`}>
                                         {this.state.title}
                                     </h4>
-                                </a>
+                                </NavLink>
                                 <p className={`card-text ${center_box ? 'center-box-des': ''} ${type === '1' ? 'd-none' : ''}`}>
                                     {this.state.description}
                                 </p>
@@ -60,7 +61,7 @@ export default class News extends Component {
                             </div>
                         </>
                     ) : (
-                            <a className = "short-card" href="">
+                            <NavLink className = "short-card" to="/comming-soon">
                                 <div className="row">
                                     <div className="col-4 m-0 pr-0">
                                         <img className="news-img" src={this.state.imgUrl} alt="" />
@@ -69,7 +70,7 @@ export default class News extends Component {
                                         <h4 className="news-title title-overflow">{this.state.title}</h4>
                                     </div>
                                 </div>
-                            </a>
+                            </NavLink>
                         )
                 }
             </div>

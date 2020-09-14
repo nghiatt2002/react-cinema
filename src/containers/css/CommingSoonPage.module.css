@@ -1,0 +1,54 @@
+.commingSoonPage {
+  background-image: url("/./images/bg01.jpg");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+}
+
+.commingSoonPage :global .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(218, 56, 218, 0.404);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.commingSoonPage :global .overlay h2 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.commingSoonPage :global .overlay a {
+  display: block;
+  text-decoration: none;
+  color: #555555;
+  padding: 5px 40px;
+  border-radius: 15px;
+  background-color: white;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.commingSoonPage :global .overlay a:hover {
+  background-color: #555555;
+  color: white;
+}
+/*# sourceMappingURL=CommingSoonPage.module.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../MovieNews/MoviesNews.module.scss"
+    ],
+    "names": [],
+    "file": "MoviesNews.module.css"
+}

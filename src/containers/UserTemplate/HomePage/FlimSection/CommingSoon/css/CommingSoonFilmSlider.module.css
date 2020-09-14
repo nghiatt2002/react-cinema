@@ -1,0 +1,196 @@
+.commingSoonSlider {
+  height: 500px;
+  background-color: #101010;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area {
+  padding-top: 75px;
+  height: 100%;
+  background: url("/./images/films/slide-1.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  color: white;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area h3 {
+  font-size: 1.3rem;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area h3::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(#fbbd61), to(#ec7532));
+  background: linear-gradient(to right, #fbbd61, #ec7532);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__area--type {
+  font-size: 14px;
+  margin: 0;
+  color: #ec7532;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__area--title {
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__info .commingSoonSlider__info--star {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__info .commingSoonSlider__info--star img {
+  max-width: 15px;
+  margin: 0 2px;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__info .commingSoonSlider__info--calendar {
+  margin-left: 5px;
+  opacity: .7;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__info .commingSoonSlider__info--calendar i {
+  font-size: 12px;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__description {
+  margin: 20px 0;
+  max-height: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__moreinfo a {
+  position: relative;
+  text-decoration: none;
+  color: #ec7532;
+  font-size: 14px;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__moreinfo a i {
+  margin-left: 2px;
+  font-size: 12px;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__moreinfo a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: -webkit-gradient(linear, left top, right top, from(#fbbd61), to(#ec7532));
+  background: linear-gradient(to right, #fbbd61, #ec7532);
+  opacity: 1;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__moreinfo a:hover {
+  color: #fbbd61;
+  letter-spacing: 2px;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--right {
+  text-align: center;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--right .commingSoonSlider__img a {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 0 50px 15px rgba(0, 0, 0, 0.75);
+          box-shadow: 0 0 50px 15px rgba(0, 0, 0, 0.75);
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--right .commingSoonSlider__img a .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--right .commingSoonSlider__img a img {
+  width: 250px !important;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--right .commingSoonSlider__img a i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-size: 1.5rem;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1.5px solid #ec7532;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--right .commingSoonSlider__img a:hover i {
+  -webkit-transform: translate(-50%, -50%) scale(0.8);
+          transform: translate(-50%, -50%) scale(0.8);
+}
+
+@media screen and (max-width: 992px) {
+  .commingSoonSlider :global .commingSoonSlider__area .container {
+    max-width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__info {
+    display: block;
+  }
+  .commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__info .commingSoonSlider__info--calendar {
+    margin-left: 0;
+  }
+  .commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--left .commingSoonSlider__info .commingSoonSlider__info--calendar i {
+    margin-left: 0 !important;
+  }
+  .commingSoonSlider :global .commingSoonSlider__area .commingSoonSlider__area--right a i {
+    display: none;
+  }
+}
+/*# sourceMappingURL=CommingSoonFilmSlider.module.css.map */
