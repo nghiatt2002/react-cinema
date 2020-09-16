@@ -4,7 +4,6 @@ export default class MovieDetailPage extends Component {
     render() {
         return (
             <div>
-                
             </div>
         )
     }
