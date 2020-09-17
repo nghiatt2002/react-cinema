@@ -110,29 +110,19 @@
                             text-align: center;
                             align-self: center;
                             .circlePercent {
-                                .circular-chart {
-                                    max-width: 100%;
-                                    max-height: 250px;
-                                    .circle {
-                                        stroke: #ff9f00;
-                                    }
-                                }
                                 .circle-bg {
                                     fill: none;
                                     stroke: #eee;
-                                    stroke-width: 3.8;
+                                    stroke-width: 3.8px;
                                 }
                                 .circle {
+                                    stroke: #ff9f00;
                                     fill: none;
-                                    stroke-width: 3;
+                                    stroke-width: 3px;
                                     stroke-linecap: round;
-                                    animation: progress 1s ease-out forwards;
-                                    animation-delay: 5s;
-                                }
-                                @keyframes progress {
-                                    0% {
-                                      stroke-dasharray: 0 100;
-                                    // https://codeburst.io/animating-react-components-with-css-and-styled-components-cc5a0585f105
+                                    animation-delay: 1s;
+                                    &:local {
+                                        animation: progress 2s ease-out infinite;
                                     }
                                 }
                                 .percentage {
@@ -142,6 +132,7 @@
                                     text-anchor: middle;
                                 }
                             }
+                           
                         }
                     }
                 }
@@ -223,11 +214,13 @@
                 }
             }
         }
+
+        @keyframes progress {
+            0% {
+                stroke-dasharray: 0 100;
+            }
+        }
     }
-    // @keyframes progress {
-    //     0% {
-    //       stroke-dasharray: 0 100;
-    //     }
-    // }
+    
 }
 

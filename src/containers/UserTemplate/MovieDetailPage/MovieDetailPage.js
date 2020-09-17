@@ -35,19 +35,22 @@ export default class MovieDetailPage extends Component {
                                                     <div>
                                                         <span className="movieInfo__time">116 phút - 0 IMDb - 2D/Digital</span>
                                                     </div>
-                                                    <button type="button" class="btn btnBuyTicket">Mua vé</button>
+                                                    <button type="button" className="btn btnBuyTicket">Mua vé</button>
                                                 </div>
                                                 <div className="col-2 movieInfo_circleStar">
                                                     <div className="circlePercent">
                                                         <svg viewBox="0 0 36 36" className="circular-chart">
                                                             <path className="circle-bg" d="M18 2.0845
-                                                                                        a 15.9155 15.9155 0 0 1 0 31.831
-                                                                                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                                                            a 15.9155 15.9155 0 0 1 0 31.831
+                                                                                            a 15.9155 15.9155 0 0 1 0 -31.831" />
                                                             <path className="circle" strokeDasharray="72, 100" d="M18 2.0845
                                                                                                                 a 15.9155 15.9155 0 0 1 0 31.831
                                                                                                                 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                                             <text x={18} y="20.35" className="percentage">7.2</text>
                                                         </svg>
+                                                    </div>
+                                                    <div className="row starMain">
+                                                        <img src="./image/star.png" width={25} alt=""/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -59,19 +62,19 @@ export default class MovieDetailPage extends Component {
                             <div className="detailContent">
                                 <div className="container">
                                     <div className="detailContent__navMenu">
-                                        <ul class="nav nav-tabs navMenuList" id="myTab" role="tablist">
-                                            <li class="nav-item" role="presentation">
-                                                <a class="nav-link active" id="showTime-tab" data-toggle="tab" href="#showTime" role="tab" aria-controls="showTime" aria-selected="true">Lịch Chiếu</a>
+                                        <ul className="nav nav-tabs navMenuList" id="myTab" role="tablist">
+                                            <li className="nav-item" role="presentation">
+                                                <a className="nav-link active" id="showTime-tab" data-toggle="tab" href="#showTime" role="tab" aria-controls="showTime" aria-selected="true">Lịch Chiếu</a>
                                             </li>
-                                            <li class="nav-item" role="presentation">
-                                                <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Thông tin</a>
+                                            <li className="nav-item" role="presentation">
+                                                <a className="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Thông tin</a>
                                             </li>
                                         </ul>
-                                        <div class="tab-content" id="myTabContent">
-                                            <div class="tab-pane fade show active" id="showTime" role="tabpanel" aria-labelledby="showTime-tab">
+                                        <div className="tab-content" id="myTabContent">
+                                            <div className="tab-pane fade show active" id="showTime" role="tabpanel" aria-labelledby="showTime-tab">
 
                                             </div>
-                                            <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+                                            <div className="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
                                                 <div className="row">
                                                     <div className="col-sm-6 col-xs-12 info__left">
                                                         <div className="row rowInfoLeft">
