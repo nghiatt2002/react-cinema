@@ -1,0 +1,40 @@
+.movieDetailShowTimeStyle {
+    :global .movieDetailShowTimeContent {
+        width: 100%;
+        .columnFirst {
+            height: 705px;
+            margin-right: 0;
+            overflow-y: hidden;
+            border: 1px solid #ebebec;
+            &:hover {
+                overflow-y: auto;
+            }
+            .cinemasGroup {
+                display: block;
+                .cinemasGroupItem {
+                    width: 100%;
+                    background: #ffffff;
+                    display: inline-block;
+                    padding: 20px;
+                    cursor: pointer;
+                    border: none;
+                    position: relative;
+                    transition: all 0.2s;
+                    .cinemasGroupItemFlex {
+                        display: flex;
+                        align-items: center;
+                        .cinemaImg {
+                            width: 50px;
+                            margin-right: 10px;
+                            opacity: 0.4;
+                        }
+                        .cinemaName {
+                            font-size: 16px;
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
