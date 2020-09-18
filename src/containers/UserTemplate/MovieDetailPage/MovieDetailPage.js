@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import style from './MovieDetailPage.module.scss';
+import PercentageCircle from './PercentageCircle/PercentageCircle';
 
 export default class MovieDetailPage extends Component {
     render() {
@@ -19,7 +20,11 @@ export default class MovieDetailPage extends Component {
                                         <div className="container">
                                             <div className="row justify-content-center">
                                                 <div className="col-4 movieInfo__poster">
-                                                    <div className="imagePoster" style={{ backgroundImage: "url('https://s3img.vcdn.vn/mobile/123phim/2020/09/ac-nu-bloodlust-lady-c18-15994496809693_215x318.png')" }}></div>
+                                                    <div className="imagePoster" style={{ backgroundImage: "url('https://s3img.vcdn.vn/mobile/123phim/2020/09/ac-nu-bloodlust-lady-c18-15994496809693_215x318.png')" }}>
+                                                        <button className="btnPlayVideo">
+                                                            <img src="./images/play-video.png" alt=""/>
+                                                        </button>
+                                                    </div>
                                                 </div>
                                                 <div className="col-6 movieInfo__detailGroup">
                                                     <div>
@@ -39,18 +44,14 @@ export default class MovieDetailPage extends Component {
                                                 </div>
                                                 <div className="col-2 movieInfo_circleStar">
                                                     <div className="circlePercent">
-                                                        <svg viewBox="0 0 36 36" className="circular-chart">
-                                                            <path className="circle-bg" d="M18 2.0845
-                                                                                            a 15.9155 15.9155 0 0 1 0 31.831
-                                                                                            a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                                            <path className="circle" strokeDasharray="72, 100" d="M18 2.0845
-                                                                                                                a 15.9155 15.9155 0 0 1 0 31.831
-                                                                                                                a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                                            <text x={18} y="20.35" className="percentage">7.2</text>
-                                                        </svg>
+                                                        <PercentageCircle percent="7.2"/>
                                                     </div>
                                                     <div className="row starMain">
-                                                        <img src="./image/star.png" width={25} alt=""/>
+                                                        <img src="./images/star.png" alt=""/>
+                                                        <img src="./images/star.png" alt=""/>
+                                                        <img src="./images/star.png" alt=""/>
+                                                        <img src="./images/star.png" alt=""/>
+                                                        <img src="./images/star.png" alt=""/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -71,9 +72,12 @@ export default class MovieDetailPage extends Component {
                                             </li>
                                         </ul>
                                         <div className="tab-content" id="myTabContent">
+                                            {/* Lịch chiếu */}
                                             <div className="tab-pane fade show active" id="showTime" role="tabpanel" aria-labelledby="showTime-tab">
 
                                             </div>
+
+                                            {/* Thông tin */}
                                             <div className="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
                                                 <div className="row">
                                                     <div className="col-sm-6 col-xs-12 info__left">
