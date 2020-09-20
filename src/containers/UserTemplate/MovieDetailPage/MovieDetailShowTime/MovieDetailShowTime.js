@@ -10,7 +10,7 @@ export default class MovieDetailShowTime extends Component {
                 <div className={style.movieDetailShowTimeStyle}>
                     <div className="movieDetailShowTimeContent">
                         <Tabs forceRenderTabPanel defaultTab="cgv-list-rap" vertical className="vertical-tabs" onChange={(tabId) => { console.log(tabId) }}>
-                            <div className="row">
+                            <div className="row no-gutter">
                                 <div className="col-md-4 columnFirst">
                                     <TabList className="cinemasGroup">
                                         <Tab className="cinemasGroupItem" tabId="cgv" tabFor="cgv-list-rap">
@@ -33,40 +33,223 @@ export default class MovieDetailShowTime extends Component {
                                         </Tab>
                                     </TabList>
                                 </div>
-                                <div className="col-md-8">
+                                <div className="col-md-8 columnSecond">
                                     <TabPanel tabId="cgv-list-rap">
                                         <Tabs>
-                                            <TabList className="listCinemasGroup">
-                                                <Tab className="cinemasGroupItem" tabId="cgv" tabFor="thu2">
+                                            <TabList className="listDayOfWeek">
+                                                <Tab className="dateSelect" tabId="cgv" tabFor="thu2">
                                                     Thứ 2
                                                 </Tab>
-                                                <Tab className="cinemasGroupItem" tabId="bhd" tabFor="thu3">
+                                                <Tab className="dateSelect" tabId="bhd" tabFor="thu3">
                                                     Thứ 3
                                                 </Tab>
-                                                <Tab className="cinemasGroupItem" tabId="galaxy" tabFor="thu4">
+                                                <Tab className="dateSelect" tabId="galaxy" tabFor="thu4">
                                                     Thứ 4
+                                                </Tab>
+                                                <Tab className="dateSelect" tabId="galaxy" tabFor="thu5">
+                                                    Thứ 5
+                                                </Tab>
+                                                <Tab className="dateSelect" tabId="galaxy" tabFor="thu6">
+                                                    Thứ 6
+                                                </Tab>
+                                                <Tab className="dateSelect" tabId="galaxy" tabFor="thu7">
+                                                    Thứ 7
+                                                </Tab>
+                                                <Tab className="dateSelect" tabId="galaxy" tabFor="thu8">
+                                                    Thứ 8
                                                 </Tab>
                                             </TabList>
                                             <TabPanel tabId="thu2">
-                                                <ul>
-                                                    <li>A</li>
-                                                    <li>B</li>
-                                                    <li>C</li>
-                                                </ul>
+                                                <div className="movieItem">
+                                                    <div className="movieInfo">
+                                                        <img className="movieImage" src="./images/cinema.jpg" alt="" />
+                                                        <div className="wrapInfo">
+                                                            <p>
+                                                                <span className="movieAgeType">C18</span>
+                                                                <span className="movieName">AAA</span>
+                                                            </p>
+                                                            <p className="movieTime">100 phút - TIX 7.5 - IMDb 7</p>
+                                                        </div>
+                                                        <div className="movieSessions">
+                                                            <div className="movieListTime">
+                                                                <div className="movieType">2D Digital</div>
+                                                                <div className="movieSession">
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="movieItem">
+                                                    <div className="movieInfo">
+                                                        <img className="movieImage" src="./images/cinema.jpg" alt="" />
+                                                        <div className="wrapInfo">
+                                                            <p>
+                                                                <span className="movieAgeType">C18</span>
+                                                                <span className="movieName">AAA</span>
+                                                            </p>
+                                                            <p className="movieTime">100 phút - TIX 7.5 - IMDb 7</p>
+                                                        </div>
+                                                        <div className="movieSessions">
+                                                            <div className="movieListTime">
+                                                                <div className="movieType">2D Digital</div>
+                                                                <div className="movieSession">
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="movieItem">
+                                                    <div className="movieInfo">
+                                                        <img className="movieImage" src="./images/cinema.jpg" alt="" />
+                                                        <div className="wrapInfo">
+                                                            <p>
+                                                                <span className="movieAgeType">C18</span>
+                                                                <span className="movieName">AAA</span>
+                                                            </p>
+                                                            <p className="movieTime">100 phút - TIX 7.5 - IMDb 7</p>
+                                                        </div>
+                                                        <div className="movieSessions">
+                                                            <div className="movieListTime">
+                                                                <div className="movieType">2D Digital</div>
+                                                                <div className="movieSession">
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="movieItem">
+                                                    <div className="movieInfo">
+                                                        <img className="movieImage" src="./images/cinema.jpg" alt="" />
+                                                        <div className="wrapInfo">
+                                                            <p>
+                                                                <span className="movieAgeType">C18</span>
+                                                                <span className="movieName">AAA</span>
+                                                            </p>
+                                                            <p className="movieTime">100 phút - TIX 7.5 - IMDb 7</p>
+                                                        </div>
+                                                        <div className="movieSessions">
+                                                            <div className="movieListTime">
+                                                                <div className="movieType">2D Digital</div>
+                                                                <div className="movieSession">
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </TabPanel>
                                             <TabPanel tabId="thu3">
-                                                <ul>
-                                                    <li>D</li>
-                                                    <li>E</li>
-                                                    <li>F</li>
-                                                </ul>
+                                                <div className="movieItem">
+                                                    <div className="movieInfo">
+                                                        <img className="movieImage" src="./images/cinema.jpg" alt="" />
+                                                        <div className="wrapInfo">
+                                                            <p>
+                                                                <span className="movieAgeType">C18</span>
+                                                                <span className="movieName">AAA</span>
+                                                            </p>
+                                                            <p className="movieTime">100 phút - TIX 7.5 - IMDb 7</p>
+                                                        </div>
+                                                        <div className="movieSessions">
+                                                            <div className="movieListTime">
+                                                                <div className="movieType">2D Digital</div>
+                                                                <div className="movieSession">
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </TabPanel>
                                             <TabPanel tabId="thu4">
-                                                <ul>
-                                                    <li>G</li>
-                                                    <li>H</li>
-                                                    <li>I</li>
-                                                </ul>
+                                                <div className="movieItem">
+                                                    <div className="movieInfo">
+                                                        <img className="movieImage" src="./images/cinema.jpg" alt="" />
+                                                        <div className="wrapInfo">
+                                                            <p>
+                                                                <span className="movieAgeType">C18</span>
+                                                                <span className="movieName">AAA</span>
+                                                            </p>
+                                                            <p className="movieTime">100 phút - TIX 7.5 - IMDb 7</p>
+                                                        </div>
+                                                        <div className="movieSessions">
+                                                            <div className="movieListTime">
+                                                                <div className="movieType">2D Digital</div>
+                                                                <div className="movieSession">
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                    <a href="#" className="showTimeDetail">
+                                                                        <span className="movie-time">18:05</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </TabPanel>
                                         </Tabs>
                                     </TabPanel>
