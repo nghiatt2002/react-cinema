@@ -10,6 +10,24 @@
             }
             .carousel-inner .carousel-item{
                 position: relative;
+                .movieCarousel__play--tablet{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    button{
+                        background-color: transparent;
+                        border: 1px solid black;
+                        transition: all .5s;
+                        &:hover{
+                            transform: scale(1.2);
+                            border: 1px solid orange;
+                            i{
+                                color: orange;
+                            }
+                        }
+                    }
+                }
                 .carousel__Slider--Content{
                     position: absolute;
                     top: 50%;

@@ -2,7 +2,17 @@
     :global .menu__main{
         background-color: black;
         #navbarSupportedContent{
+            ul li.show{
+                a{
+                    color: #ec7532;
+                }
+            }
             ul li{
+                &:hover{
+                    a{
+                        color: #ec7532;
+                    }
+                }
                 margin: 0 30px;
                 a{
                     color: white;
@@ -15,6 +25,7 @@
                     a{
                         padding: 10px;
                         transition: all .5s;
+                        color: white;
                         &:hover{
                             background-color: transparent;
                             color: orange;
@@ -90,10 +101,22 @@
     .Menu {
         :global .menu__main{
             background-color: transparent;
-            #navbarSupportedContent ul li a{
-                text-align: right;
-                color: black;
-            }
+            #navbarSupportedContent ul li{
+                a{
+                    text-align: right;
+                    color: black;
+                }
+                .dropdown-menu{
+                    background-color: transparent;
+                    border: none;
+                    padding: 0;
+                    padding-right: 20px;
+                    font-size: 12px;
+                    a{
+                        color: black;
+                    }
+                }
+            } 
         }
     }
 }

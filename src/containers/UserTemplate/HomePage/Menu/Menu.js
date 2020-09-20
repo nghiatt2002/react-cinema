@@ -7,24 +7,23 @@ export default class Menu extends Component {
             <div className={menuStyle.Menu}>
                 <nav className="menu__main navbar navbar-expand-sm navbar-light">
                     <img src="./img/hero-1.jpg" className="d-inline d-sm-none" height={40} alt="..." />
-                    <div className="d-inline d-sm-none">
-                        <form className="header__form">
-                            <div className="input-group">
-                                <input type="text" className="form-control" placeholder="Search for anything" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                                <div className="input-group-append">
-                                    <span className="input-group-text" id="basic-addon2"><i className="fa fa-search" /></span>
-                                </div>
+                    <form className="d-inline d-sm-none header__form">
+                        <div className="input-group">
+                            <input type="text" className="form-control" placeholder="Search for anything" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                            <div className="input-group-append">
+                                <span className="input-group-text" id="basic-addon2"><i className="fa fa-search" /></span>
                             </div>
-                        </form>
-                    </div>
-                    <div className="d-flex aligh-item-end">
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon" />
-                        </button>
-                    </div>
+                        </div>
+                    </form>
+                    <button className="d-inline d-sm-none navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon" />
+                    </button>
                     <div className="d-lg-flex justify-content-around collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav">
-                            <li className="nav-item">
+                            <li className="nav-item d-inline d-sm-none">
+                                <a className="nav-link" href="#">ĐĂNG NHẬP / ĐĂNG KÝ</a>
+                            </li>
+                            <li className="nav-item active">
                                 <a className="nav-link" href="#">MUA VÉ</a>
                             </li>
                             <li className="nav-item dropdown">
@@ -32,10 +31,10 @@ export default class Menu extends Component {
                                     PHIM
                                 </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <div className="menu__Movie text-light">
+                                    <div className="menu__Movie d-none d-sm-block text-light">
                                         <div>
                                             <a href="#">PHIM ĐANG CHIẾU</a>
-                                            <div className="d-none d-sm-block menu__Movie--list px-3 py-1">
+                                            <div className="menu__Movie--list px-3 py-1">
                                                 <div className="row">
                                                     <div className="menu__Movie--item col-3">
                                                         <div className="menu__Movie--img">
@@ -71,7 +70,7 @@ export default class Menu extends Component {
                                         <hr />
                                         <div>
                                             <a href="#">PHIM SẮP CHIẾU</a>
-                                            <div className="d-none d-sm-block menu__Movie--list px-3 py-1">
+                                            <div className="menu__Movie--list px-3 py-1">
                                                 <div className="row">
                                                     <div className="menu__Movie--item col-3">
                                                         <div className="menu__Movie--img">
@@ -104,6 +103,10 @@ export default class Menu extends Component {
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div className="d-inline d-sm-none">
+                                        <a className="dropdown-item" href="#">PHIM ĐANG CHIẾU</a>
+                                        <a className="dropdown-item" href="#">PHIM SẮP CHIẾU</a>
                                     </div>
                                 </div>
                             </li>
