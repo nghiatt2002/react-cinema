@@ -1,14 +1,29 @@
 import React, { Component } from 'react'
 import CoupleSeat from './CoupleSeat/CoupleSeat'
-import Seat from './Seat/Seat'
+import { getTicketLists } from '../../../redux/actions/BookingTicketAction';
+import { connect } from 'react-redux';
+import style from './BookingTicketPage.module.scss';
+import SeatList from './SeatList/SeatList';
+import ScreenContent from './ScreenContent/ScreenContent';
 
-export default class BookingTicketPage extends Component {
+class BookingTicketPage extends Component {
     render() {
         return (
-            <div className = "container">
-                <Seat />
-                <CoupleSeat value1 = "1" value2 = "2"/>
+            <div className = {`${style.bookingTicketPage} container-fuild`}>
+                <div className="row">
+                    <div className="col-8 ">
+                      <ScreenContent />
+                      <SeatList />
+                    </div>
+                    <div className="col-4"></div>
+                </div>
             </div>
         )
     }
+
+    componentDidMount = () => {
+        this.props.dispatch(getTicketLists());
+    }
 }
+
+export default connect(null)(BookingTicketPage);
