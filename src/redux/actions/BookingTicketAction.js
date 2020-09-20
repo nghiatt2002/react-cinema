@@ -9,7 +9,6 @@ export const getTicketLists = () => {
                 url: 'http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=29919',
             }
         ).then(res => {
-            console.log(res.data);
             dispatch({
                 type: GET_TICKET_LIST,
                 data: res.data

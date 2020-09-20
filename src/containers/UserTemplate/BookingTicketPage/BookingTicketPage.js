@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import style from './BookingTicketPage.module.scss';
 import SeatList from './SeatList/SeatList';
 import ScreenContent from './ScreenContent/ScreenContent';
+import CheckOut from './CheckOut/CheckOut';
 
 class BookingTicketPage extends Component {
     render() {
@@ -15,7 +16,9 @@ class BookingTicketPage extends Component {
                       <ScreenContent />
                       <SeatList />
                     </div>
-                    <div className="col-4"></div>
+                    <div className="col-4">
+                        <CheckOut />
+                    </div>
                 </div>
             </div>
         )

@@ -7,13 +7,15 @@ class SeatList extends Component {
     rowSeatName = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', "M", 'N' ];
     renderSeat = () => {
         let cnt = 0;
-        return this.props.listTicket.map((item, index) => {
+        let divArr = []
+        let divHtml;
+        divArr = this.props.listTicket.map((item, index) => {
             if (index % 16 == 0) {
                 return (
-                    <>
-                        <span>{this.rowSeatName[cnt++]}</span>
-                        <Seat  key = {index} seat = {item}/>
-                    </>
+                    [
+                        <span key = {index + 'span'}>{this.rowSeatName[cnt++]}</span>,
+                        <Seat key = {index} seat = {item}/>
+                    ]
                 )
             } else {
                 return (
@@ -21,6 +23,7 @@ class SeatList extends Component {
                 )
             }
         })
+        return divArr.flat();
     }
 
     render() {

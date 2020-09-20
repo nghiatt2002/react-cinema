@@ -1,0 +1,113 @@
+.checkout {
+    :global .checkout-area {
+        padding: 0 20px;
+        .total-price {
+            height: 80px;
+            border-bottom: 1px dotted #ccc;
+            h2 {
+                text-align: center;
+                color: green;
+                font-size: 3rem;
+                font-weight: 500;
+                line-height: 80px;;
+            }
+        }
+        .film-info {
+            p {
+                font-size: 18px;
+                color: #333;
+            }
+            .film-title {
+                font-weight: 600;
+                margin: 15px 0 0;
+            }
+            border-bottom: 1px dotted #ccc;
+        }
+        .seat-info {
+            display: flex;
+            padding: 20px 0;
+            justify-content: space-between;
+            border-bottom: 1px dotted #ccc;
+            .seat-name {
+                color: red;
+                width: 60%;
+                display: flex;
+                flex-wrap: wrap;
+                .seat-name--add {
+                    margin-right: 2px;
+                }
+            }
+            .price {
+                color: green;
+                margin-right: 20px;
+            }
+        }
+        .checkout-form {
+            padding: 20px 0;
+            margin-bottom: 0 !important;
+            border-bottom: 1px dotted #ccc;
+            .checkout-form-area {
+                display: flex;
+                flex-direction: column-reverse;
+                position: relative;
+                .checkout-label {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    font-size: 18px;
+                    transition: all .3s;
+                }
+                .checkout-input {
+                    border: none;
+                    padding: 0;
+                    &:focus {
+                        padding-top: 18px;
+                        outline: 0;
+                        box-shadow: none;
+                        + .checkout-label {
+                            color: #4a90e2;
+                            font-size: 14px;
+                        }
+                    }       
+                }
+            }
+            .has-text {
+                .checkout-label {
+                    font-size: 14px !important;
+                }
+                .checkout-input {
+                    padding-top: 18px !important;
+                }
+            }
+           
+        }
+
+        .checkout-promotion {
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            .promotion-form {
+                width: 70%;
+                display: flex;
+                flex-direction: column-reverse;
+                position: relative;
+                .promotion-label {
+                    font-size: 14px !important;
+                }
+                .promotion-input {
+                    border: none;
+                    padding: 0;     
+                    &:focus {
+                        outline: 0;
+                        box-shadow: none;
+                        + .promotion-label {
+                            color: #4a90e2;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}
