@@ -29,51 +29,96 @@ export default class CheckOut extends Component {
     }
     render() {
         return (
-            <div className = {style.checkout}>
+            <div className={style.checkout}>
                 <div className="checkout-area">
-                    <div className="total-price">
-                        <h2>0 đ</h2>
-                    </div>
-                    <div className="film-info">
-                        <p className="film-title">
-                            Greenland: Thảm Hoạ Thiên Thạch
+                    <div className="checkout-info">
+                        <div className="total-price">
+                            <h2>0 đ</h2>
+                        </div>
+                        <div className="film-info">
+                            <p className="film-title">
+                                Greenland: Thảm Hoạ Thiên Thạch
                         </p>
-                        <p className = "cinema-name mb-0">
-                            DDC - Đống Đa
+                            <p className="cinema-name mb-0">
+                                DDC - Đống Đa
                         </p>
-                        <p className = "cinema-hour">
-                            Hôm nay 20/09/2020 - 21:25 - RẠP 2
+                            <p className="cinema-hour">
+                                Hôm nay 20/09/2020 - 21:25 - RẠP 2
                         </p>
+                        </div>
+                        <div className="seat-info">
+                            <div className="seat-name">
+                                <span className="mr-2">Ghế</span>
+                            </div>
+                            <div className="price">
+                                0đ
+                        </div>
+                        </div>
+                        <div className="checkout-form form-group">
+                            <div className={`checkout-form-area ${this.state.emailActive ? 'has-text' : ''}`}>
+                                <input id="email" name="email" className="checkout-input form-control" type="text" onChange={this.onType} />
+                                <label className="checkout-label" for="email">E-Mail</label>
+                            </div>
+                        </div>
+                        <div className="checkout-form form-group">
+                            <div className={`checkout-form-area ${this.state.phoneActive ? 'has-text' : ''}`}>
+                                <input id="phone" name="phone" className="checkout-input form-control" type="text" onChange={this.onType} />
+                                <label className="checkout-label" htmlFor="phone">Phone</label>
+                            </div>
+                        </div>
+                        <div className="checkout-promotion">
+                            <div className="promotion-form">
+                                <input id="promotion" name="promotion" className="promotion-input form-control"
+                                    type="text" placeholder="Nhập tại đây..." />
+                                <label className="promotion-label" htmlFor="promotion">Phone</label>
+                            </div>
+                            <div className="promotion-btn">
+                                <button className="btn btn-success">Áp dụng</button>
+                            </div>
+                        </div>
+                        <div className="checkout-medthod">
+                            <label htmlFor="" className="checkout-medthod--label">Hình thức thanh toán</label>
+                            <p className="checkout-medthod-err d-none">Vui lòng chọn ghế để hiển thị phương thức thanh toán phù hợp.</p>
+                            <div className="checkout-medthod__select">
+                                <div className="chooseethod">
+                                    <input type="radio" value="ZAlOPAY" />
+                                    <img src="./images/zalo.jpg" alt="" />
+                                    <div className="d-flex  align-items-center method-title">
+                                        <p>Thanh toán qua ZaloPay</p>
+                                    </div>
+                                </div>
+                                <div className="chooseethod">
+                                    <input type="radio" value="CCPAY" />
+                                    <img src="./images/ccCard.png" alt="" />
+                                    <div className="d-flex align-items-center method-title">
+                                        <p>Visa, Master, JCP</p>
+                                    </div>
+                                </div>
+                                <div className="chooseethod">
+                                    <input type="radio" value="ATMPAY" />
+                                    <img src="./images/ccCard.png" alt="" />
+                                    <div className="d-flex align-items-center method-title">
+                                        <p>ATM nội địa</p>
+                                    </div>
+                                </div>
+                                <div className="chooseethod">
+                                    <input type="radio" value="ATMPAY" />
+                                    <img src="./images/store.png" alt="" />
+                                    <div className="d-flex align-items-center method-title">
+                                        <p>Thanh toán tại cửa hàng tiện ích</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="seat-info">
-                        <div className="seat-name">
-                            <span className = "mr-2">Ghế</span>
+                    <div className="pay-area">
+                        <div className="pay-area--notice">
+                            <p>Vé đã mua không thể đổi hoặc hoàn tiền</p>
+                            <p>Mã vé sẽ được gửi qua tin nhắn ZMS (tin nhắn Zalo) và Email đã nhập</p>
                         </div>
-                        <div className="price">
-                            0đ
-                        </div>
-                    </div>
-                    <div className="checkout-form form-group">
-                        <div className={`checkout-form-area ${this.state.emailActive ? 'has-text': ''}`}>
-                            <input id = "email" name = "email" className = "checkout-input form-control" type="text" onChange = {this.onType}/>
-                            <label className="checkout-label" for = "email">E-Mail</label>
-                        </div>
-                    </div>
-                    <div className="checkout-form form-group">
-                        <div className={`checkout-form-area ${this.state.phoneActive ? 'has-text': ''}`}>
-                            <input id = "phone" name = "phone" className = "checkout-input form-control" type="text" onChange = {this.onType}/>
-                            <label className="checkout-label" for = "phone">Phone</label>
-                        </div>
-                    </div>
-                    <div className="checkout-promotion">
-                        <div className="promotion-form">
-                            <input id = "promotion" name = "promotion" className = "promotion-input form-control"
-                             type="text" placeholder= "Nhập tại đây..." />
-                            <label className="promotion-label" for = "promotion">Phone</label>
-                        </div>
-                        <div className="promotion-btn">
-                            <button className = "btn btn-success">Áp dụng</button>
-                        </div>
+                        <button className="pay-btn">
+                            Đặt vé
+                        </button>
                     </div>
                 </div>
             </div>

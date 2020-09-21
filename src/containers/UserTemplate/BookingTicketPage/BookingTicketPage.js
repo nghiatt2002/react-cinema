@@ -11,7 +11,7 @@ class BookingTicketPage extends Component {
     render() {
         return (
             <div className = {`${style.bookingTicketPage} container-fuild`}>
-                <div className="row">
+                <div className="row m-0">
                     <div className="col-8 ">
                       <ScreenContent />
                       <SeatList />
