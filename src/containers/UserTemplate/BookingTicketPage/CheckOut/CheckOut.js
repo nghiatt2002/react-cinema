@@ -1,8 +1,9 @@
 import { event } from 'jquery';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import style from './CheckOut.module.scss';
 
-export default class CheckOut extends Component {
+class CheckOut extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,6 +28,13 @@ export default class CheckOut extends Component {
             }
         }
     }
+    renderSeatSelected = () => {
+       return this.props.seatSelected.map((item, index) => {
+            return (
+                <span className="mr-2" key = {index}>{item.seatNameDisplay}</span>
+            )
+        })
+    }
     render() {
         return (
             <div className={style.checkout}>
@@ -49,6 +57,7 @@ export default class CheckOut extends Component {
                         <div className="seat-info">
                             <div className="seat-name">
                                 <span className="mr-2">Ghế</span>
+                                {this.renderSeatSelected()}
                             </div>
                             <div className="price">
                                 0đ
@@ -125,3 +134,11 @@ export default class CheckOut extends Component {
         )
     }
 }
+
+const mapStatetoProps = (state) => {
+    return {
+        seatSelected : state.BookingTicketReducer.seatSelected
+    }
+}
+
+export default connect(mapStatetoProps)(CheckOut)

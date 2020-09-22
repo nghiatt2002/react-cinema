@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GET_TICKET_LIST} from '../contants/BookingTicketConstant';
+import {GET_TICKET_LIST, SELECT_SEAT} from '../contants/BookingTicketConstant';
 
 export const getTicketLists = () => {
     return dispatch => {
@@ -16,5 +16,14 @@ export const getTicketLists = () => {
         }).catch(err => {
             console.log(err);
         })
+    }
+}
+
+export const selectSeat = (seatNameDisplay, seatName, isSelect) => {
+    return {
+        type: SELECT_SEAT,
+        seatNameDisplay: seatNameDisplay,
+        seatName: seatName,
+        isSelect: isSelect
     }
 }

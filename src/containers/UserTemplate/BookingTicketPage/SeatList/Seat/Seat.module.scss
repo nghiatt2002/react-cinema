@@ -43,13 +43,13 @@
             border-top: none !important;
         }
         &:hover {
-            .box-center:not(.booked) {
+            .box-center:not(.booked):not(.is-remove) {
                 background-color: #44c020;
                 .seat-value {
                     opacity: 1;
                 }
             }
-            .seat-border:not(.booked) {
+            .seat-border:not(.booked):not(.is-remove) {
                 border: 3.5px solid #44c020 !important;
                 border-top: none !important;
             }
