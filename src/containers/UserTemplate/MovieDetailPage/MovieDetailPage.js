@@ -5,8 +5,30 @@ import PercentageCircle from './PercentageCircle/PercentageCircle';
 import "react-web-tabs/dist/react-web-tabs.css";
 import style from './MovieDetailPage.module.scss';
 import MovieDetailShowTime from './MovieDetailShowTime/MovieDetailShowTime';
+import { MovieMngService } from '../../../services/MovieManagementService';
 
 export default function MovieDetailPage(props) {
+
+    let [movieDetail, setMovieDetail] = useState({
+        cinemaSystem: []
+    });
+
+    useEffect(() => {
+        // let {film} = props.match.params;
+        let filmId = 1314;
+
+        MovieMngService.getMovieDetail(filmId).then(
+            res => {
+                let listFilm = res.data;
+                console.log(listFilm);
+                setMovieDetail(listFilm);
+            }
+        ).catch(
+            err => {
+                console.log(err.response.data);
+            }
+        )
+    }, []);
 
     return (
         <div>
@@ -129,7 +151,7 @@ export default function MovieDetailPage(props) {
                                                 <TabPanel tabId="bhd-list-rap">B</TabPanel>
                                                 <TabPanel tabId="galaxy-list-rap">C</TabPanel>
                                             </Tabs> */}
-                                            <MovieDetailShowTime />
+                                            <MovieDetailShowTime film={movieDetail}/>
                                         </div>
 
                                         {/* Thông tin */}
