@@ -5,9 +5,31 @@ import "react-web-tabs/dist/react-web-tabs.css";
 import style from './MovieDetailShowTime.module.scss';
 
 export default class MovieDetailShowTime extends Component {
-    
+
     constructor(props) {
         super(props);
+    }
+
+    createShowTimeList = (arr, field) => {
+        return arr.reduce((newArr, obj) => {
+            let key = moment(obj[field]).format('YYYY-MM-DD');
+            if (!newArr[key]) {
+                newArr[key] = [];
+            }
+            newArr[key].push(obj);
+
+            return newArr;
+        }, []);
+    }
+
+    renderShowTimeList = (arr) => {
+        return arr.map((info, index) => {
+            return (
+                <Tab className="dateSelect" tabFor={moment(info.ngayChieuGioChieu).format('YYYY/DD/MM')} key={index}>
+                    {moment(info.ngayChieuGioChieu).format('YYYY/DD/MM')}
+                </Tab>
+            )
+        })
     }
 
     renderCinemaSystem = () => {
@@ -25,23 +47,35 @@ export default class MovieDetailShowTime extends Component {
 
     renderCinemaDeatil = () => {
         return this.props.film.heThongRapChieu?.map((cinemaGroup, index) => {
-            console.log('cinema', cinemaGroup);
+            console.log('cinemaGroup', cinemaGroup);
             return (
                 <TabPanel tabId={cinemaGroup.maHeThongRap} key={index}>
                     <Tabs>
                         <TabList className="listDayOfWeek">
                             {
                                 cinemaGroup.cumRapChieu?.map((cinema, index) => {
+                                    console.log('cinema', cinema);
                                     return (
                                         <div key={index}>
                                             {
-                                                cinema.lichChieuPhim?.map((showDate, index) => {
-                                                    return (
-                                                        <Tab className="dateSelect" tabFor={showDate.ngayChieuGioChieu} key={index}>
-                                                            {moment(showDate.ngayChieuGioChieu).format('YYYY/DD/MM')}
-                                                        </Tab>
-                                                    )
-                                                })
+                                                this.renderShowTimeList(this.createShowTimeList(cinema.lichChieuPhim, 'ngayChieuGioChieu'))
+                                                // console.log(this.createShowTimeList(cinema.lichChieuPhim, 'ngayChieuGioChieu'))
+                                                // this.createShowTimeList(cinema.lichChieuPhim, 'ngayChieuGioChieu').map((info, index) => {
+                                                //     console.log("info:", info)
+                                                //     return (
+                                                //         <Tab className="dateSelect" tabFor={info.ngayChieuGioChieu} key={index}>
+                                                //             {moment(info.ngayChieuGioChieu).format('YYYY/DD/MM')}
+                                                //         </Tab>
+                                                //     )
+                                                // })
+                                                // cinema.lichChieuPhim?.reduce((arr, k) => {
+                                                //     console.log("k: ", k);
+                                                //     // return (
+                                                //     //     <Tab className="dateSelect" tabFor={showDate.ngayChieuGioChieu} key={index}>
+                                                //     //         {moment(showDate.ngayChieuGioChieu).format('YYYY/DD/MM')}
+                                                //     //     </Tab>
+                                                //     // )
+                                                // })
                                             }
                                         </div>
                                     )
@@ -52,6 +86,7 @@ export default class MovieDetailShowTime extends Component {
                 </TabPanel>
             );
         });
+
     }
 
     render() {
@@ -85,7 +120,34 @@ export default class MovieDetailShowTime extends Component {
                                     </TabList>
                                 </div>
                                 <div className="col-md-8 columnSecond">
-                                    {this.renderCinemaDeatil()}
+                                    {
+                                        this.props.film.heThongRapChieu?.map((cinemaGroup, index) => {
+                                            return (
+                                                <TabPanel tabId={cinemaGroup.maHeThongRap} key={index}>
+                                                    <Tabs>
+                                                        <TabList className="listDayOfWeek">
+                                                            {
+                                                                cinemaGroup.cumRapChieu.map((cinema, index) => {
+                                                                    const showTimeList = this.createShowTimeList(cinema.lichChieuPhim, 'ngayChieuGioChieu');
+                                                                    return (
+                                                                        cinema.lichChieuPhim.map((info, index1) => {
+                                                                            console.log(info)
+                                                                            return (
+                                                                                <Tab className="dateSelect" tabId={cinema.maCumRap} tabFor={info.ngayChieuGioChieu} key={index1}>
+                                                                                    {moment(info.ngayChieuGioChieu).format('YYYY/DD/MM')}
+                                                                                </Tab>
+                                                                            )
+                                                                        })
+                                                                    )
+                                                                })
+                                                            }
+                                                        </TabList>
+                                                    </Tabs>
+                                                </TabPanel>
+                                            )
+                                        })
+                                    }
+
                                     {/* <TabPanel tabId="cgv-list-rap">
                                         <Tabs>
                                             <TabList className="listDayOfWeek">
