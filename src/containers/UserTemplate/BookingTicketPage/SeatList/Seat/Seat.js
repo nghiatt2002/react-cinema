@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import style from './Seat.module.scss';
 import {selectSeat} from '../../../../../redux/actions/BookingTicketAction'
+import Swal from 'sweetalert2';
 
 class Seat extends Component {
     constructor (props) {
@@ -17,14 +18,15 @@ class Seat extends Component {
         if (this.props.seat.daDat) {
             return;
         }
-        const index = this.props.seatSelected.findIndex(ele=> ele.seatName == this.props.seat.tenGhe);
+        const index = this.props.seatSelected.findIndex(ele=> ele.seatInfo.tenGhe == this.props.seat.tenGhe);
         if (this.props.seatSelected.length >= 10) {
             if (index < 0) {
+                Swal.fire('Bạn không thể chọn quá 10 ghế');
                 return;
             }
         }
         const tenGhe = this.props.seat.tenGhe;
-        this.props.dispatch(selectSeat(this.getSeatName(tenGhe), tenGhe, !this.state.isSelect));
+        this.props.dispatch(selectSeat(this.getSeatName(tenGhe), this.props.seat, !this.state.isSelect));
         if (!this.props.seat.daDat) {
             this.setState({
                 isSelect: !this.state.isSelect,
@@ -71,7 +73,7 @@ class Seat extends Component {
         return (
             <div className = {style.seat}>
                 <div className={`seat-area ${loaiGhe === 'Vip' ? 'vip-seat' : ''}
-                ${isSelect? 'selecting show-text': ''}
+                ${(isSelect && !this.props.isReLoad) ? 'selecting show-text': ''}
                 ${daDat? 'no-click': ''}`}
                  onClick = {() => this.handleClick()} onMouseLeave = {() => this.handleBlur()}>
                     <span className = {`box-center ${daDat ? 'booked box-center-booked': ''} ${isRemove? 'is-remove': ''}`}>

@@ -41,7 +41,7 @@ class CheckOut extends Component {
                 <div className="checkout-area">
                     <div className="checkout-info">
                         <div className="total-price">
-                            <h2>0 đ</h2>
+                            <h2>{(this.props.total).toLocaleString()} đ</h2>
                         </div>
                         <div className="film-info">
                             <p className="film-title">
@@ -60,7 +60,7 @@ class CheckOut extends Component {
                                 {this.renderSeatSelected()}
                             </div>
                             <div className="price">
-                                0đ
+                            {(this.props.total).toLocaleString()} đ
                         </div>
                         </div>
                         <div className="checkout-form form-group">
@@ -137,7 +137,8 @@ class CheckOut extends Component {
 
 const mapStatetoProps = (state) => {
     return {
-        seatSelected : state.BookingTicketReducer.seatSelected
+        seatSelected : state.BookingTicketReducer.seatSelected,
+        total: state.BookingTicketReducer.total
     }
 }
 

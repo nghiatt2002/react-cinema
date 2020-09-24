@@ -4,6 +4,12 @@ import Seat from './Seat/Seat';
 import style from './SeatList.module.scss';
 
 class SeatList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            reLoad: true
+        }
+    }
     rowSeatName = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', "M", 'N' ];
     renderSeat = () => {
         let cnt = 0;
@@ -32,6 +38,7 @@ class SeatList extends Component {
                  <div className="bookingTicketPage__grid">
                         {this.renderSeat()}
                 </div>
+                <p>{this.props.isReLoad}</p>
             </div>
         )
     }
@@ -40,7 +47,8 @@ class SeatList extends Component {
 const mapStatetoProps = (state) => {
     return ({
         listTicket: state.BookingTicketReducer.listTicket,
-        flimInfo: state.BookingTicketReducer.flimInfo
+        flimInfo: state.BookingTicketReducer.flimInfo,
+        isReLoad: state.BookingTicketReducer.isReLoad,
     })
 }
 
