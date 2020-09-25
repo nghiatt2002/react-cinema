@@ -10,28 +10,32 @@ class ScreenContent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            counts: 5
+            settings : {
+                count: 5,
+                hideDay: true,
+                hideHours: true,
+                color: 'red',
+                onEnd: this.endTime
+            }
         }
     }
 
     endTime = () => {
         Swal.fire({
             text: 'Đã hết thời gian giữ ghế. Vui lòng thực hiện đơn hàng trong thời hạn 5 phút.',
-            onClose: this.onClose
+            willClose: this.onClose
     });
     }
     onClose = () => {
-        this.props.dispatch(reLoadPage());
-        this.forceUpdate();
+       window.location.reload();
     }
 
     render() {
         const settings = {
-            count: this.state.counts + (this.props.isReLoad ? 1 : 0),
+            count: 5,
             hideDay: true,
             hideHours: true,
             color: 'red',
-            onEnd: this.endTime
         };
         console.log('render screen');
         return (
@@ -44,7 +48,6 @@ class ScreenContent extends Component {
                         <div className="screencContent__flim">
                             <p className = "flim-text">
                                 <span>DDC </span>
-                                <p>{this.props.isReLoad ? 'true': 'false'}</p>
                                 <span className = "cinena-name">- Đống Đa</span>
                             </p>
                             <p className = "hour-text">Ngày mai - 21:20 - RẠP 1</p>
@@ -56,7 +59,7 @@ class ScreenContent extends Component {
                             thời gian giữ ghế
                         </p>
                         <h3 className = "time-left--hour text-center">
-                            <CountdownTimer {...settings} />
+                            <CountdownTimer {...settings}  onEnd={() => this.endTime()} />
                         </h3>
                     </div>
                 </div>
@@ -66,6 +69,10 @@ class ScreenContent extends Component {
             </div>
 
         )
+    }
+
+    componentWillUnmount = () => {
+        console.log('componentWillUnmount');
     }
 }
 

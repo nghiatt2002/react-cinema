@@ -27,9 +27,3 @@ export const selectSeat = (seatNameDisplay, seat, isSelect) => {
         isSelect: isSelect
     }
 }
-
-export const reLoadPage = () => {
-    return {
-        type: RELOAD_PAGE
-    }
-}

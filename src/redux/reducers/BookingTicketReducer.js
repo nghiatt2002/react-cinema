@@ -6,7 +6,6 @@ const initialState = {
     totalPrice: 0,
     seatSelected: [],
     total : 0,
-    isReLoad: false
 }
 
 export default (state = initialState, action) => {
@@ -33,12 +32,6 @@ export default (state = initialState, action) => {
         state.seatSelected = newState;
         state.total = total;
         state.isReLoad = false;
-        return {...state}
-    }
-    case RELOAD_PAGE: {
-        state.seatSelected = [];
-        state.total = 0;
-        state.isReLoad = true;
         return {...state}
     }
     default:

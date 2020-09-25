@@ -33,6 +33,7 @@ class SeatList extends Component {
     }
 
     render() {
+        console.log('render seat list');
         return (
             <div className = {style.seatList}>
                  <div className="bookingTicketPage__grid">

@@ -66,7 +66,7 @@ class CheckOut extends Component {
                         <div className="checkout-form form-group">
                             <div className={`checkout-form-area ${this.state.emailActive ? 'has-text' : ''}`}>
                                 <input id="email" name="email" className="checkout-input form-control" type="text" onChange={this.onType} />
-                                <label className="checkout-label" for="email">E-Mail</label>
+                                <label className="checkout-label" htmlFor="email">E-Mail</label>
                             </div>
                         </div>
                         <div className="checkout-form form-group">
