@@ -12,11 +12,11 @@ class BookingTicketPage extends Component {
         return (
             <div className = {`${style.bookingTicketPage} container-fuild`}>
                 <div className="row m-0">
-                    <div className="col-8 ">
+                    <div className="col-left">
                       <ScreenContent />
                       <SeatList />
                     </div>
-                    <div className="col-4">
+                    <div className="col-right">
                         <CheckOut />
                     </div>
                 </div>

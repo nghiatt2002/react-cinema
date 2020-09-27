@@ -9,6 +9,7 @@ class CheckOut extends Component {
         this.state = {
             emailActive: false,
             phoneActive: false,
+            radioCheck: ''
         }
     }
 
@@ -33,6 +34,11 @@ class CheckOut extends Component {
             return (
                 <span className="mr-2" key = {index}>{item.seatNameDisplay}</span>
             )
+        })
+    }
+    checkRadioHandle = (value) => {
+        this.setState({
+            radioCheck: value
         })
     }
     render() {
@@ -79,7 +85,7 @@ class CheckOut extends Component {
                             <div className="promotion-form">
                                 <input id="promotion" name="promotion" className="promotion-input form-control"
                                     type="text" placeholder="Nhập tại đây..." />
-                                <label className="promotion-label" htmlFor="promotion">Phone</label>
+                                <label className="promotion-label" htmlFor="promotion">Mã giảm giá</label>
                             </div>
                             <div className="promotion-btn">
                                 <button className="btn btn-success">Áp dụng</button>
@@ -90,28 +96,28 @@ class CheckOut extends Component {
                             <p className="checkout-medthod-err d-none">Vui lòng chọn ghế để hiển thị phương thức thanh toán phù hợp.</p>
                             <div className="checkout-medthod__select">
                                 <div className="chooseethod">
-                                    <input type="radio" value="ZAlOPAY" />
+                                    <input type="radio" checked = {this.state.radioCheck === 'ZAlOPAY'} value="ZAlOPAY" onChange = {() => {this.checkRadioHandle('ZAlOPAY')}} />
                                     <img src="./images/zalo.jpg" alt="" />
                                     <div className="d-flex  align-items-center method-title">
                                         <p>Thanh toán qua ZaloPay</p>
                                     </div>
                                 </div>
                                 <div className="chooseethod">
-                                    <input type="radio" value="CCPAY" />
+                                    <input type="radio" checked = {this.state.radioCheck === 'CCPAY'} value="CCPAY" onChange = {() => {this.checkRadioHandle('CCPAY')}}/>
                                     <img src="./images/ccCard.png" alt="" />
                                     <div className="d-flex align-items-center method-title">
                                         <p>Visa, Master, JCP</p>
                                     </div>
                                 </div>
                                 <div className="chooseethod">
-                                    <input type="radio" value="ATMPAY" />
+                                    <input type="radio" checked = {this.state.radioCheck === 'ATMPAY'} value="ATMPAY" onChange = {() => {this.checkRadioHandle('ATMPAY')}}/>
                                     <img src="./images/ccCard.png" alt="" />
                                     <div className="d-flex align-items-center method-title">
                                         <p>ATM nội địa</p>
                                     </div>
                                 </div>
                                 <div className="chooseethod">
-                                    <input type="radio" value="ATMPAY" />
+                                    <input type="radio" checked = {this.state.radioCheck === 'STORES'} value="STORES"  onChange = {() => {this.checkRadioHandle('STORES')}}/>
                                     <img src="./images/store.png" alt="" />
                                     <div className="d-flex align-items-center method-title">
                                         <p>Thanh toán tại cửa hàng tiện ích</p>
@@ -125,9 +131,14 @@ class CheckOut extends Component {
                             <p>Vé đã mua không thể đổi hoặc hoàn tiền</p>
                             <p>Mã vé sẽ được gửi qua tin nhắn ZMS (tin nhắn Zalo) và Email đã nhập</p>
                         </div>
-                        <button className="pay-btn">
-                            Đặt vé
-                        </button>
+                        <div className = "pay-display">
+                            <div className = "pay-price px-3">
+                                {this.renderSeatSelected()}
+                            </div>
+                            <button className="pay-btn">
+                                Đặt vé
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

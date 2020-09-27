@@ -15,10 +15,12 @@ class Seat extends Component {
     }
     rowSeatName = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', "M", 'N' ];
     handleClick = () => {
+        // If seat was selected
         if (this.props.seat.daDat) {
             return;
         }
         const index = this.props.seatSelected.findIndex(ele=> ele.seatInfo.tenGhe == this.props.seat.tenGhe);
+        // If count of selected seat > 10
         if (this.props.seatSelected.length >= 10) {
             if (index < 0) {
                 Swal.fire('Bạn không thể chọn quá 10 ghế');
@@ -26,6 +28,25 @@ class Seat extends Component {
             }
         }
         const tenGhe = this.props.seat.tenGhe;
+        const seatNumber = this.convertSeatName(tenGhe);
+        debugger;
+        if (seatNumber > 0 && seatNumber < 15 
+            && this.props.seatSelected.length > 0
+            && !this.state.isSelect) {
+            let isValid = false;
+            const preSeat = this.props.seat.maGhe - 1;
+            if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === preSeat)) >= 0) {
+                isValid = true;
+            }
+            const nextSeat = this.props.seat.maGhe + 1;
+            if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === nextSeat)) >= 0) {
+                isValid = true;
+            }
+            if (!isValid) {
+                Swal.fire('Bạn không thể để 1 ghế trống');
+                return;
+            }
+        }
         this.props.dispatch(selectSeat(this.getSeatName(tenGhe), this.props.seat, !this.state.isSelect));
         if (!this.props.seat.daDat) {
             this.setState({
@@ -42,6 +63,7 @@ class Seat extends Component {
     }
 
     convertSeatName =(name) => {
+        if (name === '') return '';
         return name%16 === 0 ? 16 : name%16;
     }
 
@@ -69,13 +91,18 @@ class Seat extends Component {
 
     render() {
         const {isSelect, isRemove} = this.state;
-        const {loaiGhe, tenGhe, daDat} = this.props.seat;
+        const {loaiGhe, tenGhe, daDat, inActive, selectingSeat, small} = this.props.seat;
         return (
             <div className = {style.seat}>
                 <div className={`seat-area ${loaiGhe === 'Vip' ? 'vip-seat' : ''}
-                ${(isSelect && !this.props.isReLoad) ? 'selecting show-text': ''}
-                ${daDat? 'no-click': ''}`}
-                 onClick = {() => this.handleClick()} onMouseLeave = {() => this.handleBlur()}>
+                ${isSelect ? 'selecting show-text': ''}
+                ${daDat? 'no-click': ''}
+                ${inActive ? 'in-active': ''}
+                ${selectingSeat ? 'selecting-seat': ''}
+                ${small ? 'small': ''}
+                `}
+                onClick = {() => inActive || this.handleClick()} 
+                onMouseLeave = {() => inActive || this.handleBlur()}>
                     <span className = {`box-center ${daDat ? 'booked box-center-booked': ''} ${isRemove? 'is-remove': ''}`}>
                         {
                             this.renderSeat(tenGhe, daDat)

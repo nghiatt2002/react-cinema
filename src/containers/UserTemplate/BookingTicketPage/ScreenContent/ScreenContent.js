@@ -32,12 +32,11 @@ class ScreenContent extends Component {
 
     render() {
         const settings = {
-            count: 5,
+            count: 300,
             hideDay: true,
             hideHours: true,
             color: 'red',
         };
-        console.log('render screen');
         return (
             <div className={style.screencContent}>
                 <div className="d-flex justify-content-between screencContent_areas">
@@ -63,6 +62,7 @@ class ScreenContent extends Component {
                         </h3>
                     </div>
                 </div>
+                <div className = "total">Tổng cộng: {(this.props.total).toLocaleString()} đ</div>
                 <div className="sreenImg">
                     <img src="./images/screen.png" alt=""/>
                 </div>
@@ -70,15 +70,11 @@ class ScreenContent extends Component {
 
         )
     }
-
-    componentWillUnmount = () => {
-        console.log('componentWillUnmount');
-    }
 }
 
 const mapStatetoProps = (state) => {
     return ({
-        isReLoad: state.BookingTicketReducer.isReLoad,
+        total: state.BookingTicketReducer.total
     })
 }
 export default connect(mapStatetoProps, null)(ScreenContent);

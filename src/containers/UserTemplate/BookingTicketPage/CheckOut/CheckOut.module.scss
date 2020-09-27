@@ -19,7 +19,7 @@
         box-shadow: 0 0 15px rgba(0,0,0,.3);
         z-index: 3;
         height: 100%;
-        width: 33.33%;
+        width: 30%;
         background: #fff;
         .checkout-info {
             padding: 0 20px;
@@ -211,3 +211,62 @@
     }
 
 }
+
+@media screen and (max-width: 1250px) {
+    .checkout {
+        :global .checkout-area {
+            width: 33%;
+            .checkout-info { 
+                .checkout-promotion {
+                    .promotion-form {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .checkout {
+        :global .checkout-area {
+            position: unset;
+            width: 80%;
+            margin: 0 auto;
+            box-shadow: none;
+            .checkout-info {
+                overflow-y: unset;
+                .total-price {
+                    display: none;
+                }
+                .checkout-promotion {
+                    .promotion-form {
+                        width: 80%;
+                    }
+                }
+            }
+            .pay-area {
+                position: unset;
+                .pay-area--notice {
+                    padding-bottom: 100px;
+                }
+                .pay-display {
+                    position: fixed;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    display: flex;
+                    .pay-price {
+                        background-color: #fff;
+                        color: #429321;
+                    }
+                    .pay-price, .pay-btn {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

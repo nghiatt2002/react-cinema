@@ -31,7 +31,6 @@ export default (state = initialState, action) => {
         }, 0);
         state.seatSelected = newState;
         state.total = total;
-        state.isReLoad = false;
         return {...state}
     }
     default:

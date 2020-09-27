@@ -3,8 +3,8 @@
     margin: 0 auto;
     :global .seat-area {
         position: relative;
-        width: 40px;
-        height: 25px;
+        width: 30px;
+        height: 20px;
         padding: 0 5px;
         cursor: pointer;
         .box-center {
@@ -42,7 +42,7 @@
             border: 3.5px solid #ccc !important;
             border-top: none !important;
         }
-        &:hover {
+        &:hover:not(.in-active) {
             .box-center:not(.booked):not(.is-remove) {
                 background-color: #44c020;
                 .seat-value {
@@ -54,6 +54,13 @@
                 border-top: none !important;
             }
         }
+    }
+    :global .small {
+        width: 25px;
+        height: 15px;
+    }
+    :global .in-active {
+        cursor: unset !important;
     }
 
     // Vip Seat
@@ -67,7 +74,7 @@
     }
 
     // Selecting
-    :global .selecting {
+    :global .selecting:not(.in-active), :global .selecting-seat {
         .box-center {
             background-color: #44c020;
         }

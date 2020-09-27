@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Description from '../Description/Description';
 import Seat from './Seat/Seat';
 import style from './SeatList.module.scss';
 
 class SeatList extends Component {
     constructor(props) {
         super(props);
+        this.loadSeatFinished = false;
         this.state = {
             reLoad: true
         }
@@ -19,7 +21,7 @@ class SeatList extends Component {
             if (index % 16 == 0) {
                 return (
                     [
-                        <span key = {index + 'span'}>{this.rowSeatName[cnt++]}</span>,
+                        <span className = "first-class" key = {index + 'span'}>{this.rowSeatName[cnt++]}</span>,
                         <Seat key = {index} seat = {item}/>
                     ]
                 )
@@ -29,17 +31,22 @@ class SeatList extends Component {
                 )
             }
         })
+        this.loadSeatFinished = true;
         return divArr.flat();
     }
 
+    renderDescription = () => {
+        if (this.props.listTicket.length === 0) return;
+        return (<Description />);
+    }
+
     render() {
-        console.log('render seat list');
         return (
             <div className = {style.seatList}>
                  <div className="bookingTicketPage__grid">
                         {this.renderSeat()}
                 </div>
-                <p>{this.props.isReLoad}</p>
+                {this.renderDescription()}
             </div>
         )
     }
@@ -49,7 +56,6 @@ const mapStatetoProps = (state) => {
     return ({
         listTicket: state.BookingTicketReducer.listTicket,
         flimInfo: state.BookingTicketReducer.flimInfo,
-        isReLoad: state.BookingTicketReducer.isReLoad,
     })
 }
 
