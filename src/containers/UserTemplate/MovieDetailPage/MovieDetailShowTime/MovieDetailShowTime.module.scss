@@ -1,8 +1,10 @@
 .movieDetailShowTimeStyle {
     :global .movieDetailShowTimeContent {
+        
         width: 100%;
 
         .no-gutter {
+            background-color: #ffffff;
             margin-right: 0;
             margin-left: 0;
             & > [class*='col-'] {
@@ -75,6 +77,7 @@
                 }
             }
         }
+
         .columnSecond {
             height: 705px;
             margin-right: 0;
@@ -84,6 +87,23 @@
             &:hover {
                 overflow-y: auto;
             }
+            .listDayOfWeek {
+                .dateSelect {
+                    padding: 1rem;
+
+                    &[aria-selected="true"] {
+                        color: #fb4226;
+                        font-weight: bold;
+                        &::after {
+                            border-bottom: none;
+                        }
+                    }
+                    p {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+
             .movieItem {
                 float: left;
                 clear: both;
@@ -141,7 +161,7 @@
                             line-height: 22px;
                             overflow: hidden;
                             text-overflow: ellipsis;
-                            color: #000;
+                            color: #8bc541;
                         }
                         p {
                             margin: 0;

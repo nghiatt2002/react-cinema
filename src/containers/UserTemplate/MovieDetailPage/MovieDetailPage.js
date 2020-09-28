@@ -15,7 +15,7 @@ export default function MovieDetailPage(props) {
 
     useEffect(() => {
         // let {film} = props.match.params;
-        let filmId = 1314;
+        let filmId = 2528;
 
         MovieMngService.getMovieDetail(filmId).then(
             res => {
@@ -100,57 +100,6 @@ export default function MovieDetailPage(props) {
                                     <div className="tab-content" id="myTabContent">
                                         {/* Lịch chiếu */}
                                         <div className="tab-pane fade show active" id="showTime" role="tabpanel" aria-labelledby="showTime-tab">
-                                            {/* <Tabs forceRenderTabPanel defaultTab="cgv-list-rap" vertical className="vertical-tabs" onChange={(tabId) => { console.log(tabId) }}>
-                                                <TabList className="listCinemasGroup">
-                                                    <Tab className="cinemasGroupItem" tabId="cgv" tabFor="cgv-list-rap">
-                                                        <img src="https://s3img.vcdn.vn/123phim/2018/09/ee621ee05dcd4565caead4f29421b41e.png" alt="" />
-                                                    </Tab>
-                                                    <Tab className="cinemasGroupItem" tabId="bhd" tabFor="bhd-list-rap">
-                                                        <img src="https://s3img.vcdn.vn/123phim/2018/09/f32670fd0eb083c9c4c804f0f3a252ed.png" alt="" />
-                                                    </Tab>
-                                                    <Tab className="cinemasGroupItem" tabId="galaxy" tabFor="galaxy-list-rap">
-                                                        <img src="https://s3img.vcdn.vn/123phim/2018/09/e520781386bd5436e94d6e15e193a005.png" alt="" />
-                                                    </Tab>
-                                                </TabList>
-                                                <TabPanel tabId="cgv-list-rap">
-                                                    <Tabs>
-                                                        <TabList className="listCinemasGroup">
-                                                            <Tab className="cinemasGroupItem" tabId="cgv" tabFor="thu2">
-                                                                Thứ 2
-                                                            </Tab>
-                                                            <Tab className="cinemasGroupItem" tabId="bhd" tabFor="thu3">
-                                                                Thứ 3
-                                                            </Tab>
-                                                            <Tab className="cinemasGroupItem" tabId="galaxy" tabFor="thu4">
-                                                                Thứ 4
-                                                            </Tab>
-                                                        </TabList>
-                                                        <TabPanel tabId="thu2">
-                                                            <ul>
-                                                                <li>A</li>
-                                                                <li>B</li>
-                                                                <li>C</li>
-                                                            </ul>
-                                                        </TabPanel>
-                                                        <TabPanel tabId="thu3">
-                                                            <ul>
-                                                                <li>D</li>
-                                                                <li>E</li>
-                                                                <li>F</li>
-                                                            </ul>
-                                                        </TabPanel>
-                                                        <TabPanel tabId="thu4">
-                                                            <ul>
-                                                                <li>G</li>
-                                                                <li>H</li>
-                                                                <li>I</li>
-                                                            </ul>
-                                                        </TabPanel>
-                                                    </Tabs>
-                                                </TabPanel>
-                                                <TabPanel tabId="bhd-list-rap">B</TabPanel>
-                                                <TabPanel tabId="galaxy-list-rap">C</TabPanel>
-                                            </Tabs> */}
                                             <MovieDetailShowTime film={movieDetail}/>
                                         </div>
 
