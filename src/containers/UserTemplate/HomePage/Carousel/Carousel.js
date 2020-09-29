@@ -9,8 +9,6 @@ export default class Carousel extends Component {
     render() {
         return (
             <div className={carouselStyle.Carousel}>
-                <Header/>
-                <Menu/>
                 <div className="carousel__Main">
                     <div id="carouselSlider" className="carousel__Slider carousel slide carousel-fade">
                         <ol className="container carousel-indicators">
@@ -60,7 +58,6 @@ export default class Carousel extends Component {
                     </div>
                     {/* <CarouselForm/> */}
                 </div>
-                <Footer />
             </div>
         )
     }
