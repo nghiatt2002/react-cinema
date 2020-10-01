@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Description from '../Description/Description';
 import Seat from './Seat/Seat';
 import style from './SeatList.module.scss';
+const COLUMN_NUMBER = 12;
 
 class SeatList extends Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class SeatList extends Component {
         let divArr = []
         let divHtml;
         divArr = this.props.listTicket.map((item, index) => {
-            if (index % 16 == 0) {
+            if (index % COLUMN_NUMBER == 0) {
                 return (
                     [
                         <span className = "first-class" key = {index + 'span'}>{this.rowSeatName[cnt++]}</span>,

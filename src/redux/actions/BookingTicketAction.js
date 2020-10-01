@@ -6,7 +6,7 @@ export const getTicketLists = () => {
         axios (
             {
                 method: 'GET',
-                url: 'http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=29919',
+                url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=29919',
             }
         ).then(res => {
             dispatch({

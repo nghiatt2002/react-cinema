@@ -12,6 +12,7 @@ import { Provider } from 'react-redux';
 import reduxThunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 
+
 const reduxStore = createStore(rootReducer, applyMiddleware(reduxThunk));
 
 ReactDOM.render(

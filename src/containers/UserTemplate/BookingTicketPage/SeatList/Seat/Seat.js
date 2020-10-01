@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import style from './Seat.module.scss';
 import {selectSeat} from '../../../../../redux/actions/BookingTicketAction'
 import Swal from 'sweetalert2';
+const COLUMN_NUMBER = 12;
 
 class Seat extends Component {
     constructor (props) {
@@ -29,19 +30,102 @@ class Seat extends Component {
         }
         const tenGhe = this.props.seat.tenGhe;
         const seatNumber = this.convertSeatName(tenGhe);
-        debugger;
-        if (seatNumber > 0 && seatNumber < 15 
+        if (seatNumber > 0 && seatNumber < COLUMN_NUMBER - 1 
             && this.props.seatSelected.length > 0
             && !this.state.isSelect) {
             let isValid = false;
-            const preSeat = this.props.seat.maGhe - 1;
-            if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === preSeat)) >= 0) {
-                isValid = true;
+            const index = this.props.listTicket.findIndex(ele => ele.maGhe === this.props.seat.maGhe);
+            const preSeat = index > 0 ? this.props.listTicket[index - 1] : null;
+            const nextSeat = index < this.props.listTicket.length ? this.props.listTicket[index + 1] : null;
+            const upSeat = index > 0 ? this.props.listTicket[index - 12]: null;
+            const downSeat = index < this.props.listTicket.length - 12 ?  this.props.listTicket[index + 12] : null;
+            let tempSeat;
+            // next
+            debugger;
+            if (nextSeat != null) {
+                if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === nextSeat.maGhe)) >= 0) {
+                    isValid = true;
+                } else if (nextSeat.daDat) {
+                    for (let i = index + 2; i < (COLUMN_NUMBER * (Math.floor(index/COLUMN_NUMBER) + 1)); i++) {
+                        tempSeat = this.props.listTicket[i];
+                        if (tempSeat.daDat) {
+                            continue;
+                        }
+                        if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === tempSeat.maGhe)) >= 0) {
+                            isValid = true;
+                            break; 
+                        } else {
+                            isValid = false;
+                            break; 
+                        }
+                    }
+                }
             }
-            const nextSeat = this.props.seat.maGhe + 1;
-            if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === nextSeat)) >= 0) {
-                isValid = true;
+            // pre
+            if(preSeat != null) {
+                if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === preSeat.maGhe)) >= 0) {
+                    isValid = true;
+                } else if (preSeat.daDat) {
+                    for(let i = index - 2; i > Math.floor(index/COLUMN_NUMBER); i--) {
+                        tempSeat = this.props.listTicket[i];
+                        if (tempSeat.daDat) {
+                            continue;
+                        }
+                        if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === tempSeat.maGhe)) >= 0) {
+                            isValid = true;
+                            break;
+                        } else {
+                            isValid = false;
+                            break;
+                        }
+                    }
+                }
             }
+            //up 
+            debugger;
+            if (upSeat !=null) {
+                if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === upSeat.maGhe)) >= 0) {
+                    isValid = true;
+                } else if (upSeat.daDat) {
+                    for(let i = index - COLUMN_NUMBER; i >= index % COLUMN_NUMBER ; i -= COLUMN_NUMBER) {
+                        tempSeat = this.props.listTicket[i];
+                        if (tempSeat.daDat) {
+                            continue;
+                        }
+                        if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === tempSeat.maGhe)) >= 0) {
+                            isValid = true;
+                            break;
+                        } else {
+                            isValid = false;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            //down
+            if (downSeat !=null) {
+                if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === downSeat.maGhe)) >= 0) {
+                    isValid = true;
+                } else if (downSeat.daDat) {
+                    const count = index / COLUMN_NUMBER > Math.floor(this.props.listTicket.length / COLUMN_NUMBER) ? Math.floor(index / COLUMN_NUMBER) : (Math.floor(this.props.listTicket.length / COLUMN_NUMBER) - 1);
+                    
+                    // for(let i = index + COLUMN_NUMBER; i < count * (index % COLUMN_NUMBER == 0 ?  COLUMN_NUMBER ? index % COLUMN_NUMBER) ; i += COLUMN_NUMBER) {
+                    //     tempSeat = this.props.listTicket[i];
+                    //     if (tempSeat.daDat) {
+                    //         continue;
+                    //     }
+                    //     if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === tempSeat.maGhe)) >= 0) {
+                    //         isValid = true;
+                    //         break;
+                    //     } else {
+                    //         isValid = false;
+                    //         break;
+                    //     }
+                    // }
+                }
+            }
+
             if (!isValid) {
                 Swal.fire('Bạn không thể để 1 ghế trống');
                 return;
@@ -64,12 +148,12 @@ class Seat extends Component {
 
     convertSeatName =(name) => {
         if (name === '') return '';
-        return name%16 === 0 ? 16 : name%16;
+        return name%COLUMN_NUMBER === 0 ? COLUMN_NUMBER : name%COLUMN_NUMBER;
     }
 
     getSeatName = (tenGhe) => {
         const seat_number = this.convertSeatName(tenGhe);
-        const seat_row =  Math.floor((Number(tenGhe) - 1)/16);
+        const seat_row =  Math.floor((Number(tenGhe) - 1)/COLUMN_NUMBER);
         return String(this.rowSeatName[seat_row]) + String(seat_number);
     }
 
@@ -117,7 +201,8 @@ class Seat extends Component {
 
 const mapStatetoProps = (state) => {
     return {
-        seatSelected : state.BookingTicketReducer.seatSelected
+        seatSelected : state.BookingTicketReducer.seatSelected,
+        listTicket: state.BookingTicketReducer.listTicket,
     }
 }
 

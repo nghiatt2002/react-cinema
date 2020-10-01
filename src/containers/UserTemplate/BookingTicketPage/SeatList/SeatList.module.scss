@@ -1,7 +1,7 @@
 .seatList {
     :global .bookingTicketPage__grid {
         display: grid;
-        grid-template-columns: repeat(17, 45px);
+        grid-template-columns: repeat(13, 45px);
         row-gap: 10px;
         width: fit-content;
         margin: 0 auto;
@@ -15,7 +15,7 @@
     .seatList {
         :global .bookingTicketPage__grid {
             display: grid;
-            grid-template-columns: repeat(17, 35px);
+            grid-template-columns: repeat(13, 35px);
             row-gap: 10px;
             width: fit-content;
             margin: 0 auto;

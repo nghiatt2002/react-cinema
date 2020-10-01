@@ -41,7 +41,7 @@ class Film extends Component {
                   </div>
                   ): ''
               }
-              <a className ="filmDetail" href="" style = {{backgroundImage: `url(${imgUrl})`}}>
+              <a className ="filmDetail" href="" style = {{backgroundImage: `url(${imgUrl})`}} href = "/abc">
                   <div className = "filmThumbnail" >
                         <span className = "film__avgPoint">
                           <p className = "avgpoint m-0">
