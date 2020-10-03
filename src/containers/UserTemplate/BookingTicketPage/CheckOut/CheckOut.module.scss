@@ -96,6 +96,9 @@
                         }       
                     }
                 }
+                .error-input {
+                    color: red;
+                }
                 .has-text {
                     .checkout-label {
                         font-size: 14px !important;
@@ -204,8 +207,14 @@
                 outline: 0;
                 text-align: center;
                 color: #e9e9e9!important;
-                background-image: linear-gradient(223deg,#b4ec51 0,#429321 100%);
+                background-color: #ccc;
+                cursor: no-drop;
             }
+            .active {
+                background-image: linear-gradient(223deg,#b4ec51 0,#429321 100%);
+                cursor: pointer;
+            }
+
         }
 
     }

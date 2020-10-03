@@ -1,17 +1,24 @@
-import {GET_TICKET_LIST, SELECT_SEAT, RELOAD_PAGE} from '../contants/BookingTicketConstant'
+import {GET_TICKET_LIST, SELECT_SEAT, CONFIRM} from '../contants/BookingTicketConstant'
 
 const initialState = {
+    userInfo : {},
+    checkOutMethod: '',
     listTicket: [],
     flimInfo: {},
     totalPrice: 0,
     seatSelected: [],
     total : 0,
+    booked: false
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
     case GET_TICKET_LIST: {
-        return {...state, listTicket: action.data.danhSachGhe, flimInfo: action.data.thongTinPhim}
+        return {...state, listTicket: action.data.danhSachGhe, 
+            flimInfo: action.data.thongTinPhim,
+             seatSelected: [],
+             booked: action.booked,
+             total: 0}
     }
     case SELECT_SEAT: {
         let newState = [...state.seatSelected];
@@ -31,6 +38,11 @@ export default (state = initialState, action) => {
         }, 0);
         state.seatSelected = newState;
         state.total = total;
+        return {...state}
+    }
+    case CONFIRM: {
+        state.checkOutMethod = action.data.checkOutMethod
+        state.userInfo = action.data
         return {...state}
     }
     default:

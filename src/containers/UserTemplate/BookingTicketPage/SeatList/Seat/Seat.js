@@ -41,12 +41,14 @@ class Seat extends Component {
             const downSeat = index < this.props.listTicket.length - 12 ?  this.props.listTicket[index + 12] : null;
             let tempSeat;
             // next
-            debugger;
             if (nextSeat != null) {
                 if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === nextSeat.maGhe)) >= 0) {
                     isValid = true;
                 } else if (nextSeat.daDat) {
                     for (let i = index + 2; i < (COLUMN_NUMBER * (Math.floor(index/COLUMN_NUMBER) + 1)); i++) {
+                        if (i >= this.props.listTicket.length) {
+                            break;
+                        }
                         tempSeat = this.props.listTicket[i];
                         if (tempSeat.daDat) {
                             continue;
@@ -55,7 +57,6 @@ class Seat extends Component {
                             isValid = true;
                             break; 
                         } else {
-                            isValid = false;
                             break; 
                         }
                     }
@@ -75,14 +76,12 @@ class Seat extends Component {
                             isValid = true;
                             break;
                         } else {
-                            isValid = false;
                             break;
                         }
                     }
                 }
             }
             //up 
-            debugger;
             if (upSeat !=null) {
                 if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === upSeat.maGhe)) >= 0) {
                     isValid = true;
@@ -96,7 +95,6 @@ class Seat extends Component {
                             isValid = true;
                             break;
                         } else {
-                            isValid = false;
                             break;
                         }
                     }
@@ -110,19 +108,18 @@ class Seat extends Component {
                 } else if (downSeat.daDat) {
                     const count = index / COLUMN_NUMBER > Math.floor(this.props.listTicket.length / COLUMN_NUMBER) ? Math.floor(index / COLUMN_NUMBER) : (Math.floor(this.props.listTicket.length / COLUMN_NUMBER) - 1);
                     
-                    // for(let i = index + COLUMN_NUMBER; i < count * (index % COLUMN_NUMBER == 0 ?  COLUMN_NUMBER ? index % COLUMN_NUMBER) ; i += COLUMN_NUMBER) {
-                    //     tempSeat = this.props.listTicket[i];
-                    //     if (tempSeat.daDat) {
-                    //         continue;
-                    //     }
-                    //     if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === tempSeat.maGhe)) >= 0) {
-                    //         isValid = true;
-                    //         break;
-                    //     } else {
-                    //         isValid = false;
-                    //         break;
-                    //     }
-                    // }
+                    for(let i = index + COLUMN_NUMBER; i < count * (index % COLUMN_NUMBER == 0 ?  COLUMN_NUMBER : index % COLUMN_NUMBER); i += COLUMN_NUMBER) {
+                        tempSeat = this.props.listTicket[i];
+                        if (tempSeat.daDat) {
+                            continue;
+                        }
+                        if (this.props.seatSelected.findIndex(ele => (ele.seatInfo.maGhe === tempSeat.maGhe)) >= 0) {
+                            isValid = true;
+                            break;
+                        } else {
+                            break;
+                        }
+                    }
                 }
             }
 
@@ -203,6 +200,7 @@ const mapStatetoProps = (state) => {
     return {
         seatSelected : state.BookingTicketReducer.seatSelected,
         listTicket: state.BookingTicketReducer.listTicket,
+        
     }
 }
 

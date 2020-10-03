@@ -6,6 +6,7 @@ import style from './BookingTicketPage.module.scss';
 import SeatList from './SeatList/SeatList';
 import ScreenContent from './ScreenContent/ScreenContent';
 import CheckOut from './CheckOut/CheckOut';
+import CheckOutPopup from './CheckOutPopup/CheckOutPopup';
 
 class BookingTicketPage extends Component {
     render() {
@@ -18,6 +19,7 @@ class BookingTicketPage extends Component {
                     </div>
                     <div className="col-right">
                         <CheckOut />
+                        <CheckOutPopup />
                     </div>
                 </div>
             </div>

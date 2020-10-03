@@ -51,12 +51,19 @@ class SeatList extends Component {
             </div>
         )
     }
+
+    componentDidUpdate = () => {
+        if (this.props.booked) {
+            window.dispatchEvent(new Event('CHECKOUT_FINISH', null));
+        }
+    }
 }
 
 const mapStatetoProps = (state) => {
     return ({
         listTicket: state.BookingTicketReducer.listTicket,
         flimInfo: state.BookingTicketReducer.flimInfo,
+        booked:  state.BookingTicketReducer.booked
     })
 }
 
