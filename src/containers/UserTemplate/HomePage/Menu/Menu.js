@@ -1,7 +1,38 @@
 import React, { Component } from 'react'
 import menuStyle from './Menu.module.scss';
+import { getFilmLists } from '../../../../redux/actions/FilmSectionReducerAction';
+import { connect } from 'react-redux';
 
-export default class Menu extends Component {
+class Menu extends Component {
+
+    mapPropstoDataProvider = () => {
+        let dataProvider = this.props.listFilm.map((item) => {
+            return ({
+                title: item.tenPhim,
+                imgUrl: item.hinhAnh,
+                ageType: 'C18',
+                trailerUrl: item.trailer,
+                description: item.moTa
+            })
+        })
+        return dataProvider;
+    }
+
+    renderFilm = () => {
+        const dataProvider = this.mapPropstoDataProvider();
+        return dataProvider.slice(0, 4).map((item, index) => {
+            return (
+                <div className="menu__Movie--item col-3">
+                    <div className="menu__Movie--img">
+                        <img src="./img/hero-1.jpg" className="w-100" alt="..." />
+                        <button className="p-1"><span>MUA VÉ</span></button>
+                    </div>
+                    <p>{item.title}</p>
+                </div>
+            )
+        })
+    }
+
     render() {
         return (
             <div className={menuStyle.Menu}>
@@ -36,34 +67,7 @@ export default class Menu extends Component {
                                             <a href="#">PHIM ĐANG CHIẾU</a>
                                             <div className="menu__Movie--list px-3 py-1">
                                                 <div className="row">
-                                                    <div className="menu__Movie--item col-3">
-                                                        <div className="menu__Movie--img">
-                                                            <img src="./img/hero-1.jpg" className="w-100" alt="..." />
-                                                            <button className="p-1"><span>MUA VÉ</span></button>
-                                                        </div>
-                                                        <p>movie name</p>
-                                                    </div>
-                                                    <div className="menu__Movie--item col-3">
-                                                        <div className="menu__Movie--img">
-                                                            <img src="./img/hero-1.jpg" className="w-100" alt="..." />
-                                                            <button className="p-1"><span>MUA VÉ</span></button>
-                                                        </div>
-                                                        <p>movie name</p>
-                                                    </div>
-                                                    <div className="menu__Movie--item col-3">
-                                                        <div className="menu__Movie--img">
-                                                            <img src="./img/hero-1.jpg" className="w-100" alt="..." />
-                                                            <button className="p-1"><span>MUA VÉ</span></button>
-                                                        </div>
-                                                        <p>movie name</p>
-                                                    </div>
-                                                    <div className="menu__Movie--item col-3">
-                                                        <div className="menu__Movie--img">
-                                                            <img src="./img/hero-1.jpg" className="w-100" alt="..." />
-                                                            <button className="p-1"><span>MUA VÉ</span></button>
-                                                        </div>
-                                                        <p>movie name</p>
-                                                    </div>
+                                                    {this.renderFilm()}
                                                 </div>
                                             </div>
                                         </div>
@@ -72,34 +76,7 @@ export default class Menu extends Component {
                                             <a href="#">PHIM SẮP CHIẾU</a>
                                             <div className="menu__Movie--list px-3 py-1">
                                                 <div className="row">
-                                                    <div className="menu__Movie--item col-3">
-                                                        <div className="menu__Movie--img">
-                                                            <img src="./img/hero-1.jpg" className="w-100" alt="..." />
-                                                            <button className="p-1"><span>MUA VÉ</span></button>
-                                                        </div>
-                                                        <p>movie name</p>
-                                                    </div>
-                                                    <div className="menu__Movie--item col-3">
-                                                        <div className="menu__Movie--img">
-                                                            <img src="./img/hero-1.jpg" className="w-100" alt="..." />
-                                                            <button className="p-1"><span>MUA VÉ</span></button>
-                                                        </div>
-                                                        <p>movie name</p>
-                                                    </div>
-                                                    <div className="menu__Movie--item col-3">
-                                                        <div className="menu__Movie--img">
-                                                            <img src="./img/hero-1.jpg" className="w-100" alt="..." />
-                                                            <button className="p-1"><span>MUA VÉ</span></button>
-                                                        </div>
-                                                        <p>movie name</p>
-                                                    </div>
-                                                    <div className="menu__Movie--item col-3">
-                                                        <div className="menu__Movie--img">
-                                                            <img src="./img/hero-1.jpg" className="w-100" alt="..." />
-                                                            <button className="p-1"><span>MUA VÉ</span></button>
-                                                        </div>
-                                                        <p>movie name</p>
-                                                    </div>
+                                                    {this.renderFilm()}
                                                 </div>
                                             </div>
                                         </div>
@@ -146,4 +123,16 @@ export default class Menu extends Component {
             </div>
         )
     }
+
+    componentDidMount = () => {
+        this.props.dispatch(getFilmLists());
+    }
 }
+
+const mapStatetoProps = (state) => {
+    return ({
+        listFilm: state.FilmSectionReducer.listFilm
+    });
+}
+
+export default connect(mapStatetoProps)(Menu)

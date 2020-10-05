@@ -31,11 +31,11 @@ export default class Footer extends Component {
                                 <h3>KẾT NỐI GP04 CINEMA</h3>
                                 <button><i className="fab fa-facebook-f" /></button>
                                 <button><i className="fab fa-twitter" /></button>
-                                <button><i className="fab fa-google-plus-g" /></button> 
+                                <button><i className="fab fa-google-plus-g" /></button>
                                 <h3>DOWNLOAD</h3>
-                                <button><i class="fab fa-apple"></i></button>
-                                <button><i class="fab fa-android"></i></button>
-                                <button><i class="fab fa-google-play"></i></button>
+                                <button><i className="fab fa-apple" /></button>
+                                <button><i className="fab fa-android" /></button>
+                                <button><i className="fab fa-google-play" /></button>
                             </div>
                         </div>
                         <div className="row">

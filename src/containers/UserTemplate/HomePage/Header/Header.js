@@ -17,7 +17,7 @@ export default class Header extends Component {
                                 <form action="">
                                     <input className="headerSearch_txt" type="text" name="" id="" placeholder="Tìm tên phim, diễn viên..." />
                                     <button className="headerSearch_btn" type="submit">
-                                        <i class="fa fa-search"></i>
+                                       <i className="fa fa-search" />
                                     </button>
                                 </form>
                             </div>
