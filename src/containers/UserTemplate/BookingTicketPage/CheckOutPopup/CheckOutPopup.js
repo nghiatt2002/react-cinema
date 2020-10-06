@@ -22,6 +22,7 @@ class CheckOutPopup extends Component {
 
     confirm = () => {
         window.addEventListener('CHECKOUT_FINISH', this.checkOutFinished);
+        $('body').removeClass('modal-checkout-open');
         this.setState({
             showLoader: true
         })
@@ -29,12 +30,11 @@ class CheckOutPopup extends Component {
     }
 
     checkOutFinished = () => {
-        console.log('checkOutFinished');
         this.setState({
             showLoader: false
         })
-        window.removeEventListener('CHECKOUT_FINISH', this.checkOutFinished);
         $('#checkOutPopUp').modal('toggle');
+        window.removeEventListener('CHECKOUT_FINISH', this.checkOutFinished);
         Swal.fire({
             icon: 'success',
             title: 'Đặt vé thành công',
@@ -42,6 +42,10 @@ class CheckOutPopup extends Component {
             timer: 1500
         })
         window.dispatchEvent(new Event('RESET', null));
+    }
+
+    onClose = () => {
+        $('body').removeClass('modal-checkout-open');
     }
 
     render() {
@@ -53,7 +57,7 @@ class CheckOutPopup extends Component {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h2>Xác nhận thông tin</h2>
-                            <button type="button" className="close" data-dismiss="modal">×</button>
+                            <button type="button" className="close" data-dismiss="modal" onClick = {()=>this.onClose()}>×</button>
                         </div>
                         <div className="modal-body">
                            <div className="checkOutPopUp-area">

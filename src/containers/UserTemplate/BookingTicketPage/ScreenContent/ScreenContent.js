@@ -32,11 +32,12 @@ class ScreenContent extends Component {
 
     render() {
         const settings = {
-            count: 300,
+            count: 3000,
             hideDay: true,
             hideHours: true,
             color: 'red',
         };
+        const {tenCumRap, gioChieu, ngayChieu, tenRap} = this.props.flimInfo;
         return (
             <div className={style.screencContent}>
                 <div className="d-flex justify-content-between screencContent_areas">
@@ -46,10 +47,12 @@ class ScreenContent extends Component {
                         </div>
                         <div className="screencContent__flim">
                             <p className = "flim-text">
-                                <span>DDC </span>
-                                <span className = "cinena-name">- Đống Đa</span>
+                                <span>{tenCumRap != undefined ? String(tenCumRap).split('-')[0] : ''}</span>
+                                <span className = "cinena-name">{tenCumRap != undefined ? '- ' + String(tenCumRap).split('-')[1] : ''}</span>
                             </p>
-                            <p className = "hour-text">Ngày mai - 21:20 - RẠP 1</p>
+                            <p className = "hour-text">
+                            {gioChieu != undefined ? gioChieu + ' - ' + ngayChieu + ' - ' + tenRap : ''}
+                            </p>
                         </div>
                     </div>
 
@@ -74,7 +77,8 @@ class ScreenContent extends Component {
 
 const mapStatetoProps = (state) => {
     return ({
-        total: state.BookingTicketReducer.total
+        total: state.BookingTicketReducer.total,
+        flimInfo: state.BookingTicketReducer.flimInfo,
     })
 }
 export default connect(mapStatetoProps, null)(ScreenContent);

@@ -271,6 +271,10 @@
                     }
                     .pay-price, .pay-btn {
                         width: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-wrap: wrap;
                     }
                 }
             }
@@ -279,3 +283,12 @@
 }
 
 
+@media screen and (max-width: 576px) {
+    .checkout {
+        margin-top: 80px;
+        :global .checkout-area {
+            position: unset;
+            width: 100%;
+        }
+    }
+}

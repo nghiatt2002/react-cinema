@@ -1,5 +1,5 @@
 .checkOutPopup {
-    overflow-y: hidden;
+    overflow-y: hidden !important;
     :global .modal-header {
         .close {
             outline: 0;
@@ -7,6 +7,7 @@
     }
     :global .checkOutPopUp-area {
         position: relative;
+        height: 100%;
         .film-info {
             .left-area {
                 img {
@@ -79,4 +80,18 @@
 @keyframes spin {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
     100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media screen and (max-width: 576px) {
+    .checkOutPopup {
+        :global .checkOutPopUp-area {
+            .checkout-info {
+                .items {
+                    .label {
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,4 +1,6 @@
 .seatList {
+    padding-left: 10px;
+    padding-right: 20px;
     :global .bookingTicketPage__grid {
         display: grid;
         grid-template-columns: repeat(13, 45px);
@@ -32,3 +34,11 @@
     }
 }
 
+@media screen and (max-width: 576px) {
+    .seatList {
+        :global .bookingTicketPage__grid {
+            max-width: 100%;
+            overflow-x: scroll;
+        }
+    }
+}

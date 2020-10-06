@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import style from './CheckOut.module.scss';
 import {bookSeats, comfirm} from '../../../../redux/actions/BookingTicketAction'
+import $ from 'jquery'
 
 class CheckOut extends Component {
     constructor(props) {
@@ -89,6 +90,7 @@ class CheckOut extends Component {
 
     checkOut = () => {
         window.addEventListener('RESET', this.reset);
+        $('body').addClass('modal-checkout-open');
         this.props.dispatch(comfirm({
                 ...this.state.dataRegister,
                 checkOutMethod: this.state.radioValue
@@ -220,8 +222,9 @@ class CheckOut extends Component {
                                 {this.renderSeatSelected()}
                             </div>
                             <button className={`pay-btn ${this.checkInActivebtn() ? 'active': ''}`}
-                            onClick = {() => this.reset()}
+                            onClick = {() => this.checkOut()}
                             data-toggle="modal" data-target="#checkOutPopUp"
+                            data-backdrop="static" data-keyboard="false"
                             >
                                 Đặt vé
                             </button>
@@ -231,13 +234,6 @@ class CheckOut extends Component {
             </div>
         )
     }
-
-    // componentDidMount = () => {
-    //     this.setState({
-    //         emailActive: String(this.state.dataRegister.email).length > 0,
-    //         phoneActive:  String(this.state.dataRegister.phone).length > 0,
-    //     })
-    // }
 }
 
 const mapStatetoProps = (state) => {
