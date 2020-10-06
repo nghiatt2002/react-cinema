@@ -17,7 +17,6 @@ class FimCommingSoonList extends Component {
     }
 
     componentDidMount() {
-        console.log('componentDidMount');
         this.setState({
           nav1: this.slider1,
           nav2: this.slider2
@@ -116,7 +115,6 @@ class FimCommingSoonList extends Component {
         }
 
         const dataProvider = this.mapPropstoDataProvider();
-        console.log(dataProvider);
         return (
             <div className={`${style.fimCommingSoonList}`}>
                     <div>

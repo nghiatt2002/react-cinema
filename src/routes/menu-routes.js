@@ -7,7 +7,7 @@ const routeUser = [
     {
         exact: true,
         path: '/',
-        component: BookingTicketPage
+        component: HomePage
     },
     {
         exact: false,

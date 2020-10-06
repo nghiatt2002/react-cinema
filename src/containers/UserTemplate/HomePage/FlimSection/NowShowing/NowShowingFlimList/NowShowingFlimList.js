@@ -46,6 +46,7 @@ class NowShowingFlimList extends Component {
             slidesPerRow: 4,
             rows: 2,
             className: "outline-none",
+            initialSlide: 8,
             responsive: [
                 {
                     breakpoint: 1070,
@@ -71,12 +72,17 @@ class NowShowingFlimList extends Component {
           <div className= {style.filmList}>
              <div className="container filmList-container">
                  <h2 className= "filmList__title">PHIM ĐANG CHIẾU</h2>
-                <Slider {...settings}>
+                <Slider {...settings}
+                        ref = {slider => (this.slider1 = slider)}>
                     {this.renderFilm()}
-                </Slider>   
+                </Slider> 
              </div>
           </div>
         )
+    }
+
+    componentDidUpdate = () => {
+        this.slider1.slickGoTo(0, true);
     }
 }
 

@@ -9,7 +9,7 @@ export default class HomePage extends Component {
             <div>
                 {/* <MovieShowTime /> */}
                 <Filmsection />
-                <NewsSection />
+                {/* <NewsSection /> */}
             </div>
         )
     }
