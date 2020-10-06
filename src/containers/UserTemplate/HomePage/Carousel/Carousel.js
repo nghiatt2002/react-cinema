@@ -3,9 +3,9 @@ import carouselStyle from './Carousel.module.scss';
 import CarouselForm from './CarouselForm';
 import { getFilmLists } from '../../../../redux/actions/FilmSectionReducerAction';
 import { connect } from 'react-redux';
+import CarouselItem from './CarouselItem';
 
 class Carousel extends Component {
-
     mapPropstoDataProvider = () => {
         let dataProvider = this.props.listFilm.map((item) => {
             return ({
@@ -19,49 +19,27 @@ class Carousel extends Component {
         return dataProvider;
     }
 
+    playTrainer = (event) => {
+        event.preventDefault();
+        this.props.dispatch({
+            type: 'SHOW_TRAILER_POPUP',
+            src: this.props.dataProvider.trailerUrl
+        })
+    }
+
     renderCarousel = () => {
         const dataProvider = this.mapPropstoDataProvider();
         return dataProvider.slice(0, 5).map((item, index) => {
             if (index === 0) {
                 return (
                     <div className="carousel-item active" key={index}>
-                        <img src="./img/hero-1.jpg" className="d-block w-100" alt="..." />
-                        <div className="container carousel__Slider--Content text-left text-light d-none d-sm-block">
-                            <h3><a href="#">{item.title}</a></h3>
-                            <p>{item.description}</p>
-                            <div className="movieCarousel__play">
-                                <span className="rounded-circle border border-white p-3 text-white">PG</span>
-                                <button className="p-3 text-white">
-                                    <i className="fa fa-play" /><span>PLAY TRAILER</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div className="movieCarousel__play--tablet d-inline d-sm-none">
-                            <button className="rounded-circle p-3">
-                                <i className="fa fa-play" /><span></span>
-                            </button>
-                        </div>
+                        <CarouselItem dataProvider = {item} />
                     </div>
                 )
             }
             return (
                 <div className="carousel-item" key={index}>
-                    <img src="./img/hero-1.jpg" className="d-block w-100" alt="..." />
-                    <div className="container carousel__Slider--Content text-left text-light d-none d-sm-block">
-                        <h3><a href="#">{item.title}</a></h3>
-                        <p>{item.description}</p>
-                        <div className="movieCarousel__play">
-                            <span className="rounded-circle border border-white p-3 text-white">PG</span>
-                            <button className="p-3 text-white">
-                                <i className="fa fa-play" /><span>PLAY TRAILER</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div className="movieCarousel__play--tablet d-inline d-sm-none">
-                        <button className="rounded-circle p-3">
-                            <i className="fa fa-play" /><span></span>
-                        </button>
-                    </div>
+                    <CarouselItem dataProvider = {item} />
                 </div>
             )
         })
