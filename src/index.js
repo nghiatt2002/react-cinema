@@ -1,7 +1,16 @@
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import $ from'jquery';
+// import Popper from'popper.js';
+// import 'bootstrap/dist/js/bootstrap.bundle.min';
+// import "slick-carousel/slick/slick.css"; 
+// import "slick-carousel/slick/slick-theme.css";
+
+// Add bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import $ from'jquery';
-import Popper from'popper.js';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'jquery/dist/jquery.min.js';
+import 'popper.js/dist/umd/popper.min.js';
+import 'bootstrap/dist/js/bootstrap.min.js';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -11,7 +20,6 @@ import rootReducer from './redux/reducers/rootReducer';
 import { Provider } from 'react-redux';
 import reduxThunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
-
 
 const reduxStore = createStore(rootReducer, applyMiddleware(reduxThunk));
 
