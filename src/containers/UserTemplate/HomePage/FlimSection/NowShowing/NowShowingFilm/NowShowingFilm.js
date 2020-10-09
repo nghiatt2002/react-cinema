@@ -68,9 +68,6 @@ class Film extends Component {
                         <span className = "ageType">{ageType}</span>
                         <span className = "filmTitle ml-2">{title}</span>
                   </div>
-                  <div className="infoFim">
-                        <span className = "time d-block">{infoFilm}</span>
-                  </div>
                   <div className="nameFilm--hover">
                     <a href="" className = "buyNow">MUA VÉ</a>
                   </div>

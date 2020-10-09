@@ -45,8 +45,6 @@ class NowShowingFlimList extends Component {
             speed: 500,
             slidesPerRow: 4,
             rows: 2,
-            className: "outline-none",
-            initialSlide: 8,
             responsive: [
                 {
                     breakpoint: 1070,

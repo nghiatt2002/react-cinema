@@ -86,7 +86,7 @@ class FimCommingSoonList extends Component {
             slidesToShow: 5,
             slidesToScroll: 2,
             swipeToSlide: true,
-            draggable: true,
+            draggable: false,
             infinite: true,
             asNavFor: '.slider-for',
             responsive: [
@@ -109,6 +109,15 @@ class FimCommingSoonList extends Component {
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        swipeToSlide: true,
+                        focusOnSelect: true
                     }
                 }
             ]
