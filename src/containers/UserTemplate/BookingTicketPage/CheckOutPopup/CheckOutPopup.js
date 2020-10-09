@@ -9,7 +9,8 @@ class CheckOutPopup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showLoader: false
+            showLoader: false,
+            executeFlg: false
         }
     }
     renderSeatSelected = () => {
@@ -24,14 +25,16 @@ class CheckOutPopup extends Component {
         window.addEventListener('CHECKOUT_FINISH', this.checkOutFinished);
         $('body').removeClass('modal-checkout-open');
         this.setState({
-            showLoader: true
+            showLoader: true,
+            executeFlg: true,
         })
-        bookSeats(this.props.seatSelected, this.props.dispatch);
+        bookSeats(this.props.showTimesCode, this.props.seatSelected, this.props.dispatch);
     }
 
     checkOutFinished = () => {
         this.setState({
-            showLoader: false
+            showLoader: false,
+            executeFlg: false,
         })
         $('#checkOutPopUp').modal('toggle');
         window.removeEventListener('CHECKOUT_FINISH', this.checkOutFinished);
@@ -57,7 +60,7 @@ class CheckOutPopup extends Component {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h2>Xác nhận thông tin</h2>
-                            <button type="button" className="close" data-dismiss="modal" onClick = {()=>this.onClose()}>×</button>
+                            <button type="button" className="close" data-dismiss="modal" onClick = {()=>this.onClose()} disabled = {this.state.executeFlg}>×</button>
                         </div>
                         <div className="modal-body">
                            <div className="checkOutPopUp-area">
@@ -140,6 +143,8 @@ const mapStatetoProps = (state) => {
         total: state.BookingTicketReducer.total,
         userInfo: state.BookingTicketReducer.userInfo,
         checkOutMethod:  state.BookingTicketReducer.checkOutMethod,
+        showTimesCode: state.BookingTicketReducer.showTimesCode,
+        executeFlg: state.BookingTicketReducer.executeFlg,
     }
 }
 

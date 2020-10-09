@@ -1,18 +1,19 @@
 import axios from 'axios';
 import {GET_TICKET_LIST, SELECT_SEAT, CONFIRM} from '../contants/BookingTicketConstant';
 
-export const getTicketLists = (booked = false) => {
+export const getTicketLists = (showTimesCode, booked = false) => {
     return dispatch => {
         axios (
             {
                 method: 'GET',
-                url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=29919',
+                url: `https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${showTimesCode}`,
             }
         ).then(res => {
             dispatch({
                 type: GET_TICKET_LIST,
                 data: res.data,
-                booked: booked            
+                showTimesCode: showTimesCode,
+                booked: booked
             })
         }).catch(err => {
             console.log(err);
@@ -36,7 +37,7 @@ export const comfirm = (data) => {
     }
 }
 
-export const bookSeats = (data, dispatch) => {
+export const bookSeats = (showTimesCode, data, dispatch) => {
     let danhSachVe = data.map(item => {
         return {
             maGhe: item.seatInfo.maGhe,
@@ -45,7 +46,7 @@ export const bookSeats = (data, dispatch) => {
     });
 
     let params = {
-        maLichChieu: 29919,
+        maLichChieu: showTimesCode,
         danhSachVe: danhSachVe,
         taiKhoanNguoiDung: 'testter'
     }
@@ -59,7 +60,7 @@ export const bookSeats = (data, dispatch) => {
             }
         }, 
     ).then(res => {
-        dispatch(getTicketLists(true));
+        dispatch(getTicketLists(showTimesCode, true));
     }).catch(err => {
         console.log(err);
     });

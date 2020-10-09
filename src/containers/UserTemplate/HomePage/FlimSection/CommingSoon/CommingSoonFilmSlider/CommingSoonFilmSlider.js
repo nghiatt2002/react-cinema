@@ -28,7 +28,7 @@ class CommingSoonFilmSlider extends Component {
                     <div className="container h-100">
                         <h3>PHIM SẮP CHIẾU</h3>
                         <div className="row h-100 align-item-center">
-                            <div className="col-12 col-md-8 commingSoonSlider__area--left">
+                            <div className="col-12 col-sm-6 col-md-8 commingSoonSlider__area--left">
                                 <p className = "commingSoonSlider__area--type">{type}</p>
                                 <h4 className = "commingSoonSlider__area--title">{title}</h4>
                                 <div className = "commingSoonSlider__info">
@@ -48,7 +48,7 @@ class CommingSoonFilmSlider extends Component {
                                     </a>
                                 </p>
                             </div>
-                            <div className="col-12 col-md-4 commingSoonSlider__area--right">
+                            <div className="col-12 col-sm-6 col-md-4 commingSoonSlider__area--right">
                                 <div className="commingSoonSlider__img">
                                     <a href="" onClick = {this.playTrainer}
                                       data-toggle="modal" data-target="#trainerModal" >

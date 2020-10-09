@@ -19,7 +19,7 @@ const routeUser = [
         exact: false,
         path: '/phim',
         component: MovieDetailPage
-    }
+    },
 ]
 
 const routeAdmin = [

@@ -2,7 +2,7 @@ import { event } from 'jquery';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import style from './CheckOut.module.scss';
-import {bookSeats, comfirm} from '../../../../redux/actions/BookingTicketAction'
+import {comfirm} from '../../../../redux/actions/BookingTicketAction'
 import $ from 'jquery'
 
 class CheckOut extends Component {

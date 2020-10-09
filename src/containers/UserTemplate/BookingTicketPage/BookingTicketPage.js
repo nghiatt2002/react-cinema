@@ -27,7 +27,7 @@ class BookingTicketPage extends Component {
     }
 
     componentDidMount = () => {
-        this.props.dispatch(getTicketLists());
+        this.props.dispatch(getTicketLists(this.props.match.params.maLichChieu));
     }
 }
 
