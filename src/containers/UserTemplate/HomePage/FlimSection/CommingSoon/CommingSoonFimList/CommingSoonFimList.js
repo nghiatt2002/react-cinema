@@ -34,6 +34,7 @@ class FimCommingSoonList extends Component {
     mapPropstoDataProvider = () => {
         const dataProvider = this.props.listFilm.map(item =>{
             return ({
+                maPhim: item.maPhim,
                 type: '',
                 title : item.tenPhim,
                 imgUrl:  item.hinhAnh,
@@ -49,7 +50,6 @@ class FimCommingSoonList extends Component {
     }
     
     renderCommingSoonFilmSlider = (dataProvider) => {
-        console.log('renderCommingSoonFilmSlider start');
         return dataProvider.map((item, index) => {
             return (
                 <div key = {index}>

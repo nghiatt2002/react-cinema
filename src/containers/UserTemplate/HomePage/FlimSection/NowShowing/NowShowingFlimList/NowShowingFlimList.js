@@ -15,6 +15,7 @@ class NowShowingFlimList extends Component {
     mapPropstoDataProvider = () => {
         let dataProvider = this.props.listFilm.map((item) => {
             return ({
+                maPhim: item.maPhim,
                 title: item.tenPhim,
                 infoFilm: '0 phút',
                 imgUrl: item.hinhAnh,
