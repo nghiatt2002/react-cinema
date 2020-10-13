@@ -115,7 +115,8 @@ class Menu extends Component {
                                 <a className="nav-link" href="#">HỖ TRỢ</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">THÀNH VIÊN</a>
+                                <a href="#" className="nav-link" data-toggle="modal" data-target="#modalLRForm">ĐĂNG NHẬP</a>
+                                {/* <a className="nav-link" href="#">THÀNH VIÊN</a> */}
                             </li>
                         </ul>
                     </div>

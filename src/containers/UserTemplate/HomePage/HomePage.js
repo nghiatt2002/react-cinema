@@ -4,6 +4,7 @@ import Filmsection from './FlimSection/FilmSection';
 import NewsSection from './NewsSection/NewsSection';
 import Menu from './Menu/Menu';
 import Carousel from './Carousel/Carousel';
+import Account from './Account/Account';
 
 export default class HomePage extends Component {
     render() {
@@ -13,6 +14,7 @@ export default class HomePage extends Component {
                 <Filmsection />
                 <MovieShowTime />
                 <NewsSection />
+                <Account />
             </div>
         )
     }
