@@ -24,9 +24,10 @@ const routeUser = [
 
 const routeAdmin = [
     {
-        exact: true,
+        exact: false,
         path: '/admin',
-        component: Admin
-    }
+        component: Admin,
+    },
+
 ]
 export {routeUser, routeAdmin}
